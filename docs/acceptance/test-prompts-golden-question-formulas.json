@@ -1,0 +1,41 @@
+{
+ "skill": "golden-question-formulas",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "我要为一道题写内容：'群晖和威联通 NAS 哪个好'，文章结构怎么搭？",
+   "expected_behavior": "调用 golden-question-formulas，识别对比型并套分流公式",
+   "notes": "正面：对比型"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "'直播间没人看还要继续播吗'这类问题写文章用什么结构？",
+   "expected_behavior": "调用 golden-question-formulas，识别症状型并套决策树公式",
+   "notes": "正面：症状型"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "我写的文章结论埋在第三段，帮我改得更容易被 AI 引用",
+   "expected_behavior": "应由 citable-content-spec 处理（硬指标体检改写）",
+   "notes": "跨skill诱饵：规格体检 vs 题型公式"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我算一下这条千川计划的 ROI",
+   "expected_behavior": "与内容写作无关，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "'ERP 是什么意思'这个问题要不要写篇文章占位？",
+   "expected_behavior": "触发后应指出纯定义类引用率低（非黄金题型），引导到 query 分级逻辑（skip），而不是硬套公式",
+   "notes": "边界：非黄金题型"
+  }
+ ]
+}

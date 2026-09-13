@@ -1,0 +1,41 @@
+{
+ "skill": "geo-query-research",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "我们要做 CRM 产品的 GEO，帮我列一份该先做的选题清单",
+   "expected_behavior": "调用 geo-query-research，捞词→三维分级→easy_win 清单",
+   "notes": "正面：选题清单"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "GEO 里怎么判断哪些问题值得做、哪些不值得做？",
+   "expected_behavior": "调用 geo-query-research 给三维分级口径",
+   "notes": "正面：分级方法"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "这道题看起来竞争空白，怎么确认引擎真的会引用它？",
+   "expected_behavior": "应由 geo-test-protocol 处理（先测后投实测）",
+   "notes": "跨skill诱饵：纸面分级 vs 实测"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我写一篇 AI 行业周报",
+   "expected_behavior": "与选题分级无关，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "我手上有个 SEO 关键词词库，能直接当 GEO 选题用吗？",
+   "expected_behavior": "调用后给出转换思路（搜索量逻辑→引用性×竞争度逻辑、口语化改写），不是简单肯定/否定",
+   "notes": "边界：SEO→GEO 转换"
+  }
+ ]
+}

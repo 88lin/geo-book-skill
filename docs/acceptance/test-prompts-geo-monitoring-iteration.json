@@ -1,0 +1,41 @@
+{
+ "skill": "geo-monitoring-iteration",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "GEO 内容发了两个月，怎么知道有没有效果？",
+   "expected_behavior": "调用 geo-monitoring-iteration，给监测口径与工具路径",
+   "notes": "正面：效果追踪"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "监测发现 8 条 query 里只有 1 条被引用，接下来怎么办？",
+   "expected_behavior": "调用 geo-monitoring-iteration，按三分支处理",
+   "notes": "正面：迭代决策"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "怎么设计一次规范的引用率实测？",
+   "expected_behavior": "应由 geo-test-protocol 处理（实验设计）",
+   "notes": "跨skill诱饵：实验设计 vs 日常监测"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我看看网站流量为什么下降了",
+   "expected_behavior": "SEO 流量问题，不是 GEO 引用监测，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "要不要每天盯着监测数据看？",
+   "expected_behavior": "调用并按两周周期口径回答：天天盯没有增量信息",
+   "notes": "边界：监测节奏"
+  }
+ ]
+}

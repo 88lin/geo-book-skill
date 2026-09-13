@@ -1,0 +1,41 @@
+{
+ "skill": "geo-book-router",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "route-01",
+   "type": "should_trigger",
+   "prompt": "学习机是不是智商税？品牌要怎么应对这类问题？",
+   "expected_behavior": "路由到 negative-semantic-occupy",
+   "notes": "router 可达性"
+  },
+  {
+   "id": "route-02",
+   "type": "should_trigger",
+   "prompt": "我的烘焙店在高德地图上搜不到怎么办？",
+   "expected_behavior": "路由到 lso-local-playbook",
+   "notes": "router 可达性"
+  },
+  {
+   "id": "route-03",
+   "type": "should_trigger",
+   "prompt": "怎么让我的抖音视频更容易被搜索到、被 AI 引用？",
+   "expected_behavior": "路由到 vso-video-optimization",
+   "notes": "router 可达性"
+  },
+  {
+   "id": "route-04",
+   "type": "should_trigger",
+   "prompt": "FAQPage schema 现在还有必要做吗？",
+   "expected_behavior": "路由到 aeo-answer-optimization",
+   "notes": "router 可达性"
+  },
+  {
+   "id": "route-05",
+   "type": "should_trigger",
+   "prompt": "官网要怎么改造才能被 AI 长期用上？",
+   "expected_behavior": "路由到 brand-data-infrastructure",
+   "notes": "router 可达性"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "skill": "citable-content-spec",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "这是我写的学习机 FAQ 页初稿，结论放在第三段，帮我看看能不能被 AI 引用、要怎么改",
+   "expected_behavior": "调用 citable-content-spec，按四条硬指标体检并改写",
+   "notes": "正面：稿主体检"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "为什么我的对比文章 AI 从来不引用？帮我检查一下哪里不达标",
+   "expected_behavior": "调用 citable-content-spec 逐条核对四硬指标",
+   "notes": "正面：归因检查"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "'蝉妈妈和飞瓜数据哪个好'这篇文章该怎么写？",
+   "expected_behavior": "应由 golden-question-formulas 处理（题型骨架），不是规格体检",
+   "notes": "跨skill诱饵"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我把网站迁移到新服务器",
+   "expected_behavior": "与内容规格无关，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "结论前置 40-60 字这条规则是平台官方规定吗？",
+   "expected_behavior": "调用后如实回答：是书内经验值/实测归纳，非平台官方标准",
+   "notes": "边界：规则来源"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "skill": "geo-channel-map",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "我们是做跨境电商 ERP 的，内容团队 3 个人，内容应该先发到哪些平台？要不要做知乎？",
+   "expected_behavior": "调用 geo-channel-map，走四步决策树并给出引擎×渠道分工表",
+   "notes": "正面：渠道分配"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "豆包和元宝引用内容的偏好有什么区别？",
+   "expected_behavior": "调用 geo-channel-map，给六引擎画像对比",
+   "notes": "正面：引擎信源查询"
+  },
+  {
+   "id": "should-trigger-03",
+   "type": "should_trigger",
+   "prompt": "我们品牌在元宝上完全搜不到，公众号也没有，怎么办？",
+   "expected_behavior": "调用 geo-channel-map，给出公众号是元宝入场券的结论与补建建议",
+   "notes": "正面：渠道诊断"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "帮我写一篇'聚水潭和旺店通哪个好'的对比文章，结构怎么搭？",
+   "expected_behavior": "应由 golden-question-formulas 处理（对比型内容公式），不是渠道问题",
+   "notes": "跨skill诱饵：内容写作 vs 渠道"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我写一段 Python 爬虫代码抓网页标题",
+   "expected_behavior": "与 GEO 无关，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "小红书在 GEO 里有用吗？",
+   "expected_behavior": "调用 geo-channel-map 但如实说明小红书不在 2026-08-05 实测范围内，按'无实测背书按假设处理'回答",
+   "notes": "边界：书未覆盖的渠道"
+  }
+ ]
+}

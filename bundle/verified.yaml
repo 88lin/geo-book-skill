@@ -1,0 +1,339 @@
+schema_version: 1
+bundle_id: bundle.geo-book
+book:
+  title: 从 SEO 到 GEO：AI 时代的搜索优化实战手册
+  author: JingHao-Leon
+  source_pack: geo-book
+  baseline_tag: 2026-08-05-实测快照
+entry:
+  name: geo-playbook
+  description: >-
+    从《从 SEO 到 GEO：AI 时代的搜索优化实战手册》（JingHao-Leon 著，2026-08-05 六引擎实测）蒸馏的中文 AI
+    搜索优化操作手册。覆盖 GEO 五步工作流：query 研究分级、六引擎渠道分工、可引用内容生产、一鱼多吃分发、监测迭代，
+    以及负面语义占位、引用行为实测规程和 LSO/VSO/AEO 基本功。所有引擎信源数字为 2026-08-05 单日快照，按方向性使用并定期复核。
+  core_principles:
+    - 七分渠道三分内容：先按引擎生态绑定选对渠道，再打磨内容形态
+    - 内容写给 AI 拆件：结论前置 40-60 字、对比表 5+ 维度、价格带日期、数字可验证
+    - query 三维分级（决策阶段×引用性×竞争度），先做 easy_win，放弃纯定义类
+    - 先测引用再投入：引用率是投入决策的第一道筛子
+    - 一鱼多吃是改写不是复制粘贴；不高频抓取、不铺低质稿、不造假
+    - 排名/引用是仪表盘不是目标，长期资产是经得起机器核查的事实
+  out_of_scope:
+    - 海外引擎（Google AI Overviews、Perplexity、ChatGPT Search）的优化实操
+    - AI 回答广告投放与竞价采买（截至 2026 年初国内六家均无此产品）
+    - 刷量、伪造评价、批量账号自问自答等灰产操作（原书明确红线）
+    - 各 AI 引擎算法逆向与内部机制猜测
+  stop_conditions:
+    - 目标行业的"决策人-引擎"映射无法从已验证行业（广告电商、教育）推出时，先建议小样本实测再定渠道，不硬套
+    - 需要精确百分比结论（如引用率 75% vs 83%）时，声明 n=1 局限并建议多次采样，不提供虚假精度
+    - 用户要求刷好评、编造数据、伪装中立洗地时，拒绝执行并说明"上榜示众"风险
+router_entry:
+  name: geo-book-router
+  description: >-
+    《从 SEO 到 GEO》蒸馏包的来源路由入口：按用户意图路由到 12 张能力卡——渠道分工（geo-channel-map）、
+    黄金问题公式（golden-question-formulas）、可引用内容（citable-content-spec）、query 研究（geo-query-research）、
+    一鱼多吃（one-fish-multi-platform）、监测迭代（geo-monitoring-iteration）、实测规程（geo-test-protocol）、
+    负面占位（negative-semantic-occupy）、LSO（lso-local-playbook）、VSO（vso-video-optimization）、
+    AEO（aeo-answer-optimization）、数据基建（brand-data-infrastructure）。
+promotion_budget: 8
+capabilities:
+  - capability_id: geo-channel-map
+    revision: 1
+    status: active
+    slug: geo-channel-map
+    title: GEO 渠道决策树与六引擎信源地图
+    importance: critical
+    importance_rationale: 承接 t01/t02（全书核心交付）；渠道错配直接零引用（反例 x24）；被 query 研究、一鱼多吃、VSO 等 5 张卡引用，DIGEST 渠道节主体。
+    one_liner: 先按目标用户动线定主攻引擎，再按引擎生态与问题类型定渠道与形态。
+    intents: [决定内容发哪些平台渠道, 选择主攻的 AI 引擎, 查询某引擎引用什么信源, 评估某渠道在 GEO 中的地位]
+    keywords: [渠道, 信源地图, 生态绑定, 六引擎, 豆包, 元宝, 文心一言, DeepSeek, 千问, Kimi, 公众号, 百家号, 抖音, 知乎修正, source map, channel selection]
+    also_read: [geo-test-protocol, one-fish-multi-platform, citable-content-spec, geo-query-research]
+    card: cards/geo-channel-map.md
+    frontmatter:
+      description: >-
+        当用户要决定内容发到哪些平台、主攻哪个 AI 引擎（豆包/元宝/文心/DeepSeek/千问/Kimi），或问某引擎引用什么信源、
+        知乎还有没有用时使用。按"定引擎→看生态→按题型修正→多形态分发"四步走，基于 2026-08-05 六引擎实测快照（方向性，需定期复核）。
+        不用于内容怎么写（citable-content-spec）或怎么实测引用行为（geo-test-protocol）。
+      tags: [geo, channel, source-map, decision-tree]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 6、7、9 章
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 全书数据核心，独立意图高频（"发哪里"）；与 router 卡 vso/lso 的触发通过"AI 渠道 vs 本地/视频平台"负例区分。
+  - capability_id: golden-question-formulas
+    revision: 1
+    status: active
+    slug: golden-question-formulas
+    title: 三类黄金问题识别与内容公式
+    importance: critical
+    importance_rationale: 承接 t03（执行层刚需：每篇内容稿都要先判题型）；症状/对比/信任三公式是 ch8 实测反复验证的形态结论。
+    one_liner: 按提问动机把 query 分诊为症状/对比/信任三类，套对应内容公式产出稿件骨架。
+    intents: [判断一道题属于哪类黄金问题, 为具体 query 设计内容骨架, 解释为什么内容没被 AI 引用]
+    keywords: [症状型, 对比型, 信任型, 黄金问题, 内容公式, 决策树, 分流, 怎么选, 靠谱吗, 跑不动, question triage, content formula]
+    also_read: [citable-content-spec, negative-semantic-occupy, geo-channel-map]
+    card: cards/golden-question-formulas.md
+    frontmatter:
+      description: >-
+        当用户要为一道具体问题（"X 和 Y 哪个好""X 跑不动怎么办""X 是不是智商税"）写内容，或问稿件该用什么结构时使用。
+        按提问动机分诊为症状/对比/信任三类并套公式：症状做标题+决策树+阈值；按场景分流+可核验标准；识别清单+投诉/政务数据。
+        不管稿件硬指标校验（citable-content-spec）与品牌负面占位策略（negative-semantic-occupy）。
+      tags: [geo, content, question-type, formula]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 8 章
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 与 negative-semantic-occupy 的触发区分——本卡面向通用内容写作，占位卡面向品牌声誉应对。
+  - capability_id: citable-content-spec
+    revision: 1
+    status: active
+    slug: citable-content-spec
+    title: 可引用内容四条硬指标
+    importance: critical
+    importance_rationale: 承接 t04（所有内容生产都要过的验收口径）；四指标可机械检查，直接针对"写了没被引"的形态性原因。
+    one_liner: 结论前置 40-60 字、对比表 5+ 维度、价格带日期、数字可验证——给结论给数字给适用边界。
+    intents: [检查稿件是否容易被 AI 引用, 改写内容提高被引概率, 制定内容生产规范]
+    keywords: [结论前置, 对比表, 硬指标, 价格页, 可验证, 被引用, 净菜, 可引用件, citable, answer-first, checklist]
+    also_read: [golden-question-formulas, one-fish-multi-platform, geo-monitoring-iteration]
+    card: cards/citable-content-spec.md
+    frontmatter:
+      description: >-
+        当用户写完或拿到一篇稿子，问"怎么改得更容易被 AI 引用/为什么没被引用"，或要定内容交稿验收标准时使用。
+        按四条硬指标逐条体检并改写：结论前置 40-60 字、对比表 ≥5 维度、价格带日期、数字可验证。选题归 geo-query-research，
+        稿件骨架归 golden-question-formulas，发布渠道归 geo-channel-map。
+      tags: [geo, content, standard, checklist]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 10 章（第 8、1 章补充）
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 输入输出契约清晰（体检表+改写稿），与 golden-question 靠"判题型 vs 验规格"区分。
+  - capability_id: geo-query-research
+    revision: 1
+    status: active
+    slug: geo-query-research
+    title: GEO query 研究与分级
+    importance: high
+    importance_rationale: 承接 t06（GEO 起点动作，清单是全工作流的输入）；easy_win 口径直接避免纯定义类白费产能（x34）。
+    one_liner: 从真实语料捞 query，按决策阶段×引用性×竞争度三维分级，先做 easy_win。
+    intents: [为 GEO 项目列选题清单, 给 query 排优先级, 判断哪些问题不值得做]
+    keywords: [选题, query 清单, easy_win, target, skip, 分级, 竞争空白, 蓝海, 捞词, 下拉联想, topic research, query grading]
+    also_read: [geo-test-protocol, golden-question-formulas, geo-channel-map]
+    card: cards/geo-query-research.md
+    frontmatter:
+      description: >-
+        当用户要启动 GEO/内容项目、问"该先写哪些题/帮我列选题清单/哪些问题不值得做"时使用。从真实语料（知乎原题、
+        百度下拉、评论区）捞用户原话，按决策阶段×引用性×竞争度分级为 easy_win/target/skip，产出可执行清单表。
+        纸面分级后投入前仍需实测确认（geo-test-protocol）。
+      tags: [geo, query, research, prioritization]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 10 章（第 1、9 章补充）
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 列选题清单是独立高频意图；与测试卡靠"纸面分级 vs 实测确认"区分。
+  - capability_id: one-fish-multi-platform
+    revision: 1
+    status: active
+    slug: one-fish-multi-platform
+    title: 一鱼多吃多平台改造
+    importance: high
+    importance_rationale: 承接 t05（一份研究覆盖多引擎供应链的成本杠杆）；复制粘贴分发是降权特征（x37），改造纪律有合规价值。
+    one_liner: 同一份研究改造成知乎问答版/公众号长文版/头条短文版+官网事实页，改写而非复制。
+    intents: [把一份内容改造成多平台版本, 排多平台分发计划, 判断各平台版本该怎么改]
+    keywords: [一鱼多吃, 多平台, 分发, 改写, 知乎版, 公众号长文, 头条短文, 官网事实页, repurpose, multi-platform]
+    also_read: [citable-content-spec, geo-channel-map, geo-monitoring-iteration]
+    card: cards/one-fish-multi-platform.md
+    frontmatter:
+      description: >-
+        当用户有一篇内容或一份研究，要"一稿多发/多平台分发/改成公众号和知乎和头条版"时使用。按三版规范改造（知乎问答版
+        结论前置+对比表、公众号长文版 3000 字+挂权威源、头条短文版 800-1500 字单点）加官网事实页；核心纪律是改写而非
+        复制粘贴（原样铺发是低质 AIGC 识别特征）。
+      tags: [geo, distribution, repurposing]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 10 章（第 4 章补充）
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 一稿多发的独立意图明确；与 citable-content-spec 靠"多版本改造 vs 单稿体检"区分。
+  - capability_id: geo-monitoring-iteration
+    revision: 1
+    status: active
+    slug: geo-monitoring-iteration
+    title: GEO 监测与迭代
+    importance: high
+    importance_rationale: 承接 t07（不监测等于白做）；三分支迭代把监测结果映射为确定动作；度量口径换轨（被引用率/描述倾向/站位）是 KPI 层刚需。
+    one_liner: 监测目标 query 下 AI 引没引你，按被引/竞品被引/无引用三分支迭代，两周一个周期。
+    intents: [追踪品牌在 AI 回答中的引用情况, 决定监测结果出来后做什么, 选择监测工具或决定是否自建]
+    keywords: [监测, 迭代, 被引用率, 品牌描述, 对比站位, GEOBase, 新榜智汇, 鲸牙启量, 可见度, 两周, monitoring, visibility]
+    also_read: [geo-test-protocol, citable-content-spec, one-fish-multi-platform]
+    card: cards/geo-monitoring-iteration.md
+    frontmatter:
+      description: >-
+        当用户已发布 GEO 内容，问"怎么知道有没有效果/怎么追踪 AI 有没有引用我/监测结果出来后该干什么/用什么工具"时使用。
+        建基线→选工具路径（免费 GEOBase 起步，自建需三条件且限速）→两周周期采样→按被引/竞品被引/无引用三分支执行动作。
+        实测口径与限速红线归 geo-test-protocol。
+      tags: [geo, monitoring, iteration, tools]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 10 章（第 5 章度量口径）
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 与 geo-test-protocol 靠"日常双周运营 vs 一次性实验设计与先测后投"区分。
+  - capability_id: geo-test-protocol
+    revision: 1
+    status: active
+    slug: geo-test-protocol
+    title: 引用行为实测规程（先测后投与风控红线）
+    importance: high
+    importance_rationale: 承接 t15/t09/t14（一切数据结论的方法底座）；先测后投直接止损（元宝 0/5 警示）；风控红线防账号损失。
+    one_liner: 独立新对话逐字实测引用率（几/12 二值口径），先测引用再决定投入，自动化必须限速。
+    intents: [实测或复现某引擎的引用行为, 判断某 query 在某引擎上值不值得投入, 设计引用采样方案并规避风控]
+    keywords: [实测, 采样, 引用率, n=1, 多次采样, 先测后投, 风控, 限速, 新对话, 逐字提问, citation test, sampling, rate limit]
+    also_read: [geo-channel-map, geo-monitoring-iteration, geo-query-research]
+    card: cards/geo-test-protocol.md
+    frontmatter:
+      description: >-
+        当用户要实测/复测 AI 引擎的引用行为、问"这个题这个引擎值不值得投入内容"、或要做自动化采样监测并担心风控时使用。
+        规程：每题独立新对话、逐字提问、二值引用率口径（几/12）、n=1 只作方向性；先测后投 5 次采样稳定零引用即红灯；
+        约 30 次连续提问触发 DeepSeek 风控，必须分钟级间隔+每日上限。
+      tags: [geo, methodology, testing, risk-control]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 6 章、第 9 章
+    promotion:
+      destination: promoted
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 研究/监测/卡位三类场景都会调用，独立复用性强。
+  - capability_id: negative-semantic-occupy
+    revision: 1
+    status: active
+    slug: negative-semantic-occupy
+    title: 负面语义占位
+    importance: high
+    importance_rationale: 承接 t08（教育等行业主战场，品牌声誉高 stakes）；公关式否认无效是实测支持的机理结论。
+    one_liner: 对"智商税/靠谱吗"类 query 抢阅卷权：替用户算账、分人群给结论、借第三方形态呈现。
+    intents: [应对 AI 回答中的负面口碑, 处理智商税/骗局类 query 的占位, 排负面 query 优先级]
+    keywords: [智商税, 割韭菜, 靠谱吗, 负面语义, 占位, 阅卷权, 辟谣, 口碑, scam, reputation defense]
+    also_read: [golden-question-formulas, geo-channel-map, geo-query-research]
+    card: cards/negative-semantic-occupy.md
+    frontmatter:
+      description: >-
+        当品牌方发现 AI 回答自家产品时引用了吐槽帖/负面内容，或面对"智商税/割韭菜/靠谱吗/骗局"类 query 要决定怎么回应时使用。
+        打法：禁用公关式否认，替用户算账+分人群给明确结论，按老负面（阵地战）/新负面（先到先得）烈度分级投入，差异点借第三方
+        形态呈现。红线：不伪装中立洗地、不造假。
+      tags: [geo, reputation, negative-semantics]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 9 章（第 8 章信任型）
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 五判据全过但预算 8 已满；与 golden-question-formulas 触发重叠风险较高（同为信任类内容），降为 router 卡保随时可达。
+  - capability_id: lso-local-playbook
+    revision: 1
+    status: active
+    slug: lso-local-playbook
+    title: LSO 本地商户五步执行
+    importance: medium
+    importance_rationale: 承接 t11（本地商户完整体系，但相对 GEO 主线独立成章）；受众为本地生意经营者。
+    one_liner: 本地排名三要素诊断 + NAP/评价运营/本地内容三件套，五步执行赢过商圈大多数同行。
+    intents: [解决地图搜不到/点评排名低, 新店开业线上信息搭建, 本地口碑与评价运营]
+    keywords: [LSO, 本地搜索, 地图, 高德, 百度地图, 大众点评, 美团, NAP, 评价运营, 认领门店, local, reviews]
+    also_read: [geo-channel-map, golden-question-formulas]
+    card: cards/lso-local-playbook.md
+    frontmatter:
+      description: >-
+        当本地商户（门店、教培、餐饮等）问"地图上搜不到我/点评排名低/同行比我靠前/新店开业线上怎么弄"时使用。
+        三要素（相关性/距离/知名度）诊断 + 五步执行：认领校准图钉→统一 NAP→补齐货架→评价运营→本地内容带地名。
+        不适用于无地理属性的线上业务。
+      tags: [lso, local, maps, reviews]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 2 章
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
+      notes: 独立意图成立但使用频次低于 GEO 主线；经路由入口可达。
+  - capability_id: vso-video-optimization
+    revision: 1
+    status: active
+    slug: vso-video-optimization
+    title: VSO 视频搜索优化与双吃路径
+    importance: medium
+    importance_rationale: 承接 t12（豆包渠道的形态前提；视频创作者刚需）；与 GEO 主线通过抖音渠道连接。
+    one_liner: 视频是给人看的，搜索引擎只能读字——标题贴原句、关键词进字幕、合集、评论区置顶，视频主攻对比题、图文兜底症状题。
+    intents: [让视频被抖音搜索收录, 让 AI 引擎引用自己的视频, 规划视频与图文的形态分工]
+    keywords: [VSO, 视频搜索, 抖音搜索, 字幕, 合集, 标题, 语音搜索, 答案胶囊, 豆包引抖音, video search, subtitle]
+    also_read: [geo-channel-map, geo-query-research, one-fish-multi-platform]
+    card: cards/vso-video-optimization.md
+    frontmatter:
+      description: >-
+        当用户做短视频内容，问"视频怎么被搜到/抖音搜索怎么做/豆包为什么引别人家视频不引我的/字幕和合集要不要认真做"时使用。
+        四件套（标题贴原句/关键词进字幕/合集/置顶评论）+ 双吃分工：视频主攻对比/盘点题，症状型 how-to 需图文兜底
+        （豆包对症状题倾向不联网）。
+      tags: [vso, video, douyin, voice-search]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 3 章
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 意图独立但与 geo-channel-map 的豆包渠道结论强耦合，router 可达即可。
+  - capability_id: aeo-answer-optimization
+    revision: 1
+    status: active
+    slug: aeo-answer-optimization
+    title: AEO 答案位三板斧与占位五步
+    importance: medium
+    importance_rationale: 承接 t13（GEO 基本功来源；有官网/FAQ 页用户的直接需求）；FAQ 红利退潮的认知纠偏有独立价值。
+    one_liner: 结构化问答、FAQPage schema、Speakable 三板斧——把内容加工成机器好嚼的形状，占住位置零。
+    intents: [优化网页被精选摘要/答案卡片引用, 制作 FAQ 页与 schema 标记, 判断 FAQPage 还值不值得做]
+    keywords: [AEO, 精选摘要, 位置零, FAQPage, schema, Speakable, 结构化问答, 答案引擎, featured snippet, position zero]
+    also_read: [citable-content-spec, brand-data-infrastructure, one-fish-multi-platform]
+    card: cards/aeo-answer-optimization.md
+    frontmatter:
+      description: >-
+        当用户有官网/FAQ/帮助页，问"怎么让百度精选摘要或语音助手直接引用我的内容/FAQ 页怎么做/FAQPage schema 还有必要吗"时使用。
+        三板斧：问题作标题+第一段 40-60 字结论；JSON-LD 结构化标记；圈朗读段。配"成本类问答页五步"占位流程。
+        Google 富摘要红利已退潮但降低机器理解成本的价值在 AI 时代更重要。
+      tags: [aeo, schema, faq, snippet]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 4 章
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
+      notes: 受众偏有官网/技术能力的团队；router 可达。
+  - capability_id: brand-data-infrastructure
+    revision: 1
+    status: active
+    slug: brand-data-infrastructure
+    title: 品牌数据基建三层
+    importance: medium
+    importance_rationale: 承接 t10（长期底座）；层 3 有实测支撑、层 1/2 属推演——中长期价值高但当下执行频次低于内容打法。
+    one_liner: 结构化数据、API 化内容、官方事实页三层基建，官方口径缺位的地方自然有别人的嘴替你填上。
+    intents: [制定品牌 AI 时代基建路线图, 建设官网事实页与结构化数据, 准备 Agent 时代的产品信息接口]
+    keywords: [数据基建, 事实页, 结构化数据, Schema.org, API 化, Agent 时代, 口径对齐, fact page, structured data, agent-ready]
+    also_read: [aeo-answer-optimization, geo-monitoring-iteration, negative-semantic-occupy]
+    card: cards/brand-data-infrastructure.md
+    frontmatter:
+      description: >-
+        当品牌方问"GEO 之外还该长期建什么/官网怎么改才能被 AI 用上/Agent 能下单时要准备什么"时使用。三层路线图：
+        本周盘点官方事实页（参数/带日期价格/对比维度/质疑回应）→三个月 Schema 结构化+全渠道口径对齐→按需评估 API 化。
+        层 1/2 的 Agent 收益属原书推演，执行动作本身有独立价值。
+      tags: [infrastructure, fact-page, schema, agent]
+    source_evidence:
+      - source_id: geo-book
+        location: 第 11 章（推演章，层 3 有实测支撑）
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
+      notes: 推演成分高，作为 router 卡与 aeo 卡互补；长期路线图意图可达即可。

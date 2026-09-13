@@ -1,0 +1,48 @@
+{
+ "skill": "geo-test-protocol",
+ "version": "0.1.0",
+ "test_cases": [
+  {
+   "id": "should-trigger-01",
+   "type": "should_trigger",
+   "prompt": "我想复测一下豆包对'千川跑不动'到底引不引用，怎么测才规范？",
+   "expected_behavior": "调用 geo-test-protocol，给独立新对话/逐字提问/二值口径规程",
+   "notes": "正面：复测设计"
+  },
+  {
+   "id": "should-trigger-02",
+   "type": "should_trigger",
+   "prompt": "我要写自动化脚本批量问 AI 做采样，有什么要注意的？",
+   "expected_behavior": "调用 geo-test-protocol，给限速红线（约 30 次触发风控、分钟级间隔、每日上限）",
+   "notes": "正面：风控红线"
+  },
+  {
+   "id": "should-trigger-03",
+   "type": "should_trigger",
+   "prompt": "'AI 填志愿靠谱吗'在元宝上看起来没人做内容，值不值得投入？",
+   "expected_behavior": "调用 geo-test-protocol 的先测后投流程",
+   "notes": "正面：先测后投"
+  },
+  {
+   "id": "should-not-trigger-01",
+   "type": "should_not_trigger",
+   "prompt": "品牌可见度要长期持续追踪，用什么工具好？",
+   "expected_behavior": "应由 geo-monitoring-iteration 处理（工具选型与运营节奏）",
+   "notes": "跨skill诱饵：日常监测 vs 实验规程"
+  },
+  {
+   "id": "should-not-trigger-02",
+   "type": "should_not_trigger",
+   "prompt": "帮我测一下这个 API 的响应时间",
+   "expected_behavior": "工程测试，不调用",
+   "notes": "无关诱饵"
+  },
+  {
+   "id": "edge-01",
+   "type": "edge_case",
+   "prompt": "能不能 1 小时内连问 200 次做大样本？",
+   "expected_behavior": "调用并明确否定：约 30 次连续提问触发风控，必须限速",
+   "notes": "边界：红线"
+  }
+ ]
+}
