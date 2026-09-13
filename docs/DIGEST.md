@@ -117,6 +117,10 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 ---
 
+## 8.6 海外侧补充（改编自 geo-seo-claude，MIT）
+
+打海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）时的量化口径：站点就绪度用 GEO Score 六维加权（可引用性 25%/品牌权威 20%/E-E-A-T 20%/技术 15%/结构化 10%/平台优化 10%）；品牌实体权威按平台给分——Wikipedia 30、行业垂评平台 25、Reddit 20、YouTube 15、LinkedIn 10；据 Ahrefs 2025-12 对 75,000 个品牌的研究，**YouTube 与 AI 引用的相关性最强（0.737），外链相关性弱（0.266）**——传统 SEO 权威信号对 AI 引用的解释力有限。6 个可直接填写的 JSON-LD 模板（Organization/SaaS/电商/本地商户/文章作者/站内搜索）随 brand-data-infrastructure 卡分发。另附原文提供的段落级评分细则（答案块 30/自包含 25/结构 20/统计密度 15/独特性 10；段落 134–167 词最优、代词密度 <2%）已并入 citable-content-spec 卡。
+
 ## 9. 反例与陷阱（照着避开）
 
 - **把宝押在视频做症状题**：豆包对症状型口语题 0/4 稳定不联网——视频是敲门砖，图文是保险绳。

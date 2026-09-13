@@ -102,7 +102,7 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 
 ## 🧪 质量与测试
 
-蒸馏走 cangjie-skill RIA-TV++ 流水线：整书理解 → 五路并行提取（219 条候选）→ 三重验证（来源/可执行/任务增益）→ 晋级门 → RIA 能力卡 → 压力测试 → 编译交付。全审计轨迹在 [`docs/`](docs/)。
+蒸馏流程：整书理解 → 五路并行提取（219 条候选）→ 三重验证（来源/可执行/任务增益）→ 晋级门 → RIA 能力卡 → 压力测试 → 编译交付。全审计轨迹在 [`docs/`](docs/)。
 
 | 测试 | 结果 |
 |---|---|
@@ -130,7 +130,7 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 | [JingHao-Leon/geo-book](https://github.com/JingHao-Leon/geo-book) | 原书《从 SEO 到 GEO》——方法论主源 | MIT |
 | [GEO Wiki](https://geo.wiki/zh) | 百科补充：AI 爬虫/llms.txt/可引用性七信号/答案循环/十项 KPI | CC BY 4.0 |
 | [aigclink/geolook](https://github.com/aigclink/geolook) | **配套技能**（自托管 GEO 流水线：体检/采样/工单/验收）+ CN-GEO 数据集大样本 | MIT |
-| cangjie-skill | 蒸馏流水线（RIA-TV++） | — |
+| [zubair-trabzada/geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude) | **配套技能**（海外引擎向：GEO Score 六维审计、品牌权威扫描、乙方交付流）+ Schema JSON 模板 | MIT |
 
 分工：**geo-playbook 出方法论与决策（为什么、怎么选、怎么写），GeoLook 跑自动化流水线（诊断、采样、验收、交付）**，可同时安装、触发场景基本不重叠。
 
@@ -175,7 +175,7 @@ CHANGELOG.md           # 版本历史
 
 <details>
 <summary><b>能自己改/加能力卡吗？</b></summary>
-能。`bundle/` 是事实源：改 `bundle/cards/*.md` 与 `bundle/verified.yaml`，用 cangjie-skill 的编译器重新编译（见 CHANGELOG）。直接改 `geo-playbook/references/capabilities/` 也行，但下次重编译会覆盖。
+能。<code>bundle/</code> 是事实源（能力卡 + verified.yaml 登记表）；直接改 <code>geo-playbook/references/capabilities/</code> 下的卡片也行——注意保持六段结构（R/I/A1/A2/E/B）并同步登记表，改动建议走 PR 以便回归测试。
 </details>
 
 <details>

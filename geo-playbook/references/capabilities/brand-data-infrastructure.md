@@ -22,6 +22,8 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 
 **补充定位校正（GeoLook CN-GEO 数据集 v2.0.1，MIT）**：品牌官网类信源只占国内 AI 引用全库的 **1.37%**——官方事实页的价值在"**事实源**"（让 AI 描述你时口径正确、不出事实错误），不在"引用源"（引用大头在内容平台与榜单站）。建事实页的目标是口径一致与可被抓取，不是指望官网本身带来大量引用。
 
+**补充二（来自 geo-seo-claude，MIT，github.com/zubair-trabzada/geo-seo-claude）——6 个可直接填的 JSON-LD 模板**随本技能分发（resources/ 目录）：organization（组织实体主干）、software-saas（SaaS 产品）、product-ecommerce（电商商品）、local-business（本地商户）、article-author（文章与作者，E-E-A-T 信号）、website-searchaction（站内搜索）。部署顺序：先建实体主干（Organization），再声明页面类型，最后才考虑答案形态类标记（FAQ/HowTo）；标记必须与服务端输出的可见内容一致——**解析器会丢弃不合规标记，而实时抓取型模型会把整个块当页面文字读**，两类读者对错误标记的处理恰好相反。
+
 ## A1 — 书中案例
 
 - **官方阵地的实测表现（作者亲历，ch11 引用 ch6/ch7 数据）**：小鹅通官方 SEM 页被 DeepSeek 引用、抖音电商学习中心（school.jinritemai.com）在千川类问题上被豆包和 DeepSeek 反复引用（DeepSeek 采样中 9 次）——"官方事实页 + 结构化内容"今天的形态，就是 Agent 时代"可被调用的事实接口"的雏形（后半句为作者推演）。
@@ -54,3 +56,14 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 ## 相关能力
 
 下游 geo-monitoring-iteration、negative-semantic-occupy（持续档动作）；aeo-answer-optimization（层 3 单页技术）；citable-content-spec（口径一致的稿件规格）。
+
+## 配套资源
+
+路径相对于本文件；脚本需先检查运行条件，不因附带而自动执行。
+
+- [resources/schema-organization.json](../../resources/schema-organization.json)
+- [resources/schema-software-saas.json](../../resources/schema-software-saas.json)
+- [resources/schema-product-ecommerce.json](../../resources/schema-product-ecommerce.json)
+- [resources/schema-local-business.json](../../resources/schema-local-business.json)
+- [resources/schema-article-author.json](../../resources/schema-article-author.json)
+- [resources/schema-website-searchaction.json](../../resources/schema-website-searchaction.json)

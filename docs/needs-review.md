@@ -13,3 +13,4 @@
 
 9. **补充来源（geo.wiki，v0.2.0）**：ai-crawler-access 卡与部分补充内容改编自 GEO Wiki（CC BY 4.0，2026-09 核对）。边界：爬虫名单变化快（GEO Wiki 自述每次复审需对照官方文档）；llms.txt 的引擎读取截至 2026-05 未获厂商确认（卡 B 段已写明）；国内引擎的抓取 UA 行为无系统实测，Bytespider 与豆包生态的对应关系未验证。
 10. **补充来源二（GeoLook，v0.3.0）**：大样本数字来自 GeoLook CN-GEO 数据集 v2.0.1（187,818 条去重引用，2026-07-14 发布，MIT，复算脚本公开），为第三方数据集口径，与原书 12 题实测、geo.wiki 条目互相印证但口径不同；四层依赖模型框架来自 GeoReady《The GEO Readiness Manual》（经 GeoLook 采用）；归因三段中 referrer/UTM 各家策略随时会变，需在自有日志中核对。
+11. **补充来源三（geo-seo-claude，v0.4.0）**：段落级评分细则、GEO Score 六维公式、品牌权威平台分值与 6 个 JSON-LD 模板改编自 zubair-trabzada/geo-seo-claude（MIT）。边界：评分为海外引擎向经验值（非平台官方标准）；Wikipedia/Reddit/YouTube 平台分值表适用于海外生态，国内引擎对应口径用信源榜（两套分数不可混用）；Schema 模板为占位符模板，部署前必须替换全部 YOUR_* 占位并与可见内容一致。

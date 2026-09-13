@@ -70,3 +70,12 @@
 | 输出评测（回归） | 2/2：geo-channel-map 用 1.37% 数据反驳"官网中心"预算分配且守住判停点（WMS 非已验证行业→先实测）；geo-monitoring-iteration 用归因三段回答"引用带来多少生意"，三段口径与下界声明正确 |
 
 注：v0.3.0 未改动任何 frontmatter description（触发面与 v0.2.0 一致，盲测 15/15 结果沿用）。
+
+## 六、回归测试（2026-09-14，geo-seo-claude 补充合并后 v0.4.0）
+
+补充合并内容：geo-seo-claude（zubair-trabzada，MIT）——citable-content-spec 并入段落级量化评分（5 维度分值），geo-monitoring-iteration 并入 GEO Score 六维公式与品牌权威平台分值表，brand-data-infrastructure 新增 6 个 JSON-LD 模板随 resources 分发；README 移除蒸馏工具链条目并新增 geo-seo-claude 配套行；LICENSE 增补模板作者版权行。
+
+| 项 | 结果 |
+|---|---|
+| 编译 | 13 active 能力 + 6 个 resources，single 发布，validate_skill_pack 0 errors（期间修复：资源文件名与声明不一致、GLOSSARY 来源列 .md 路径误判） |
+| 输出评测（回归） | 2/2：brand-data-infra 正确读取随包模板、只按用户事实填充占位、识别模板预填评分为示例值；citable 用五维评分给两段落打分（12 vs 74）且子项拆分透明、边界提醒齐全 |

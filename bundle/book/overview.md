@@ -44,6 +44,10 @@
 
 GeoLook 是开源自托管的全流程 GEO 实施平台（Skill 形态，含抓取体检/AI 答案采样/工单/资产生成/自动验收脚本），其 CN-GEO 数据集（v2.0.1，187,818 条去重引用实算）为本包提供了大样本印证：官网 1.37% 定律、各引擎生态集中度（百度 AI/文心 66%+、DeepSeek 21.8% 最中立、千问吃夸克 19.2%）、Web≠App 口径（千问两端信源重合仅 24.5%）、四层依赖模型（访问→定向→理解→可引用）与归因三段链路。相关数字已并入 geo-channel-map、geo-test-protocol、ai-crawler-access、geo-monitoring-iteration、brand-data-infrastructure 五张能力卡。**配套关系**：geo-playbook 出方法论与决策，GeoLook 跑自动化诊断与监测流水线，互不替代。
 
+## 补充来源三：geo-seo-claude（zubair-trabzada，MIT，2026-09 核对）
+
+面向海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）的 Claude 技能集与乙方交付流。已并入本包：段落级可引用性评分细则（5 维度分值）、GEO Score 六维加权公式、品牌权威平台分值表（含 Ahrefs 2025-12 研究：YouTube 相关性 0.737 最强、外链仅 0.266）、6 个可直接填写的 JSON-LD Schema 模板（随 brand-data-infrastructure 卡以 resources 分发）。适用边界：评分为海外向经验值，国内口径用 CN-GEO 信源榜。**配套关系**：geo-playbook（国内方法论）+ GeoLook（国内流水线）+ geo-seo-claude（海外审计与交付），按市场各取所需。
+
 ## 收束
 
 引擎会换代，信源偏好三年后可能大半过时；唯一不变的策略是——让你的信息真实、准确、结构清晰、经得起核查，成为那个"值得被引用的答案"。

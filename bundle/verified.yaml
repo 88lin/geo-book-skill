@@ -112,6 +112,8 @@ capabilities:
         location: 第 10 章（第 8、1 章补充）
       - source_id: geo-wiki
         location: 可引用性 citability（CC BY 4.0，2026-09 核对）
+      - source_id: geo-seo-claude
+        location: 段落级量化评分 geo-seo-claude（MIT，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
@@ -191,6 +193,8 @@ capabilities:
         location: GEO 指标 geo-metrics、引用 vs 提及（CC BY 4.0，2026-09 核对）
       - source_id: geolook
         location: 归因三段链路 attribution.md（MIT，2026-09 核对）
+      - source_id: geo-seo-claude
+        location: GEO Score 六维公式与品牌权威平台分值 geo-seo-claude（MIT，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
@@ -340,11 +344,20 @@ capabilities:
         本周盘点官方事实页（参数/带日期价格/对比维度/质疑回应）→三个月 Schema 结构化+全渠道口径对齐→按需评估 API 化。
         层 1/2 的 Agent 收益属原书推演，执行动作本身有独立价值。
       tags: [infrastructure, fact-page, schema, agent]
+    resources:
+      - resources/schema-organization.json
+      - resources/schema-software-saas.json
+      - resources/schema-product-ecommerce.json
+      - resources/schema-local-business.json
+      - resources/schema-article-author.json
+      - resources/schema-website-searchaction.json
     source_evidence:
       - source_id: geo-book
         location: 第 11 章（推演章，层 3 有实测支撑）
       - source_id: geolook
         location: 官网 1.37% 定位校正，CN-GEO 数据集 v2.0.1（MIT，2026-09 核对）
+      - source_id: geo-seo-claude
+        location: 6 个 JSON-LD 模板 geo-seo-claude（MIT，2026-09 核对）
     promotion:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}

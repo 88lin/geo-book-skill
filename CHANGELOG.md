@@ -2,6 +2,19 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 精神，版本号语义：次版本号 = 能力卡内容或来源的实质变更。
 
+## [0.4.0] - 2026-09-14
+
+### Added
+- 合入 geo-seo-claude（zubair-trabzada，MIT）的方法与资产：
+  - citable-content-spec：段落级量化评分细则（答案块 30/自包含 25/结构 20/统计密度 15/独特性 10；段落 134–167 词最优）
+  - geo-monitoring-iteration：GEO Score 六维加权公式 + 品牌权威平台分值表（Ahrefs 2025-12：YouTube 相关性 0.737 最强、外链 0.266 弱）
+  - brand-data-infrastructure：6 个可直接填写的 JSON-LD 模板（随 resources 分发：organization/software-saas/product-ecommerce/local-business/article-author/website-searchaction）
+- README 新增 geo-seo-claude 配套条目；LICENSE 增补模板作者版权行
+- 仓库标准化：AGENTS.md（Codex/Cursor 入口）、prompts/ 纯提示词版、三篇使用教程、README 全面重写、CHANGELOG 建立
+
+### Changed
+- README 不再列蒸馏工具链条目（审计轨迹保留于 docs/）
+
 ## [0.3.0] - 2026-09-14
 
 ### Added

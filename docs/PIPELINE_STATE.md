@@ -2,7 +2,7 @@
 
 - **书目**: 从 SEO 到 GEO：AI 时代的搜索优化实战手册（JingHao-Leon，2026-08-05）
 - **来源**: /home/developer/.zcode/workspace/default/geo-book/（README + 00~11 共 13 篇 md）
-- **当前阶段**: ✅ 全部完成（v0.3.0：+ GeoLook 数据与配套）
+- **当前阶段**: ✅ 全部完成（v0.4.0：+ geo-seo-claude 与标准化发布）
 - **更新时间**: 2026-09-13（阶段 4 完成）
 
 ## 已完成
@@ -29,3 +29,4 @@
 - 输出目录：/home/developer/.zcode/skills/cangjie-skill/books/geo-book-skill/
 - 用户未指定输出模式，阶段 5 用 compile --output auto 并按推荐展示。
 - [x] v0.3.0（2026-09-14）：合并 GeoLook（aigclink/geolook，MIT）CN-GEO 数据集大样本数字到 5 张卡；安装 GeoLook 本体为配套工具 skill；回归输出评测 2/2、编译 0 errors
+- [x] v0.4.0（2026-09-14）：合并 geo-seo-claude（MIT）段落级评分/GEO Score 六维/品牌权威分值 + 6 个 JSON-LD 模板随 resources 分发；仓库标准化发布（AGENTS.md/prompts/三篇教程/README 重写/CHANGELOG）；回归输出评测 2/2、编译 0 errors

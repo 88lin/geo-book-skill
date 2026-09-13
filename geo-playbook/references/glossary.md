@@ -56,3 +56,9 @@
 | s10 | 四层依赖模型 | 站点体检的修复顺序：访问（robots/WAF/noindex/SPA 空壳）→ 定向（sitemap/canonical/llms.txt）→ 理解（JSON-LD/语言）→ 可引用（长度/结构/抽取块/对题）；每层依赖上一层，先修最上游失败层。框架来自 GeoReady《The GEO Readiness Manual》，GeoLook 六维体检落地 | GeoLook 仓库 references/method |
 | s11 | Web≠App 口径 | 千问 web 与 App 信源重合仅 24.5%、豆包 App 字节生态占比（28.1%）约为 web（12.0%）两倍余——采样与结论按端分开，不互推 | GeoLook 仓库 references/cn-source-ranking |
 | s12 | 归因三段链路 | 采样测"答案里有没有你"→ referrer/UTM 测 AI 带来多少会话 → 转化事件测值多少钱；三段各自能测、各自会漏、不能互替；都测齐才脱离"观察相关" | GeoLook 仓库 references/attribution |
+
+### 补充词条三（来源：geo-seo-claude，zubair-trabzada，MIT）
+
+| # | 术语 | 定义 | 来源 |
+|---|---|---|---|
+| s13 | GEO Score 六维加权 | 站点侧就绪度审计分（非引用行为指标）：可引用性×0.25 + 品牌权威×0.20 + E-E-A-T×0.20 + 技术×0.15 + 结构化数据×0.10 + 平台优化×0.10；可引用性子分含内容 35%/品牌提及 30%/爬虫放行 25%/llms.txt 10%；品牌权威按平台给分（Wikipedia 30/行业垂评 25/Reddit 20/YouTube 15/LinkedIn 10；Ahrefs 2025-12 七万五千品牌研究：YouTube 相关性 0.737 最强、外链 0.266 弱） | geo-seo-claude（MIT）scoring-methodology 文档 |
