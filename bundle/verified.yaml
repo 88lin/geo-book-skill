@@ -58,6 +58,8 @@ capabilities:
     source_evidence:
       - source_id: geo-book
         location: 第 6、7、9 章
+      - source_id: geolook
+        location: CN-GEO 数据集 v2.0.1 信源榜（MIT，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
@@ -187,6 +189,8 @@ capabilities:
         location: 第 10 章（第 5 章度量口径）
       - source_id: geo-wiki
         location: GEO 指标 geo-metrics、引用 vs 提及（CC BY 4.0，2026-09 核对）
+      - source_id: geolook
+        location: 归因三段链路 attribution.md（MIT，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
@@ -212,6 +216,8 @@ capabilities:
     source_evidence:
       - source_id: geo-book
         location: 第 6 章、第 9 章
+      - source_id: geolook
+        location: Web≠App 口径，CN-GEO 数据集 v2.0.1（MIT，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
@@ -337,6 +343,8 @@ capabilities:
     source_evidence:
       - source_id: geo-book
         location: 第 11 章（推演章，层 3 有实测支撑）
+      - source_id: geolook
+        location: 官网 1.37% 定位校正，CN-GEO 数据集 v2.0.1（MIT，2026-09 核对）
     promotion:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
@@ -362,6 +370,8 @@ capabilities:
     source_evidence:
       - source_id: geo-wiki
         location: AI 爬虫 ai-crawlers、llms.txt（CC BY 4.0，2026-09 核对）
+      - source_id: geolook
+        location: 四层依赖模型 method.md（框架来自 GeoReady，MIT，2026-09 核对）
     promotion:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}

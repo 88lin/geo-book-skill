@@ -26,6 +26,8 @@
 
 **二、llms.txt：低成本预先部署，但不要指望它直接带来引用。** Answer.AI 2024-09 提出的发布约定：在站点根目录放 `/llms.txt`，一份筛选过的 Markdown 索引（H1 项目名 + blockquote 摘要 + `##` 分节链接列表 + Optional 低优先节）。三条诚实边界：截至 2026-05 无任何主流厂商文档说明其爬虫会读取它（Anthropic/Google/Perplexity 在自家文档站托管 llms.txt ≠ 其爬虫会读你的）；它不是标准（未过 IETF/W3C）；与 robots.txt（访问控制）、sitemap.xml（完整发现覆盖）职责不重叠、不可互替——llms.txt 只负责"筛选与简洁呈现"。结论：部署成本约等于零、向前兼容，值得做；把它当引用手段则是误判。
 
+**补充（GeoLook 六维体检方法，MIT，框架采用 GeoReady《The GEO Readiness Manual》）——四层依赖模型决定修复顺序：访问 → 定向 → 理解 → 可引用**，每层依赖上一层，**先修失败的最上游层**：访问层（robots 封禁/WAF-UA 差异封锁/noindex/SPA 空壳）失败时，下游的 schema 和内容优化在引擎侧全部不可见。三个国内官网高频致命点：①**SPA 空壳页**（正文 word_count≈0，AI 抓取器看到的是空白）；②**WAF/CDN 按 UA 拦截**——robots.txt 放行但换 AI 爬虫 UA 实测被 CDN 403，浏览器里看不出来，必须换真实 AI UA 探测；③**X-Robots-Tag 头级 noindex**——页面源码里看不到，要查响应头。
+
 ## A1 — 案例（补充来源，非原书案例）
 
 - **原书未提供案例**（如实标注）。GEO Wiki 给出的可核验事实：一项覆盖 30 万域名的研究测得约 10% 域名已部署 llms.txt（SEJ，2025-11）；Cloudflare 发现仅约 14% 的 robots.txt 专门设置 AI 爬虫规则（2025-07），多数站点尚未声明任何策略——多数站点连"按类放行"这一步都没做。

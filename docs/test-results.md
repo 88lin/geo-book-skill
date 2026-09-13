@@ -59,3 +59,14 @@
 | 触发盲测（回归） | 15/15：原 7 skill 正例 7/7 无回归；无关诱饵（Python 爬虫/sitemap 生成器/Nginx）3/3 正确 none；新卡路由 4/4；近邻区分（FAQPage→aeo 而非新卡）正确 |
 | 输出评测（回归） | 6/6：ai-crawler-access 正常（按类 robots 草案+llms.txt 诚实边界）与边界（拒绝"全部 Disallow"并给三替代）；citable 七信号体检 fail 项正确；monitoring KPI 口径辨析正确 |
 
+
+## 五、回归测试（2026-09-14，GeoLook 补充合并后 v0.3.0）
+
+补充合并内容：GeoLook（aigclink/geolook，MIT）CN-GEO 数据集 v2.0.1 的大样本数据并入 5 张卡——geo-channel-map（官网 1.37%/榜单站 9.1%/集中度/千问夸克 19.2%）、geo-test-protocol（Web≠App，千问两端信源重合 24.5%）、ai-crawler-access（四层依赖模型+SPA 空壳+WAF-UA 探测）、geo-monitoring-iteration（归因三段链路）、brand-data-infrastructure（官网=事实源定位校正）；GLOSSARY 增补 s09–s12；book/overview 增补配套关系说明。另安装 GeoLook 本体（~/.zcode/skills/geolook）作为配套工具 skill。
+
+| 项 | 结果 |
+|---|---|
+| 编译 | 13 active 能力，single 发布，validate_skill_pack 0 errors（期间修复：GLOSSARY 来源列含 references/*.md 路径被校验器判 broken-ref，改为纯文字） |
+| 输出评测（回归） | 2/2：geo-channel-map 用 1.37% 数据反驳"官网中心"预算分配且守住判停点（WMS 非已验证行业→先实测）；geo-monitoring-iteration 用归因三段回答"引用带来多少生意"，三段口径与下界声明正确 |
+
+注：v0.3.0 未改动任何 frontmatter description（触发面与 v0.2.0 一致，盲测 15/15 结果沿用）。

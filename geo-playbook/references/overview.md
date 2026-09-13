@@ -40,6 +40,10 @@
 - **零点击数据**：零点击早于 AI（2019–2020 年 Google 已有过半搜索零点击）；Pew 2025——出现 AI 摘要时点击率约 8%、无摘要约 15%；Ahrefs——AI Overviews 出现与首位点击率下降约 34.5% 相关（相关性非因果）。
 - **免费工具**：geo.wiki 提供可引用性检测、Schema 标记检测、AI 爬虫访问检测、llms.txt 生成器（/zh/tools）。
 
+## 补充来源二：GeoLook（aigclink/geolook，MIT，2026-09 核对）
+
+GeoLook 是开源自托管的全流程 GEO 实施平台（Skill 形态，含抓取体检/AI 答案采样/工单/资产生成/自动验收脚本），其 CN-GEO 数据集（v2.0.1，187,818 条去重引用实算）为本包提供了大样本印证：官网 1.37% 定律、各引擎生态集中度（百度 AI/文心 66%+、DeepSeek 21.8% 最中立、千问吃夸克 19.2%）、Web≠App 口径（千问两端信源重合仅 24.5%）、四层依赖模型（访问→定向→理解→可引用）与归因三段链路。相关数字已并入 geo-channel-map、geo-test-protocol、ai-crawler-access、geo-monitoring-iteration、brand-data-infrastructure 五张能力卡。**配套关系**：geo-playbook 出方法论与决策，GeoLook 跑自动化诊断与监测流水线，互不替代。
+
 ## 收束
 
 引擎会换代，信源偏好三年后可能大半过时；唯一不变的策略是——让你的信息真实、准确、结构清晰、经得起核查，成为那个"值得被引用的答案"。

@@ -47,3 +47,12 @@
 | s06 | GEO 十项 KPI | Visibility Score / Citation Rate / Citation Share / Share of Voice / Average Position（三种定义并存最易争议）/ Mention Frequency / Answer Inclusion Rate / First-Cite Rate / Brand Sentiment / Source Diversity——商用工具口径汇总，非行业标准；区分相近指标时公式比名称可靠 | /zh/geo-metrics |
 | s07 | LLMO | 大模型优化——与 GEO 基本是同一回事：指推理时检索与采信（读法 A）即 GEO；指进预训练语料（读法 B）则慢且基本无法控制，GEO 主动排除 | /zh/llmo-vs-geo |
 | s08 | 零点击搜索 | 用户需求已在结果页内满足、未访问任何来源；早于 AI（2019–2020 年 Google 已有过半零点击）；Pew 2025：有 AI 摘要时点击率约 8%、无摘要约 15%；Ahrefs：AI Overviews 与首位点击率降约 34.5% 相关（相关性非因果） | /zh/zero-click-search |
+
+## 补充词条二（来源：GeoLook，aigclink/geolook，MIT；CN-GEO 数据集 v2.0.1，187,818 条去重引用实算，2026-07-14）
+
+| # | 术语 | 定义 | 来源 |
+|---|---|---|---|
+| s09 | 官网 1.37% 定律 | 品牌官网类信源仅占国内 AI 引用全库 1.37%——官网是"事实源"（保证 AI 描述口径正确）不是"引用源"；引用大头是内容平台（四家 16.4%）与 28 个榜单站（9.1%，maigoo/smzdm/chinapp/cnpp 等） | GeoLook 仓库 references/cn-source-ranking |
+| s10 | 四层依赖模型 | 站点体检的修复顺序：访问（robots/WAF/noindex/SPA 空壳）→ 定向（sitemap/canonical/llms.txt）→ 理解（JSON-LD/语言）→ 可引用（长度/结构/抽取块/对题）；每层依赖上一层，先修最上游失败层。框架来自 GeoReady《The GEO Readiness Manual》，GeoLook 六维体检落地 | GeoLook 仓库 references/method |
+| s11 | Web≠App 口径 | 千问 web 与 App 信源重合仅 24.5%、豆包 App 字节生态占比（28.1%）约为 web（12.0%）两倍余——采样与结论按端分开，不互推 | GeoLook 仓库 references/cn-source-ranking |
+| s12 | 归因三段链路 | 采样测"答案里有没有你"→ referrer/UTM 测 AI 带来多少会话 → 转化事件测值多少钱；三段各自能测、各自会漏、不能互替；都测齐才脱离"观察相关" | GeoLook 仓库 references/attribution |
