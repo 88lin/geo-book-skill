@@ -104,6 +104,17 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 - **AEO**（三板斧：结构化问答/FAQPage schema/Speakable）：Google 砍了 FAQ 富摘要红利，但"降低机器理解成本"的底层价值在 AI 引擎时代反而更重要；"AEO 教机器找答案，GEO 教机器信答案"。→ [aeo-answer-optimization](dist/geo-book-skill/references/capabilities/aeo-answer-optimization.md)
 - **长期底座**：品牌数据基建三层（结构化数据/API 化/官方事实页）——层 3 有实测支撑，层 1/2 属第 11 章推演。→ [brand-data-infrastructure](dist/geo-book-skill/references/capabilities/brand-data-infrastructure.md)
 
+## 8.5 机制层补充（改编自 GEO Wiki，CC BY 4.0）
+
+原书聚焦"内容与渠道"，这里补齐更底层的机制与口径（详见 [ai-crawler-access](dist/geo-book-skill/references/capabilities/ai-crawler-access.md) 与 [GEO Wiki](https://geo.wiki/zh)）：
+
+- **答案循环四步**：查询理解 → 检索 → 采信 → 生成与归因。排查"AI 不引用我"按步定位——**被检索到 ≠ 被采信 ≠ 被署名**；页面进不了候选集（AI 爬虫抓取问题），后面一切优化都不起作用。
+- **AI 爬虫按用途分三类**：训练类（GPTBot、ClaudeBot、Google-Extended、Bytespider 等）、检索类（OAI-SearchBot、PerplexityBot、Googlebot、Bingbot）、用户触发类（ChatGPT-User 等）。**屏蔽检索类 = 立即失去被引机会**——"为了拦训练类把 AI 爬虫全部 Disallow"是代价最高的错误；robots.txt 是声明不是强制（RFC 9309）。
+- **llms.txt**：低成本预先部署的筛选索引（H1+摘要+分节链接），与 robots.txt（访问控制）、sitemap.xml（完整覆盖）职责不重叠；站点采用 ≠ 引擎读取（截至 2026-05 无厂商确认），别把它当引用手段。
+- **可引用性七结构信号**：自包含内容块、直接答案块、问答结构、步骤 HowTo、可引用表格列表、标题层级规范、可整段引述的句子——把"净菜规格"拆到段落级；结构过度优化反而可能被垃圾过滤器排除。
+- **口径三坑**：引用 ≠ 提及 ≠ 链接（混计会高估）；Visibility Score / Citation Rate / Answer Inclusion Rate 三者易混，区分时公式比名称可靠；行业无统一 KPI 标准（十项商用口径见监测卡）。
+- **LLMO 就是 GEO**：指"推理时检索与采信"（读法 A）即 GEO；指"进预训练语料"（读法 B）则慢且基本无法控制。
+
 ---
 
 ## 9. 反例与陷阱（照着避开）

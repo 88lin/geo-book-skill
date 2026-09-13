@@ -34,3 +34,16 @@
 | g28 | 品牌数据基建（三层） | 结构化数据/API 化内容/官方事实页；"平台系统里没录的菜，等于不存在"（第 11 章为推演） | 第 11 章 |
 | g29 | 低质 AIGC 铺稿 | 批量生成软文赌抓取概率的灰产；正被识别降权，是给域名留降权记录的负资产 | 第 5、10 章 |
 | g30 | 监测迭代 | 两周一个周期追踪"引没引你、引的是谁"；三分支动作；自建必须限速（约 30 次触发风控） | 第 6、10 章 |
+
+## 补充词条（来源：GEO Wiki，CC BY 4.0，https://geo.wiki/zh ，2026-09 核对；超出原书范围）
+
+| # | 术语 | 定义（GEO Wiki 口径） | 来源页 |
+|---|---|---|---|
+| s01 | 答案循环（Answer Loop） | 生成式引擎处理查询的四步：查询理解→检索→采信与筛选→生成与归因；可能多轮（子查询扇出、重检索）。排查"不引用我"按步定位：候选集入口（AI 爬虫）→ 采信（可引用性）→ 署名（引用 vs 提及）。注：GEO Wiki 自用框架名，底层机制来自 RAG | /zh/answer-loop |
+| s02 | 可引用性（Citability） | 已被检索到的内容是否上下文充分、表达清楚，便于 AI 准确理解和使用；不判断来源可信度（那是 E-E-A-T），也不保证被选中。七个结构信号：自包含内容块/直接答案块/问答结构/步骤 HowTo/可引用表格列表/标题层级规范/可整段引述的句子 | /zh/citability |
+| s03 | AI 爬虫（三类） | 按用途分类：训练类（GPTBot/ClaudeBot/Google-Extended/CCBot/Bytespider 等，进模型参数记忆）、检索类（OAI-SearchBot/PerplexityBot/Googlebot/Bingbot 等，实时答案素材与答案索引）、用户触发类（ChatGPT-User 等，仅当次查询）。按类决策；屏蔽检索类=立即失去被引机会；robots.txt 是声明非强制（RFC 9309）；UA 自报易伪造，核验靠 IP 段+FCrDNS | /zh/ai-crawlers |
+| s04 | llms.txt | Answer.AI 2024-09 提出的发布约定：/llms.txt 放一份筛选过的 Markdown 索引（H1+摘要+分节链接）。站点采用 ≠ 引擎读取（截至 2026-05 无厂商确认、非标准）；与 robots.txt（访问控制）、sitemap.xml（完整覆盖）职责不重叠；低成本预先部署，非引用手段 | /zh/llms-txt |
+| s05 | 引用 vs 提及 vs 链接 | 品牌被点名（mention）、域名被列为来源（citation）、附可点链接是三种不同结果，混计会高估可见度 | /zh/geo-metrics 等 |
+| s06 | GEO 十项 KPI | Visibility Score / Citation Rate / Citation Share / Share of Voice / Average Position（三种定义并存最易争议）/ Mention Frequency / Answer Inclusion Rate / First-Cite Rate / Brand Sentiment / Source Diversity——商用工具口径汇总，非行业标准；区分相近指标时公式比名称可靠 | /zh/geo-metrics |
+| s07 | LLMO | 大模型优化——与 GEO 基本是同一回事：指推理时检索与采信（读法 A）即 GEO；指进预训练语料（读法 B）则慢且基本无法控制，GEO 主动排除 | /zh/llmo-vs-geo |
+| s08 | 零点击搜索 | 用户需求已在结果页内满足、未访问任何来源；早于 AI（2019–2020 年 Google 已有过半零点击）；Pew 2025：有 AI 摘要时点击率约 8%、无摘要约 15%；Ahrefs：AI Overviews 与首位点击率降约 34.5% 相关（相关性非因果） | /zh/zero-click-search |

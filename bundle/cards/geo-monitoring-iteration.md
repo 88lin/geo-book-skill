@@ -16,6 +16,8 @@
 
 **度量口径换轨**（SEO→GEO）：排名/点击率/UV → 被引用率（目标 query 下 AI 是否引你）、品牌描述倾向（正面/中性/负面）、对比中的站位（和谁放一起比、分流理由是否对你有利）。"零点击的胜利"是真实胜利：用户看完 AI 答案直接下单，你的官网 UV 没变化但这单成了——盯着流量报表做 GEO 等于用体温计量体重。
 
+**补充（改编自 GEO Wiki《GEO 指标》《引用 vs 提及》，CC BY 4.0，https://geo.wiki/zh/geo-metrics）——三个口径坑与十项 KPI 速查：** ①**引用 ≠ 提及 ≠ 链接**：品牌在答案正文被点名（mention）、域名被列为来源（citation）、附了可点链接，是三种不同结果，混计会高估；②Visibility Score（品牌出现率，提及或引用都算）、Citation Rate（严格只计域名被列为来源）、Answer Inclusion Rate（查询级"是否出现"二值）三者易混，**区分时公式比名称可靠**；③行业无统一 KPI 标准，下表为商用工具口径汇总（Profound/Otterly/Ahrefs/BrightEdge/Similarweb），采购时逐项对公式：Visibility Score（整体出现率）、Citation Rate（单话题引用比例）、Citation Share（竞品集合内引用份额）、Share of Voice（相对声量）、Average Position（平均位置，三种定义并存、最易争议）、Mention Frequency（提及频次）、Answer Inclusion Rate（查询级覆盖度）、First-Cite Rate（首位引用率）、Brand Sentiment（品牌情感 −100…+100）、Source Diversity（引用引擎覆盖度）。监测工具补充：geo.wiki 免费工具（可引用性检测 /zh/tools/citability-check、Schema 检测 /zh/tools/schema-check、AI 爬虫访问检测 /zh/tools/ai-crawler-access）。
+
 **监测结果三分支动作**：①被引→固化该内容形态，横向复制到同 cluster 的其他 query；②没被引但竞品被引→拆竞品被引那篇（赢在结论前置还是数据更实），针对性改写；③整个 query 无引用→先查 query 类型选错没有（纯定义类引用率天然低），再查信源铺错平台没有。周期两周。
 
 **工具与建制的决策**：先买或用免费工具（满足任一：无专职技术 / query 少于 50 条 / 还在验证投入）；才考虑自建（需同时满足：query 上百条跨六引擎按天追踪 + 有研发资源 + 有内部报表需求）。建议路径：免费工具验证 → SaaS 订阅 → 仅当 SaaS 成本和灵活度都成瓶颈才自建，多数团队停在第二阶段。

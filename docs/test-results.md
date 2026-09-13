@@ -46,3 +46,16 @@
 2. 输出评测按 4 卡/批执行（受环境串行并发限制），执行 agent 之间无上下文共享，每卡仅读取自己的卡片文件。
 3. 首版无 old_skill 基线，未做 new_skill vs without_skill 三变体对比；本结果只证明"任务可正确完成且边界守住"，不宣称相对无 skill 的量化提升。
 4. 触发测试测的是描述层（description）判准；安装进宿主后的真实触发还取决于宿主的 skill 加载机制，安装后建议抽 1–2 条 should_trigger 用例实测。
+
+---
+
+## 四、回归测试（2026-09-14，geo.wiki 补充合并后 v0.2.0）
+
+补充合并内容：新增第 13 张能力卡 ai-crawler-access（AI 爬虫三类决策 + llms.txt，改编自 GEO Wiki CC BY 4.0）；citable-content-spec 并入"七个结构信号"；geo-monitoring-iteration 并入"引用≠提及≠链接 + 十项 KPI 口径"；GLOSSARY/book-overview 增补 8 条词条与机制模型。
+
+| 项 | 结果 |
+|---|---|
+| 编译 | 13 active 能力，single 发布，validate_skill_pack 0 errors |
+| 触发盲测（回归） | 15/15：原 7 skill 正例 7/7 无回归；无关诱饵（Python 爬虫/sitemap 生成器/Nginx）3/3 正确 none；新卡路由 4/4；近邻区分（FAQPage→aeo 而非新卡）正确 |
+| 输出评测（回归） | 6/6：ai-crawler-access 正常（按类 robots 草案+llms.txt 诚实边界）与边界（拒绝"全部 Disallow"并给三替代）；citable 七信号体检 fail 项正确；monitoring KPI 口径辨析正确 |
+

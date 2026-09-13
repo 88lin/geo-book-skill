@@ -10,7 +10,7 @@ entry:
   description: >-
     从《从 SEO 到 GEO：AI 时代的搜索优化实战手册》（JingHao-Leon 著，2026-08-05 六引擎实测）蒸馏的中文 AI
     搜索优化操作手册。覆盖 GEO 五步工作流：query 研究分级、六引擎渠道分工、可引用内容生产、一鱼多吃分发、监测迭代，
-    以及负面语义占位、引用行为实测规程和 LSO/VSO/AEO 基本功。所有引擎信源数字为 2026-08-05 单日快照，按方向性使用并定期复核。
+    以及负面语义占位、引用行为实测规程、LSO/VSO/AEO 基本功，及 AI 爬虫可访问性与 llms.txt（补充自 GEO Wiki）。所有引擎信源数字为 2026-08-05 单日快照，按方向性使用并定期复核。
   core_principles:
     - 七分渠道三分内容：先按引擎生态绑定选对渠道，再打磨内容形态
     - 内容写给 AI 拆件：结论前置 40-60 字、对比表 5+ 维度、价格带日期、数字可验证
@@ -30,14 +30,14 @@ entry:
 router_entry:
   name: geo-book-router
   description: >-
-    《从 SEO 到 GEO》蒸馏包的来源路由入口：按用户意图路由到 12 张能力卡——渠道分工（geo-channel-map）、
+    《从 SEO 到 GEO》蒸馏包的来源路由入口：按用户意图路由到 13 张能力卡——渠道分工（geo-channel-map）、
     黄金问题公式（golden-question-formulas）、可引用内容（citable-content-spec）、query 研究（geo-query-research）、
     一鱼多吃（one-fish-multi-platform）、监测迭代（geo-monitoring-iteration）、实测规程（geo-test-protocol）、
     负面占位（negative-semantic-occupy）、LSO（lso-local-playbook）、VSO（vso-video-optimization）、
-    AEO（aeo-answer-optimization）、数据基建（brand-data-infrastructure）。
+    AEO（aeo-answer-optimization）、数据基建（brand-data-infrastructure）、AI 爬虫与 llms.txt（ai-crawler-access，补充自 GEO Wiki）。
 promotion_budget: 8
 capabilities:
-  - capability_id: geo-channel-map
+  - capability_id: cap.geo-book.geo-channel-map
     revision: 1
     status: active
     slug: geo-channel-map
@@ -62,7 +62,7 @@ capabilities:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 全书数据核心，独立意图高频（"发哪里"）；与 router 卡 vso/lso 的触发通过"AI 渠道 vs 本地/视频平台"负例区分。
-  - capability_id: golden-question-formulas
+  - capability_id: cap.geo-book.golden-question-formulas
     revision: 1
     status: active
     slug: golden-question-formulas
@@ -87,7 +87,7 @@ capabilities:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 与 negative-semantic-occupy 的触发区分——本卡面向通用内容写作，占位卡面向品牌声誉应对。
-  - capability_id: citable-content-spec
+  - capability_id: cap.geo-book.citable-content-spec
     revision: 1
     status: active
     slug: citable-content-spec
@@ -108,11 +108,13 @@ capabilities:
     source_evidence:
       - source_id: geo-book
         location: 第 10 章（第 8、1 章补充）
+      - source_id: geo-wiki
+        location: 可引用性 citability（CC BY 4.0，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 输入输出契约清晰（体检表+改写稿），与 golden-question 靠"判题型 vs 验规格"区分。
-  - capability_id: geo-query-research
+  - capability_id: cap.geo-book.geo-query-research
     revision: 1
     status: active
     slug: geo-query-research
@@ -137,7 +139,7 @@ capabilities:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 列选题清单是独立高频意图；与测试卡靠"纸面分级 vs 实测确认"区分。
-  - capability_id: one-fish-multi-platform
+  - capability_id: cap.geo-book.one-fish-multi-platform
     revision: 1
     status: active
     slug: one-fish-multi-platform
@@ -162,7 +164,7 @@ capabilities:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 一稿多发的独立意图明确；与 citable-content-spec 靠"多版本改造 vs 单稿体检"区分。
-  - capability_id: geo-monitoring-iteration
+  - capability_id: cap.geo-book.geo-monitoring-iteration
     revision: 1
     status: active
     slug: geo-monitoring-iteration
@@ -183,11 +185,13 @@ capabilities:
     source_evidence:
       - source_id: geo-book
         location: 第 10 章（第 5 章度量口径）
+      - source_id: geo-wiki
+        location: GEO 指标 geo-metrics、引用 vs 提及（CC BY 4.0，2026-09 核对）
     promotion:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 与 geo-test-protocol 靠"日常双周运营 vs 一次性实验设计与先测后投"区分。
-  - capability_id: geo-test-protocol
+  - capability_id: cap.geo-book.geo-test-protocol
     revision: 1
     status: active
     slug: geo-test-protocol
@@ -212,7 +216,7 @@ capabilities:
       destination: promoted
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 研究/监测/卡位三类场景都会调用，独立复用性强。
-  - capability_id: negative-semantic-occupy
+  - capability_id: cap.geo-book.negative-semantic-occupy
     revision: 1
     status: active
     slug: negative-semantic-occupy
@@ -237,7 +241,7 @@ capabilities:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 五判据全过但预算 8 已满；与 golden-question-formulas 触发重叠风险较高（同为信任类内容），降为 router 卡保随时可达。
-  - capability_id: lso-local-playbook
+  - capability_id: cap.geo-book.lso-local-playbook
     revision: 1
     status: active
     slug: lso-local-playbook
@@ -262,7 +266,7 @@ capabilities:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
       notes: 独立意图成立但使用频次低于 GEO 主线；经路由入口可达。
-  - capability_id: vso-video-optimization
+  - capability_id: cap.geo-book.vso-video-optimization
     revision: 1
     status: active
     slug: vso-video-optimization
@@ -287,7 +291,7 @@ capabilities:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
       notes: 意图独立但与 geo-channel-map 的豆包渠道结论强耦合，router 可达即可。
-  - capability_id: aeo-answer-optimization
+  - capability_id: cap.geo-book.aeo-answer-optimization
     revision: 1
     status: active
     slug: aeo-answer-optimization
@@ -297,7 +301,7 @@ capabilities:
     one_liner: 结构化问答、FAQPage schema、Speakable 三板斧——把内容加工成机器好嚼的形状，占住位置零。
     intents: [优化网页被精选摘要/答案卡片引用, 制作 FAQ 页与 schema 标记, 判断 FAQPage 还值不值得做]
     keywords: [AEO, 精选摘要, 位置零, FAQPage, schema, Speakable, 结构化问答, 答案引擎, featured snippet, position zero]
-    also_read: [citable-content-spec, brand-data-infrastructure, one-fish-multi-platform]
+    also_read: [citable-content-spec, brand-data-infrastructure, one-fish-multi-platform, ai-crawler-access]
     card: cards/aeo-answer-optimization.md
     frontmatter:
       description: >-
@@ -312,7 +316,7 @@ capabilities:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
       notes: 受众偏有官网/技术能力的团队；router 可达。
-  - capability_id: brand-data-infrastructure
+  - capability_id: cap.geo-book.brand-data-infrastructure
     revision: 1
     status: active
     slug: brand-data-infrastructure
@@ -322,7 +326,7 @@ capabilities:
     one_liner: 结构化数据、API 化内容、官方事实页三层基建，官方口径缺位的地方自然有别人的嘴替你填上。
     intents: [制定品牌 AI 时代基建路线图, 建设官网事实页与结构化数据, 准备 Agent 时代的产品信息接口]
     keywords: [数据基建, 事实页, 结构化数据, Schema.org, API 化, Agent 时代, 口径对齐, fact page, structured data, agent-ready]
-    also_read: [aeo-answer-optimization, geo-monitoring-iteration, negative-semantic-occupy]
+    also_read: [aeo-answer-optimization, geo-monitoring-iteration, negative-semantic-occupy, ai-crawler-access]
     card: cards/brand-data-infrastructure.md
     frontmatter:
       description: >-
@@ -337,3 +341,28 @@ capabilities:
       destination: router
       gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: false, independent_eval: true}
       notes: 推演成分高，作为 router 卡与 aeo 卡互补；长期路线图意图可达即可。
+  - capability_id: cap.geo-book.ai-crawler-access
+    revision: 1
+    status: active
+    slug: ai-crawler-access
+    title: AI 爬虫可访问性与 llms.txt（补充自 GEO Wiki）
+    importance: high
+    importance_rationale: 补充原书未覆盖的候选集入口问题（页面进不了候选集则一切可引用性优化失效）；屏蔽检索类爬虫是"代价最高错误"；承接 t10/t14 延伸。
+    one_liner: AI 爬虫按用途三类决策（训练/检索/用户触发），检索类必须放行；llms.txt 低成本预部署但不指望带来引用。
+    intents: [决定 robots.txt 对 AI 爬虫的放行策略, 判断要不要部署 llms.txt, 排查网站内容抓不到的问题]
+    keywords: [AI 爬虫, robots.txt, GPTBot, Bytespider, OAI-SearchBot, PerplexityBot, 屏蔽, llms.txt, 抓取, SSR, ai crawler, crawler access]
+    also_read: [brand-data-infrastructure, aeo-answer-optimization, geo-monitoring-iteration]
+    card: cards/ai-crawler-access.md
+    frontmatter:
+      description: >-
+        当用户问"要不要屏蔽 GPTBot/Bytespider 等 AI 爬虫、robots.txt 怎么写 AI 规则、llms.txt 是什么要不要做、
+        AI 引擎抓不到我的网站"时使用。AI 爬虫按用途分三类（训练/检索/用户触发）分别决策，检索类屏蔽=立即失去被引机会；
+        llms.txt 是筛选索引约定（站点采用≠引擎读取，截至 2026-05 无厂商确认）。补充自 GEO Wiki（CC BY 4.0），超出原书范围。
+      tags: [crawler, robots-txt, llms-txt, accessibility]
+    source_evidence:
+      - source_id: geo-wiki
+        location: AI 爬虫 ai-crawlers、llms.txt（CC BY 4.0，2026-09 核对）
+    promotion:
+      destination: router
+      gate: {independent_intent: true, independent_contract: true, independent_run: true, independent_reuse: true, independent_eval: true}
+      notes: 独立意图明确（robots/llms.txt 问题不会撞 GEO 内容卡），但属技术基建向、频次低于内容主线；router 可达。来源为补充源 GEO Wiki，非原书。

@@ -1,12 +1,12 @@
 ---
 name: geo-playbook
 description: |
-  从《从 SEO 到 GEO：AI 时代的搜索优化实战手册》（JingHao-Leon 著，2026-08-05 六引擎实测）蒸馏的中文 AI 搜索优化操作手册。覆盖 GEO 五步工作流：query 研究分级、六引擎渠道分工、可引用内容生产、一鱼多吃分发、监测迭代， 以及负面语义占位、引用行为实测规程和 LSO/VSO/AEO 基本功。所有引擎信源数字为 2026-08-05 单日快照，按方向性使用并定期复核。
+  从《从 SEO 到 GEO：AI 时代的搜索优化实战手册》（JingHao-Leon 著，2026-08-05 六引擎实测）蒸馏的中文 AI 搜索优化操作手册。覆盖 GEO 五步工作流：query 研究分级、六引擎渠道分工、可引用内容生产、一鱼多吃分发、监测迭代， 以及负面语义占位、引用行为实测规程、LSO/VSO/AEO 基本功，及 AI 爬虫可访问性与 llms.txt（补充自 GEO Wiki）。所有引擎信源数字为 2026-08-05 单日快照，按方向性使用并定期复核。
 metadata:
   cangjie.generated-by: cangjie-tools v2.5.0
   cangjie.variant: single
   cangjie.bundle-id: bundle.geo-book
-  cangjie.capability-count: 12
+  cangjie.capability-count: 13
   cangjie.entrypoint-count: 1
 ---
 # 从 SEO 到 GEO：AI 时代的搜索优化实战手册 — 全书能力入口
@@ -43,8 +43,9 @@ metadata:
 | 应对 AI 回答中的负面口碑；处理智商税/骗局类 query 的占位；排负面 query 优先级 | references/capabilities/negative-semantic-occupy.md | references/capabilities/golden-question-formulas.md、references/capabilities/geo-channel-map.md、references/capabilities/geo-query-research.md |
 | 解决地图搜不到/点评排名低；新店开业线上信息搭建；本地口碑与评价运营 | references/capabilities/lso-local-playbook.md | references/capabilities/geo-channel-map.md、references/capabilities/golden-question-formulas.md |
 | 让视频被抖音搜索收录；让 AI 引擎引用自己的视频；规划视频与图文的形态分工 | references/capabilities/vso-video-optimization.md | references/capabilities/geo-channel-map.md、references/capabilities/geo-query-research.md、references/capabilities/one-fish-multi-platform.md |
-| 优化网页被精选摘要/答案卡片引用；制作 FAQ 页与 schema 标记；判断 FAQPage 还值不值得做 | references/capabilities/aeo-answer-optimization.md | references/capabilities/citable-content-spec.md、references/capabilities/brand-data-infrastructure.md、references/capabilities/one-fish-multi-platform.md |
-| 制定品牌 AI 时代基建路线图；建设官网事实页与结构化数据；准备 Agent 时代的产品信息接口 | references/capabilities/brand-data-infrastructure.md | references/capabilities/aeo-answer-optimization.md、references/capabilities/geo-monitoring-iteration.md、references/capabilities/negative-semantic-occupy.md |
+| 优化网页被精选摘要/答案卡片引用；制作 FAQ 页与 schema 标记；判断 FAQPage 还值不值得做 | references/capabilities/aeo-answer-optimization.md | references/capabilities/citable-content-spec.md、references/capabilities/brand-data-infrastructure.md、references/capabilities/one-fish-multi-platform.md、references/capabilities/ai-crawler-access.md |
+| 制定品牌 AI 时代基建路线图；建设官网事实页与结构化数据；准备 Agent 时代的产品信息接口 | references/capabilities/brand-data-infrastructure.md | references/capabilities/aeo-answer-optimization.md、references/capabilities/geo-monitoring-iteration.md、references/capabilities/negative-semantic-occupy.md、references/capabilities/ai-crawler-access.md |
+| 决定 robots.txt 对 AI 爬虫的放行策略；判断要不要部署 llms.txt；排查网站内容抓不到的问题 | references/capabilities/ai-crawler-access.md | references/capabilities/brand-data-infrastructure.md、references/capabilities/aeo-answer-optimization.md、references/capabilities/geo-monitoring-iteration.md |
 
 **非能力类查询**：
 - 书名/作者/章节/整书概览 → references/overview.md

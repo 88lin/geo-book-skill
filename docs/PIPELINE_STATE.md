@@ -2,7 +2,7 @@
 
 - **书目**: 从 SEO 到 GEO：AI 时代的搜索优化实战手册（JingHao-Leon，2026-08-05）
 - **来源**: /home/developer/.zcode/workspace/default/geo-book/（README + 00~11 共 13 篇 md）
-- **当前阶段**: ✅ 全部完成
+- **当前阶段**: ✅ 全部完成（v0.2.0：geo.wiki 补充合并）
 - **更新时间**: 2026-09-13（阶段 4 完成）
 
 ## 已完成
@@ -15,6 +15,7 @@
 ## 已完成（续 2）
 - [x] 阶段 5：compile --output single（auto 推荐 single，single-first-v1）→ dist/geo-book-skill → 已安装 ~/.zcode/skills/geo-playbook（validate_skill_pack 0 errors）；DIGEST.md（约 8000 字）
 - 说明：also_read 曾用完整 capability_id 导致编译 broken-ref，已改为 slug 后重编译通过（记录给后续维护者）
+- [x] v0.2.0（2026-09-14）：按用户要求合并 geo.wiki 补充（CC BY 4.0）——新增第 13 张能力卡 ai-crawler-access（AI 爬虫三类+llms.txt，router）；citable 并入七结构信号；monitoring 并入引用≠提及≠链接与十项 KPI；GLOSSARY/book-overview 增补 8 条；回归测试：触发盲测 15/15、输出评测 6/6、编译 0 errors
 
 ## 已完成（续）
 - [x] 阶段 1：219 条候选（并发受限，按降级方案串行执行 5 个 extractor）

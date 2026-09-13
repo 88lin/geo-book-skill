@@ -27,6 +27,19 @@
 
 不高频抓取（约 30 次连续提问触发 DeepSeek 风控）；不铺低质稿（DeepSeek 2025-05 明确识别降权，铺稿是负资产）；不造假不操纵（不编造数据、不伪造评价、不批量自问自答、不伪装中立洗地——"伦理不是高调，是复利"）。
 
+## 补充来源：GEO Wiki（CC BY 4.0，2026-09 核对，超出原书范围）
+
+以下内容改编自 [GEO Wiki](https://geo.wiki/zh)（CC BY 4.0），用于补齐原书未覆盖的机制层与口径层：
+
+- **答案循环（Answer Loop）四步**：查询理解 → 检索 → 采信与筛选 → 生成与归因（可能多轮、子查询扇出）。排查"AI 不引用我"按四步逐段定位：进不了候选集（可抓取性问题）→ 被检索到但没被采信（可引用性问题）→ 被采信但没署名（引用 vs 提及是两回事）。"被检索到 ≠ 被采信 ≠ 被署名"。
+- **AI 爬虫三类与 robots.txt**：训练类（GPTBot/ClaudeBot/Google-Extended/Bytespider 等）、检索类（OAI-SearchBot/PerplexityBot/Googlebot/Bingbot）、用户触发类（ChatGPT-User 等）——按类决策，屏蔽检索类 = 立即失去被引机会；robots.txt 是声明不是强制（RFC 9309）。详见能力卡 ai-crawler-access。
+- **llms.txt**：Answer.AI 2024-09 提案的 /llms.txt 筛选索引约定；站点采用 ≠ 引擎读取（截至 2026-05 无厂商确认），robots.txt/sitemap.xml/llms.txt 三文件职责不重叠；低成本预先部署，不是引用手段。
+- **GEO 十项 KPI 口径**（商用工具汇总，非行业标准）：Visibility Score、Citation Rate、Citation Share、Share of Voice、Average Position（三种定义并存、最易争议）、Mention Frequency、Answer Inclusion Rate、First-Cite Rate、Brand Sentiment、Source Diversity。**引用 ≠ 提及 ≠ 链接**，三者混计会高估；区分相近指标时公式比名称可靠。
+- **可引用性七结构信号**：自包含内容块、直接答案块、问答结构、步骤/HowTo、可引用表格列表、标题层级规范、可整段引述的句子；可引用性（内容好不好用）与 E-E-A-T（来源可不可信）分开判断；结构过度优化反而可能被垃圾过滤器排除。
+- **LLMO 辨析**：LLMO 与 GEO 基本是同一回事——"为 LLM 优化"若指推理时检索（读法 A）就是 GEO；若指进预训练语料（读法 B）则慢且基本无法控制，GEO 主动排除。
+- **零点击数据**：零点击早于 AI（2019–2020 年 Google 已有过半搜索零点击）；Pew 2025——出现 AI 摘要时点击率约 8%、无摘要约 15%；Ahrefs——AI Overviews 出现与首位点击率下降约 34.5% 相关（相关性非因果）。
+- **免费工具**：geo.wiki 提供可引用性检测、Schema 标记检测、AI 爬虫访问检测、llms.txt 生成器（/zh/tools）。
+
 ## 收束
 
 引擎会换代，信源偏好三年后可能大半过时；唯一不变的策略是——让你的信息真实、准确、结构清晰、经得起核查，成为那个"值得被引用的答案"。
