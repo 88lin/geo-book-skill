@@ -2,6 +2,14 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 精神，版本号语义：次版本号 = 能力卡内容或来源的实质变更。
 
+## [0.5.0] - 2026-09-15
+
+### Verified
+- v0.4.2 回归评测通过（两场景均 38/40 PASS）：
+  - ai-crawler-access：robots.txt + llms.txt 审查场景，补充块利用率 10/10
+  - geo-monitoring-iteration：从零搭建监测体系场景，补充块利用率 10/10
+- 审计报告存档于 `docs/supplement-audits/`
+
 ## [0.4.2] - 2026-09-15
 
 ### Added
