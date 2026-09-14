@@ -31,6 +31,14 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 - **sameAs 是最高优先级属性**：优先给 Organization/Person 正确设置 sameAs（Wikipedia、Wikidata、官网、社媒主页），它决定知识图谱里"你是谁"的消歧；类型优先级 Organization/Person > Article/WebSite/BreadcrumbList > FAQPage/HowTo（最后两者只是声明解析器本可识别的结构，Google 的 HowTo 富结果也已移除）。
 - **事实卡实践**（GeoLook）：把品牌事实（成立时间、价格、客户、资质）维护成一张带来源、核验日期、证据等级（A 官方已证实 / B 第三方可佐证 / C 内部待授权 / D 需补证 / E 禁止使用）的事实卡，作为 llms.txt、JSON-LD、内容稿的唯一口径来源；每条事实标证据等级，查不到标"待确认"，绝不用常识填充。
 
+**补充四（geo-seo-claude + GEO Wiki，MIT / CC BY 4.0，2026-09-14 穷尽审查）——结构化数据的审计细则与打分：**
+
+- **四级台阶审计法**：覆盖（原始 HTML 含 JSON-LD，非 JS 注入——AI 爬虫不执行 JS，JS 注入的 schema 会被整体漏掉）→ 有效（语法 + @context）→ 一致（@id 唯一、页面内引用可解析、无重复实体、有稳定 Organization/Person 节点）→ 属实（标记标题 vs 可见标题、作者可见、日期合理；抽查最多 10 个 sameAs）。**无效或不一致的标记比不加更糟**：实时抓取型 AI 把 JSON-LD 当正文读，受控观察发现 ChatGPT/Perplexity 甚至照搬无效或虚构标记中的值。
+- **生成五规则**：@graph 合并多类型；@id 交叉引用；ISO 8601 日期；绝对 URL；放 head 由服务端输出（非 JS 注入）。speakable 用 cssSelector 圈候选段（如 .article-summary / .key-takeaway）；knowsAbout 列 3+ 主题。
+- **十分项评分表**（结构化维度 0-100）：Organization 20 / Article 15 / Person 15 / sameAs 15（含 Wikipedia 在内的 5+ 平台才满分）/ Speakable 10 / Breadcrumb 5 / SearchAction 5 / 无废弃类型 5 / JSON-LD 格式 5 / 通过验证 5。
+- **废弃/受限类型**：FAQPage 富结果 2023-08 起仅限政府/医疗站、HowTo 富结果 2023-09 彻底移除、SpecialAnnouncement 弃用——但**准确且维护成本低的 FAQPage 标记仍值得保留**（AI 平台解析 FAQ 结构做问答抽取，受益不依赖富结果）；过时或与页面冲突才更新/删除。
+- **品牌权威综合分**（海外生态，两套口径并存勿混用）：点数版 Wikipedia 30/垂评 25/Reddit 20/YouTube 15/LinkedIn 10；权重版 = YouTube×0.25 + Reddit×0.25 + Wikipedia×0.20 + LinkedIn×0.15 + 其他×0.15。档位判据示例：YouTube 90-100 = 1 万订阅 + 20+ 第三方视频提及；Reddit 90-100 = 自有 subreddit 5K+ 成员。情感四分：正面/中性/负面（抱怨类表述）/混合。**平台补强速赢**：做对比/"替代品"视频（比较类查询会被 AI 引用）；勿自编自家 Wikipedia 词条（利益冲突，先攒声望、先做全 Wikidata）；Reddit 真实参与勿马甲（被识破反噬极大）；近 6 个月的提及远胜 3 年前的。
+
 ## A1 — 书中案例
 
 - **官方阵地的实测表现（作者亲历，ch11 引用 ch6/ch7 数据）**：小鹅通官方 SEM 页被 DeepSeek 引用、抖音电商学习中心（school.jinritemai.com）在千川类问题上被豆包和 DeepSeek 反复引用（DeepSeek 采样中 9 次）——"官方事实页 + 结构化内容"今天的形态，就是 Agent 时代"可被调用的事实接口"的雏形（后半句为作者推演）。
@@ -63,3 +71,14 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 ## 相关能力
 
 下游 geo-monitoring-iteration、negative-semantic-occupy（持续档动作）；aeo-answer-optimization（层 3 单页技术）；citable-content-spec（口径一致的稿件规格）。
+
+## 配套资源
+
+路径相对于本文件；脚本需先检查运行条件，不因附带而自动执行。
+
+- [resources/schema-organization.json](../../resources/schema-organization.json)
+- [resources/schema-software-saas.json](../../resources/schema-software-saas.json)
+- [resources/schema-product-ecommerce.json](../../resources/schema-product-ecommerce.json)
+- [resources/schema-local-business.json](../../resources/schema-local-business.json)
+- [resources/schema-article-author.json](../../resources/schema-article-author.json)
+- [resources/schema-website-searchaction.json](../../resources/schema-website-searchaction.json)

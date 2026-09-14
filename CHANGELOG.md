@@ -2,6 +2,22 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 精神，版本号语义：次版本号 = 能力卡内容或来源的实质变更。
 
+## [0.4.2] - 2026-09-15
+
+### Added
+- 七卡穷尽审查补充块（三源 ~177 候选项中高价值项合入）：
+  - ai-crawler-access：Bytespider 实测不遵守 robots.txt、26 令牌全名单、Extended 令牌不是真实 UA、RFC 9309 语义纠错、llms.txt 工程细则与纠错（llms-full.txt 不在原始规范、Google 已书面表示不使用）
+  - brand-data-infrastructure：结构化数据四级台阶审计法、生成五规则、十分项评分表、废弃/受限类型更新、品牌权威综合分两套口径
+  - citable-content-spec：段落可引用量化判据、对题性 r=0.432 最强预测因子、五类抽取块权重与实测增益、FAQ 纠错（纯 Q&A 格式 −5.7%）、E-E-A-T 代理信号与伪造四反模式、平台结构偏好差异
+  - geo-channel-map：引用位置第二把尺子、信源四层优先级框架、引擎三分类法、海外对照数字
+  - geo-monitoring-iteration：Position 三种不兼容定义、Citation Rate 区间、L1–L5 成熟度阶梯、报告七陷阱、修复优先级判据、变更风险分级、周检轻量节奏、AI 流量领先指标
+  - geo-test-protocol：问题类型触发检索、国产平台 API 采样坑（千问/火山方舟/元宝）、API 度量字段、方法论免责五条
+- GLOSSARY 追加 s17–s25（可信最重要、SEO/GEO 60/40、答案引擎术语纠错、llms.txt 纠错组、Bytespider 不遵守 robots、新兴声明标准、4-8 周见效、可抽取事实块、geo-citation-lab）
+
+### Verified
+- 13 卡六段结构（R/I/A1/A2/E/B + 相关能力）完整
+- 部署产物与源码一致，三份 glossary 副本同步
+
 ## [0.4.1] - 2026-09-14
 
 ### Added

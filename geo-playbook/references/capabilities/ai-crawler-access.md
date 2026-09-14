@@ -28,6 +28,27 @@
 
 **补充（GeoLook 六维体检方法，MIT，框架采用 GeoReady《The GEO Readiness Manual》）——四层依赖模型决定修复顺序：访问 → 定向 → 理解 → 可引用**，每层依赖上一层，**先修失败的最上游层**：访问层（robots 封禁/WAF-UA 差异封锁/noindex/SPA 空壳）失败时，下游的 schema 和内容优化在引擎侧全部不可见。三个国内官网高频致命点：①**SPA 空壳页**（正文 word_count≈0，AI 抓取器看到的是空白）；②**WAF/CDN 按 UA 拦截**——robots.txt 放行但换 AI 爬虫 UA 实测被 CDN 403，浏览器里看不出来，必须换真实 AI UA 探测；③**X-Robots-Tag 头级 noindex**——页面源码里看不到，要查响应头。
 
+**补充四（GEO Wiki ai-crawlers 全文 + GeoLook method + geo-seo-claude，2026-09-14 穷尽审查）——放行策略的关键纠错与细则：**
+
+1. **Bytespider（字节跳动）实测不遵守 robots.txt 且无官方文档**（GEO Wiki 令牌表）——对它，robots.txt 只是姿态，硬限制只能走网络层（WAF/IP 段）。
+2. **令牌按产品核对，不能照搬经验**（三个官方实例）：屏蔽 GPTBot 不影响 ChatGPT 搜索可见性（那由 OAI-SearchBot + ChatGPT-User 决定）；Google 官方原文确认 Google-Extended 与搜索收录/排名无关、AIO 无专属爬虫（退出 AIO 只有退出 Google 搜索一条路）；同一个 Google-Extended 令牌对 AIO 无效、却控制 Gemini Apps/Vertex 的 grounding 采信。
+3. **Extended 令牌不是真实 UA**：Google-Extended / Applebot-Extended 是 robots.txt 控制令牌，实际抓取由 Googlebot/Applebot 完成——robots 判断与边缘测试分开处理。
+4. **26 个令牌全名单**（GEO Wiki 2026-08-18 核验，超出"代表 UA"的完整版）：训练类含 GPTBot、ClaudeBot、Google-Extended、Applebot-Extended、CCBot、meta-externalagent、Amazonbot、MistralAI-Training、AI2Bot、Bytespider；检索类含 OAI-SearchBot、Claude-SearchBot、PerplexityBot、Googlebot、bingbot、Applebot、DuckAssistBot、YouBot、MistralAI-Index；用户触发类含 ChatGPT-User、Claude-User、Perplexity-User、meta-externalfetcher、MistralAI-User、Google-GeminiNotebook、Google-Agent。每季度复查——固定白名单会让新出现的爬虫默认被排除。
+5. **分爬虫 JS 渲染差异**：Googlebot 会渲染但有延迟队列（可延迟数天数周）；GPTBot/ClaudeBot/PerplexityBot 按纯 HTML 对待——SPA 空壳对这些爬虫等于不存在。
+6. **robots.txt 要按 RFC 9309 语义判**（GeoLook）：逐行正则会漏三种真实封禁——`User-agent: * / Disallow: /` 通配符组封掉所有无专属组的 AI 爬虫（最常见的"无意封禁"）；多 UA 共享规则组；specificity 规则不看顺序（存在专属组时通配符组整组失效）。
+7. **头部与元标记**：X-Robots-Tag 响应头覆盖 meta 且适用于非 HTML 资源（图片/PDF 也会被 noindex）；另有 bot 专属 meta（如 `<meta name="GPTBot" content="noindex">`）。
+8. **屏蔽面统计**：Top 1000 网站 35%+ 屏蔽至少一只 AI 爬虫、5-10% 全屏蔽（Originality.ai 2025）——大多数站点没做"按类放行"这一步。
+9. **新兴方向（B 段级，不能依赖）**：IETF draft 的 Web Bot Auth（HTTP 消息签名验证爬虫身份）；robots.txt 的 Content-Signal 指令（`ai-train=no, search=yes, ai-retrieval=yes`，IETF draft）；ai.txt 提案标准；IndexNow（/.well-known/indexnow-key.txt + 发布时 ping API——ChatGPT 走 Bing 索引，加速 Bing 即加速 ChatGPT 收录）；Agent-Readiness Link 头与 `Accept: text/markdown` 内容协商（Cloudflare "Markdown for Agents"）。
+10. **页面深度**：4 层以上深度的页面爬行预算骤减，更难被 AI 引用——重要页面别埋深。
+
+**补充五（llms.txt 工程细则，GEO Wiki llms-txt + geo-seo-claude geo-llmstxt）：**
+
+- **纠错**：llms-full.txt 不在原始规范（Mintlify 推广形成的约定）；规范定义的是 llms-ctx.txt / llms-ctx-full.txt（llms_txt2ctx 生成）。**Google 已书面表示其 AI 功能不会使用 llms.txt**——比"无厂商确认"更强一档。90 天 × 10 站点研究结论：当 sitemap 类基础设施，不是增长手段。
+- **硬格式**：根路径（v2 起可用子路径 + head 内 `<link rel="describedby" href="/llms.txt">` 声明）；H1 首行、blockquote 摘要 <200 字符、总条目 10-30、每条目 10-30 词描述、绝对 URL。
+- **收录三档**：收录高价值页（定价/核心文档/FAQ）→ 可选收录次要页 → **跳过**：薄分类/标签页、分页、登录注册页、法律样板。
+- **误用清单（弊大于利）**：内容陈旧的 llms.txt 比没有更糟；把整个 sitemap 塞进去失去筛选意义；必须由构建过程自动生成并保持同步；所列页面**不得被 robots.txt 对 AI 爬虫屏蔽**（自相矛盾）；部署后验证无重定向。
+- **质量分参考**：完整性 40% + 准确性 35% + 有用性 25%（geo-seo-claude 口径）；验证严重级——H1 与至少一个 H2 为 Critical。
+
 ## A1 — 案例（补充来源，非原书案例）
 
 - **原书未提供案例**（如实标注）。GEO Wiki 给出的可核验事实：一项覆盖 30 万域名的研究测得约 10% 域名已部署 llms.txt（SEJ，2025-11）；Cloudflare 发现仅约 14% 的 robots.txt 专门设置 AI 爬虫规则（2025-07），多数站点尚未声明任何策略——多数站点连"按类放行"这一步都没做。

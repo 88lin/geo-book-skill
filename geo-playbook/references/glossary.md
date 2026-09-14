@@ -65,3 +65,12 @@
 | s14 | 标记 ≠ 引用（sameAs 优先） | Schema 标记不是排名/引用信号，只作用于检索前的页面解析与实体识别；采信由可引用性与 E-E-A-T 决定。属性优先级 sameAs 最高（知识图谱消歧）；类型优先级 Organization/Person > Article/WebSite > FAQPage/HowTo。依赖索引的 AI（Google AIO/Copilot）解析标记，实时抓取型（ChatGPT/Perplexity）把 JSON-LD 当正文读（searchVIU 2025） | GEO Wiki schema-org-for-ai |
 | s15 | 采样证据等级 A–D | A=人工/浏览器真实样本（有原文与来源链接）；B=API 可复现（注明是否联网）；C=合成/推断；D=待复核（个人日常账号自动降 D）。环境四档不混算：沙箱/无痕/专用 Profile/个人账号；没提到品牌也要记录 | GeoLook method.md |
 | s16 | 指标四层 + 广度≠深度 | 只看提及率会高估：至少四层（提及率/首位率 Top3/描述准确率/引用质量）。海外生态广度≠深度：Perplexity 均引 16.35 源、ChatGPT 仅 6.88 但单条影响力是 Google 的 5.64 倍——被引次数与真被采纳分开算 | GeoLook method.md |
+| s17 | 可信最重要 | Google 官方口径：E-E-A-T 四信号中 Trust 最重要、其余三者都为它服务；AI 引擎不计算 E-E-A-T，而在检索/采信/模型先验三环节使用代理信号（亲历细节、具名作者+sameAs、知识图谱存在度、断言可核实、信息及时） | GEO Wiki e-e-a-t |
+| s18 | SEO/GEO 60/40 | 约 60% 工作共用（SEO 基线），约 40% 为 GEO 特有（内容结构+衡量方法）；一条 AI 答案综合 3-10 个来源，单一排名概念失效；"GEO、LLMO、AEO 全都只是 SEO"（Ahrefs）——客户质疑时的标准应答 | GEO Wiki seo-vs-geo |
+| s19 | 答案引擎（术语纠错） | Google 官方从未使用"答案引擎"一词，只用 featured snippets / PAA / AI Overviews；AEO 与 GEO 九成工作相同，差别在抽取式答案仍在 + 署名方式不同；GAIO、AISO 是营销同义词；GEO 不包括训练数据优化与提示词工程（那优化的是用户输入） | GEO Wiki aeo-vs-geo / generative-engine-optimization |
+| s20 | llms.txt 纠错组 | llms-full.txt 不在原始规范（Mintlify 约定），规范定义 llms-ctx.txt/llms-ctx-full.txt；Google 已书面表示其 AI 功能不会使用 llms.txt；90 天×10 站点研究：当 sitemap 类基础设施而非增长手段；内容陈旧的 llms.txt 比没有更糟 | GEO Wiki llms-txt |
+| s21 | Bytespider 不遵守 robots | 字节跳动训练爬虫实测不遵循 robots.txt 且无官方文档——对其 robots 只是姿态，硬限制走网络层；Top 1000 网站 35%+ 屏蔽至少一只 AI 爬虫、5-10% 全屏蔽（Originality.ai 2025） | GEO Wiki ai-crawlers |
+| s22 | 新兴声明标准 | Web Bot Auth（IETF draft，HTTP 消息签名验证爬虫身份）；robots.txt Content-Signal 指令（ai-train/search/ai-personalization/ai-retrieval 四键 yes/no）；ai.txt 提案；IndexNow（ChatGPT 走 Bing 索引，加速 Bing 即加速其收录）——均为 draft/提案，不能依赖 | GEO Wiki + geo-seo-claude |
+| s23 | 4-8 周见效 | GEO 改动完整见效通常需 4-8 周（平台重新索引）；实时检索型数小时到数天可见但波动大；点击 AI 摘要内部链接仅约 1%——引用≠流量 | geo-seo-claude / GEO Wiki |
+| s24 | 可抽取事实块 | GEO 的最小单位不是页面，是"可被抽取的事实块"——终点不是排名，是答案里那句话是否按你的口径说；永不承诺"一定被引用"，只能承诺可发现/可验证/可抽取 | GeoLook method.md |
+| s25 | geo-citation-lab | CN-GEO 数据集数据总仓（21.4 万条引用 + 海外数据集 + QUICK_REPORT + 54 篇论文库）；生产/工作台侧开源工具：GEORank（自托管工作台）、GEOFlow（规模化内容分发）——工具产出仍需按评分口径复核 | GeoLook sources.md |
