@@ -24,6 +24,13 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 
 **补充二（来自 geo-seo-claude，MIT，github.com/zubair-trabzada/geo-seo-claude）——6 个可直接填的 JSON-LD 模板**随本技能分发（resources/ 目录）：organization（组织实体主干）、software-saas（SaaS 产品）、product-ecommerce（电商商品）、local-business（本地商户）、article-author（文章与作者，E-E-A-T 信号）、website-searchaction（站内搜索）。部署顺序：先建实体主干（Organization），再声明页面类型，最后才考虑答案形态类标记（FAQ/HowTo）；标记必须与服务端输出的可见内容一致——**解析器会丢弃不合规标记，而实时抓取型模型会把整个块当页面文字读**，两类读者对错误标记的处理恰好相反。
 
+**补充三（改编自 GEO Wiki《面向 AI 的 Schema.org》，CC BY 4.0；GeoLook 事实卡实践）——标记的正确预期与优先级：**
+
+- **标记 ≠ 引用**：Schema 标记不是排名信号也不是引用信号——它作用于检索前的页面解析与实体识别，不参与由可引用性与 E-E-A-T 决定的采信环节。"为 FAQ 加标记并不会让其中的答案更容易被引用"，答案是否被用取决于可见正文的写法。
+- **两类读者对错误标记的处理相反**（searchVIU 2025）：依赖搜索索引的 AI（Google AI Overviews、Bing Copilot）会解析标记；实时抓取页面的对话引擎（ChatGPT、Perplexity）只把 JSON-LD 当普通正文读。
+- **sameAs 是最高优先级属性**：优先给 Organization/Person 正确设置 sameAs（Wikipedia、Wikidata、官网、社媒主页），它决定知识图谱里"你是谁"的消歧；类型优先级 Organization/Person > Article/WebSite/BreadcrumbList > FAQPage/HowTo（最后两者只是声明解析器本可识别的结构，Google 的 HowTo 富结果也已移除）。
+- **事实卡实践**（GeoLook）：把品牌事实（成立时间、价格、客户、资质）维护成一张带来源、核验日期、证据等级（A 官方已证实 / B 第三方可佐证 / C 内部待授权 / D 需补证 / E 禁止使用）的事实卡，作为 llms.txt、JSON-LD、内容稿的唯一口径来源；每条事实标证据等级，查不到标"待确认"，绝不用常识填充。
+
 ## A1 — 书中案例
 
 - **官方阵地的实测表现（作者亲历，ch11 引用 ch6/ch7 数据）**：小鹅通官方 SEM 页被 DeepSeek 引用、抖音电商学习中心（school.jinritemai.com）在千川类问题上被豆包和 DeepSeek 反复引用（DeepSeek 采样中 9 次）——"官方事实页 + 结构化内容"今天的形态，就是 Agent 时代"可被调用的事实接口"的雏形（后半句为作者推演）。

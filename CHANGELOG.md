@@ -2,6 +2,19 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 精神，版本号语义：次版本号 = 能力卡内容或来源的实质变更。
 
+## [0.4.1] - 2026-09-14
+
+### Added
+- 三源补遗核对后的补入：
+  - brand-data-infrastructure / aeo-answer-optimization：标记≠引用、sameAs 最高优先级、类型优先级、两类解析器对错误标记的相反处理（GEO Wiki schema-org-for-ai，searchVIU 2025）
+  - geo-test-protocol：采样证据等级 A–D（个人账号自动降 D）、采样环境四档不混算、"没提到也要记录"
+  - geo-monitoring-iteration：指标至少四层（提及率/首位率/描述准确率/引用质量）+ 海外"广度≠深度"（Perplexity 均引 16.35 源 vs ChatGPT 6.88 但单条影响力 5.64 倍）
+  - citable-content-spec：E-E-A-T 四维 0-25 量化口径
+  - brand-data-infrastructure：事实卡实践（来源/核验日期/证据等级 A–E，查不到标待确认）
+
+### Verified
+- 全量完整性复查：13 卡六段结构完整、安装产物与源一致（仅编译器资源清单为预期差异）、三参考仓库有价值项逐一对照
+
 ## [0.4.0] - 2026-09-14
 
 ### Added

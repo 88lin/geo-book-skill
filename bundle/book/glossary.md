@@ -62,3 +62,6 @@
 | # | 术语 | 定义 | 来源 |
 |---|---|---|---|
 | s13 | GEO Score 六维加权 | 站点侧就绪度审计分（非引用行为指标）：可引用性×0.25 + 品牌权威×0.20 + E-E-A-T×0.20 + 技术×0.15 + 结构化数据×0.10 + 平台优化×0.10；可引用性子分含内容 35%/品牌提及 30%/爬虫放行 25%/llms.txt 10%；品牌权威按平台给分（Wikipedia 30/行业垂评 25/Reddit 20/YouTube 15/LinkedIn 10；Ahrefs 2025-12 七万五千品牌研究：YouTube 相关性 0.737 最强、外链 0.266 弱） | geo-seo-claude（MIT）scoring-methodology 文档 |
+| s14 | 标记 ≠ 引用（sameAs 优先） | Schema 标记不是排名/引用信号，只作用于检索前的页面解析与实体识别；采信由可引用性与 E-E-A-T 决定。属性优先级 sameAs 最高（知识图谱消歧）；类型优先级 Organization/Person > Article/WebSite > FAQPage/HowTo。依赖索引的 AI（Google AIO/Copilot）解析标记，实时抓取型（ChatGPT/Perplexity）把 JSON-LD 当正文读（searchVIU 2025） | GEO Wiki schema-org-for-ai |
+| s15 | 采样证据等级 A–D | A=人工/浏览器真实样本（有原文与来源链接）；B=API 可复现（注明是否联网）；C=合成/推断；D=待复核（个人日常账号自动降 D）。环境四档不混算：沙箱/无痕/专用 Profile/个人账号；没提到品牌也要记录 | GeoLook method.md |
+| s16 | 指标四层 + 广度≠深度 | 只看提及率会高估：至少四层（提及率/首位率 Top3/描述准确率/引用质量）。海外生态广度≠深度：Perplexity 均引 16.35 源、ChatGPT 仅 6.88 但单条影响力是 Google 的 5.64 倍——被引次数与真被采纳分开算 | GeoLook method.md |
