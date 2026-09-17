@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://YOURDOMAIN.com/faq/PAGE_SLUG/#faqpage",
+  "url": "https://YOURDOMAIN.com/faq/PAGE_SLUG",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://YOURDOMAIN.com/#website"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://YOURDOMAIN.com/#organization"
+  },
+  "dateModified": "YYYY-MM-DD",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "问题一：用目标 query 的用户原话，不要改写成品牌内部叫法",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第一句直接给结论（40-60 字），再展开条件与例外；带日期的数字写在正文里。本段必须与页面可见文字逐字一致。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "问题二：用户原话",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可独立摘引的短答案：结论 + 数字 + 适用边界。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "问题三：用户原话",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可独立摘引的短答案：结论 + 数字 + 适用边界。"
+      }
+    }
+  ],
+  "inLanguage": "zh-CN"
+}

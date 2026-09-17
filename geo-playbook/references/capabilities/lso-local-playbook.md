@@ -52,3 +52,8 @@
 ## 相关能力
 
 与 geo-channel-map 组合（本地商户的 AI 渠道分工）；golden-question-formulas 的信任型公式适用于点评回复与负面评价应对。
+
+## 配套资源
+
+- [resources/templates/nap-table.md](../../resources/templates/nap-table.md) — 全平台 NAP 对照表 + 五步执行进度 + 三要素诊断（第 6 步产出物）。
+- [resources/schema-local-business.json](../../resources/schema-local-business.json) — 官网侧 LocalBusiness 结构化数据，`sameAs` 正好填这张表里的各平台商户页链接。⚠️ `aggregateRating` 的占位符是 `X.X`，只能填各平台的**真实**评分与评价数；本店评价还没起量就把整块删掉——写一个好看的分上去就是刷评的另一种形式，与本卡第 4 步"绝不刷评"同属红线。

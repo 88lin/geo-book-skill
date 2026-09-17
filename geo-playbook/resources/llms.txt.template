@@ -1,0 +1,55 @@
+# 品牌/站点名称
+
+> 一句话说清这个站点是什么、为谁解决什么问题。摘要控制在 200 字符以内——llms.txt 的价值是「筛选与简洁呈现」，不是把 sitemap 抄一遍。
+
+<!--
+使用说明（部署时删除本段注释）
+
+配合能力卡 references/capabilities/ai-crawler-access.md 使用。把本文件重命名为 llms.txt 放到站点根目录。
+
+先读这三条诚实边界，再决定做不做：
+  · 截至 2026-05 没有任何主流厂商文档说明其爬虫会读取 llms.txt；Google 已书面表示其 AI 功能不会使用它。
+  · 它不是标准（未过 IETF/W3C），是 Answer.AI 2024-09 提出的发布约定。
+  · 与 robots.txt（访问控制）、sitemap.xml（完整发现覆盖）职责不重叠、不可互替。
+结论：部署成本约等于零、向前兼容，值得做；把它当引用手段则是误判——当 sitemap 那类基础设施来维护。
+
+硬格式要求：
+  · 放在根路径 /llms.txt（v2 起可用子路径 + 在 head 内加 <link rel="describedby" href="/llms.txt">）
+  · H1 必须是首行；blockquote 摘要 < 200 字符
+  · 总条目 10–30 条，每条描述 10–30 词，URL 必须是绝对路径
+  · 用 ## 分节；低优先内容放进 ## Optional 节
+
+收录三档：
+  · 收录：定价页、核心文档、FAQ、产品事实页、带日期的对比/评测
+  · 可选收录：次要文档、更新日志、案例
+  · 跳过：薄分类/标签页、分页、登录注册页、法律样板
+
+误用清单（做错了不如不做）：
+  · 内容陈旧的 llms.txt 比没有更糟——必须由构建过程自动生成并保持同步，无人维护就删除
+  · 所列页面不得被 robots.txt 对 AI 爬虫屏蔽（自相矛盾）
+  · 列出的每个 URL 都应提供干净的 Markdown 版本
+  · 部署后验证无重定向
+-->
+
+## 核心文档
+
+- [产品事实页](https://YOURDOMAIN.com/facts): 产品参数、服务范围、联系方式，全渠道口径以此页为准
+- [定价](https://YOURDOMAIN.com/pricing): 各版本价格与生效日期，年费/抽佣/手续费三笔账分开列
+- [快速上手](https://YOURDOMAIN.com/docs/quickstart): 从注册到跑通第一个流程需要的全部步骤
+- [常见问题](https://YOURDOMAIN.com/faq): 售前与售后高频问题的直接答案
+
+## 方法与案例
+
+- [XXX 怎么选：N 维度横向对比](https://YOURDOMAIN.com/blog/comparison): 含中立项与适用边界的同口径对比表
+- [XXX 实测数据](https://YOURDOMAIN.com/blog/benchmark): 带样本量、采样日期与方法说明的一手数据
+- [客户案例](https://YOURDOMAIN.com/cases): 可核实的具名案例与量化结果
+
+## 公司
+
+- [关于我们](https://YOURDOMAIN.com/about): 成立时间、团队、资质
+- [联系方式](https://YOURDOMAIN.com/contact): 电话、邮箱、地址、工作时间
+
+## Optional
+
+- [更新日志](https://YOURDOMAIN.com/changelog): 版本变更记录
+- [招聘](https://YOURDOMAIN.com/jobs): 在招岗位

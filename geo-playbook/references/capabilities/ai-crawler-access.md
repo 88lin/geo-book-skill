@@ -26,9 +26,9 @@
 
 **二、llms.txt：低成本预先部署，但不要指望它直接带来引用。** Answer.AI 2024-09 提出的发布约定：在站点根目录放 `/llms.txt`，一份筛选过的 Markdown 索引（H1 项目名 + blockquote 摘要 + `##` 分节链接列表 + Optional 低优先节）。三条诚实边界：截至 2026-05 无任何主流厂商文档说明其爬虫会读取它（Anthropic/Google/Perplexity 在自家文档站托管 llms.txt ≠ 其爬虫会读你的）；它不是标准（未过 IETF/W3C）；与 robots.txt（访问控制）、sitemap.xml（完整发现覆盖）职责不重叠、不可互替——llms.txt 只负责"筛选与简洁呈现"。结论：部署成本约等于零、向前兼容，值得做；把它当引用手段则是误判。
 
-**补充（GeoLook 六维体检方法，MIT，框架采用 GeoReady《The GEO Readiness Manual》）——四层依赖模型决定修复顺序：访问 → 定向 → 理解 → 可引用**，每层依赖上一层，**先修失败的最上游层**：访问层（robots 封禁/WAF-UA 差异封锁/noindex/SPA 空壳）失败时，下游的 schema 和内容优化在引擎侧全部不可见。三个国内官网高频致命点：①**SPA 空壳页**（正文 word_count≈0，AI 抓取器看到的是空白）；②**WAF/CDN 按 UA 拦截**——robots.txt 放行但换 AI 爬虫 UA 实测被 CDN 403，浏览器里看不出来，必须换真实 AI UA 探测；③**X-Robots-Tag 头级 noindex**——页面源码里看不到，要查响应头。
+**补充 · 四层依赖模型决定修复顺序：访问 → 定向 → 理解 → 可引用**（GeoLook 六维体检方法，MIT，框架采用 GeoReady《The GEO Readiness Manual》），每层依赖上一层，**先修失败的最上游层**：访问层（robots 封禁/WAF-UA 差异封锁/noindex/SPA 空壳）失败时，下游的 schema 和内容优化在引擎侧全部不可见。三个国内官网高频致命点：①**SPA 空壳页**（正文 word_count≈0，AI 抓取器看到的是空白）；②**WAF/CDN 按 UA 拦截**——robots.txt 放行但换 AI 爬虫 UA 实测被 CDN 403，浏览器里看不出来，必须换真实 AI UA 探测；③**X-Robots-Tag 头级 noindex**——页面源码里看不到，要查响应头。
 
-**补充四（GEO Wiki ai-crawlers 全文 + GeoLook method + geo-seo-claude，2026-09-14 穷尽审查）——放行策略的关键纠错与细则：**
+**补充 · 放行策略的关键纠错与细则**（GEO Wiki ai-crawlers 全文 + GeoLook method + geo-seo-claude，2026-09-14 穷尽审查）：
 
 1. **Bytespider（字节跳动）实测不遵守 robots.txt 且无官方文档**（GEO Wiki 令牌表）——对它，robots.txt 只是姿态，硬限制只能走网络层（WAF/IP 段）。
 2. **令牌按产品核对，不能照搬经验**（三个官方实例）：屏蔽 GPTBot 不影响 ChatGPT 搜索可见性（那由 OAI-SearchBot + ChatGPT-User 决定）；Google 官方原文确认 Google-Extended 与搜索收录/排名无关、AIO 无专属爬虫（退出 AIO 只有退出 Google 搜索一条路）；同一个 Google-Extended 令牌对 AIO 无效、却控制 Gemini Apps/Vertex 的 grounding 采信。
@@ -41,7 +41,7 @@
 9. **新兴方向（B 段级，不能依赖）**：IETF draft 的 Web Bot Auth（HTTP 消息签名验证爬虫身份）；robots.txt 的 Content-Signal 指令（`ai-train=no, search=yes, ai-retrieval=yes`，IETF draft）；ai.txt 提案标准；IndexNow（/.well-known/indexnow-key.txt + 发布时 ping API——ChatGPT 走 Bing 索引，加速 Bing 即加速 ChatGPT 收录）；Agent-Readiness Link 头与 `Accept: text/markdown` 内容协商（Cloudflare "Markdown for Agents"）。
 10. **页面深度**：4 层以上深度的页面爬行预算骤减，更难被 AI 引用——重要页面别埋深。
 
-**补充五（llms.txt 工程细则，GEO Wiki llms-txt + geo-seo-claude geo-llmstxt）：**
+**补充 · llms.txt 工程细则**（GEO Wiki llms-txt + geo-seo-claude geo-llmstxt）：
 
 - **纠错**：llms-full.txt 不在原始规范（Mintlify 推广形成的约定）；规范定义的是 llms-ctx.txt / llms-ctx-full.txt（llms_txt2ctx 生成）。**Google 已书面表示其 AI 功能不会使用 llms.txt**——比"无厂商确认"更强一档。90 天 × 10 站点研究结论：当 sitemap 类基础设施，不是增长手段。
 - **硬格式**：根路径（v2 起可用子路径 + head 内 `<link rel="describedby" href="/llms.txt">` 声明）；H1 首行、blockquote 摘要 <200 字符、总条目 10-30、每条目 10-30 词描述、绝对 URL。
@@ -81,3 +81,8 @@
 ## 相关能力
 
 上游前提于 brand-data-infrastructure（层 1 结构化数据）与 aeo-answer-optimization（机器可读形态）；被 geo-monitoring-iteration 的"整个 query 无引用"分支调用（排查候选集入口）。
+
+## 配套资源
+
+- [resources/robots-ai-crawlers.txt](../../resources/robots-ai-crawlers.txt) — 按三类放行的 robots.txt 模板，含 26 个令牌全名单、RFC 9309 specificity 陷阱、部署后必须验证的三件事。**照抄前先读文件头的三条使用前提**（令牌需每季度复核 / robots 是声明不是强制 / 专属组不继承通配符组）。
+- [resources/llms.txt.template](../../resources/llms.txt.template) — llms.txt 模板，含硬格式要求、收录三档与误用清单。部署前先确认接受它的三条诚实边界。

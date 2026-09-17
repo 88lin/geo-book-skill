@@ -26,7 +26,7 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 规律：**裁判离人越来越远、离机器越来越近；资产从"讨好算法的技巧"回归"经得起机器核查的事实"**。SEO 章里那句话值得刻在脑子里："排名是租来的位置，内容才是买下的资产"——HubSpot 复盘显示约 76% 的博客访问、92% 的销售线索来自旧文章，把有排名的旧文翻新比追新选题便宜且回报翻倍。
 
-→ 对应能力：这套坐标是理解后面所有打法的前提；SEO 基本功沉淀在 [citable-content-spec](dist/geo-book-skill/references/capabilities/citable-content-spec.md) 与 AEO 卡中。
+→ 对应能力：这套坐标是理解后面所有打法的前提；SEO 基本功沉淀在 [citable-content-spec](../geo-playbook/references/capabilities/citable-content-spec.md) 与 AEO 卡中。
 
 ## 2. 六个导购员：生态绑定定律（全书数据核心）
 
@@ -41,7 +41,7 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 **生态绑定定律**：有内容生态的引擎优先吃自家生态——想影响它，先进它的供应链。由此推出全书最重要的动作结论：**"知乎是 GEO 主阵地"是错的**（作者最重要的自我修正）——知乎几乎只在文心引用里出现，被引第一梯队是 CSDN/博客园/搜狐/网易/头条/公众号；B 端内容更窄，只有元宝（公众号轨道）和文心（百度系）两班车。
 
-→ 对应能力：[geo-channel-map](dist/geo-book-skill/references/capabilities/geo-channel-map.md)（四步决策树：定引擎→看生态→按题型修正→多形态分发）
+→ 对应能力：[geo-channel-map](../geo-playbook/references/capabilities/geo-channel-map.md)（四步决策树：定引擎→看生态→按题型修正→多形态分发）
 
 ## 3. 什么内容会被引用：四条硬指标
 
@@ -54,7 +54,7 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 收束成一句：**给结论、给数字、给适用边界——引擎引用的是判断，不是广告**。
 
-→ 对应能力：[citable-content-spec](dist/geo-book-skill/references/capabilities/citable-content-spec.md)；内容结构按题型分三套公式：[golden-question-formulas](dist/geo-book-skill/references/capabilities/golden-question-formulas.md)（症状型→决策树+阈值；对比型→分流名单；信任型→识别清单+投诉/政务数据）
+→ 对应能力：[citable-content-spec](../geo-playbook/references/capabilities/citable-content-spec.md)；内容结构按题型分三套公式：[golden-question-formulas](../geo-playbook/references/capabilities/golden-question-formulas.md)（症状型→决策树+阈值；对比型→分流名单；信任型→识别清单+投诉/政务数据）
 
 ## 4. 三类黄金问题：内容形状决定出场机会
 
@@ -75,7 +75,7 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 - **头条短文版**（豆包）：800–1500 字单点切入，保留一张对比表。
 - **官网事实页**（易漏）：Kimi 对企业官网的引用覆盖率 67.6% 六家最高之一；晓多官方博客同时进豆包/元宝/DeepSeek 三家引用——官网不是门面，是 AI 当教材用的信源。
 
-→ 对应能力：[one-fish-multi-platform](dist/geo-book-skill/references/capabilities/one-fish-multi-platform.md)
+→ 对应能力：[one-fish-multi-platform](../geo-playbook/references/capabilities/one-fish-multi-platform.md)
 
 ## 6. 起步与闭环：五步工作流
 
@@ -87,26 +87,26 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 工具路径：先用免费的 GEOBase 跑通闭环，成长期上 SaaS（新榜智汇、鲸牙启量）；自建仅当 query 上百条+跨六引擎+有研发资源时考虑。
 
-→ 对应能力：[geo-query-research](dist/geo-book-skill/references/capabilities/geo-query-research.md)、[geo-monitoring-iteration](dist/geo-book-skill/references/capabilities/geo-monitoring-iteration.md)、实测规程与风控红线 [geo-test-protocol](dist/geo-book-skill/references/capabilities/geo-test-protocol.md)
+→ 对应能力：[geo-query-research](../geo-playbook/references/capabilities/geo-query-research.md)、[geo-monitoring-iteration](../geo-playbook/references/capabilities/geo-monitoring-iteration.md)、实测规程与风控红线 [geo-test-protocol](../geo-playbook/references/capabilities/geo-test-protocol.md)
 
 ## 7. 两个高价值卡位
 
 **负面语义占位（抢阅卷权）**："智商税/割韭菜/靠谱吗"在教育等行业是主战场。公关式否认最没用（不提供可引用的判断框架）；正确姿势是替用户把账算清、分人群给明确结论（什么孩子值得买、什么情况就是吃灰的平板）——"谁提供判断框架，谁就定义什么叫智商税"。老负面是阵地战，新负面窗口期短先到先得。
-→ [negative-semantic-occupy](dist/geo-book-skill/references/capabilities/negative-semantic-occupy.md)
+→ [negative-semantic-occupy](../geo-playbook/references/capabilities/negative-semantic-occupy.md)
 
 **先测引用再投入**：元宝对"用 DeepSeek 辅导孩子作业靠谱吗"5 次采样 0/5 引用（同批题整体引用率 81.7%）——0/5 不是偶发是策略：价值观和方法论类开放题，引擎倾向直接输出观点不翻参考书。任何"看起来干净的卡位"，先小样本实测该引擎在该 query 上引不引用，再决定投不投入。
-→ [geo-test-protocol](dist/geo-book-skill/references/capabilities/geo-test-protocol.md)
+→ [geo-test-protocol](../geo-playbook/references/capabilities/geo-test-protocol.md)
 
 ## 8. SEO 家族三件基本功（按需取用）
 
-- **LSO**（本地五步：认领校准图钉→统一 NAP→补齐货架→评价运营→本地内容带地名）：门槛不在技巧在执行完整度；本地资产是 AI 推荐本地类问题时的素材库。→ [lso-local-playbook](dist/geo-book-skill/references/capabilities/lso-local-playbook.md)
-- **VSO**（视频是给人看的，搜索引擎只能读字）：标题贴原句、关键词进字幕、合集、评论区置顶；视频主攻对比/盘点题，症状题图文兜底——"视频是敲门砖，图文是保险绳"。→ [vso-video-optimization](dist/geo-book-skill/references/capabilities/vso-video-optimization.md)
-- **AEO**（三板斧：结构化问答/FAQPage schema/Speakable）：Google 砍了 FAQ 富摘要红利，但"降低机器理解成本"的底层价值在 AI 引擎时代反而更重要；"AEO 教机器找答案，GEO 教机器信答案"。→ [aeo-answer-optimization](dist/geo-book-skill/references/capabilities/aeo-answer-optimization.md)
-- **长期底座**：品牌数据基建三层（结构化数据/API 化/官方事实页）——层 3 有实测支撑，层 1/2 属第 11 章推演。→ [brand-data-infrastructure](dist/geo-book-skill/references/capabilities/brand-data-infrastructure.md)
+- **LSO**（本地五步：认领校准图钉→统一 NAP→补齐货架→评价运营→本地内容带地名）：门槛不在技巧在执行完整度；本地资产是 AI 推荐本地类问题时的素材库。→ [lso-local-playbook](../geo-playbook/references/capabilities/lso-local-playbook.md)
+- **VSO**（视频是给人看的，搜索引擎只能读字）：标题贴原句、关键词进字幕、合集、评论区置顶；视频主攻对比/盘点题，症状题图文兜底——"视频是敲门砖，图文是保险绳"。→ [vso-video-optimization](../geo-playbook/references/capabilities/vso-video-optimization.md)
+- **AEO**（三板斧：结构化问答/FAQPage schema/Speakable）：Google 砍了 FAQ 富摘要红利，但"降低机器理解成本"的底层价值在 AI 引擎时代反而更重要；"AEO 教机器找答案，GEO 教机器信答案"。→ [aeo-answer-optimization](../geo-playbook/references/capabilities/aeo-answer-optimization.md)
+- **长期底座**：品牌数据基建三层（结构化数据/API 化/官方事实页）——层 3 有实测支撑，层 1/2 属第 11 章推演。→ [brand-data-infrastructure](../geo-playbook/references/capabilities/brand-data-infrastructure.md)
 
 ## 8.5 机制层补充（改编自 GEO Wiki，CC BY 4.0）
 
-原书聚焦"内容与渠道"，这里补齐更底层的机制与口径（详见 [ai-crawler-access](dist/geo-book-skill/references/capabilities/ai-crawler-access.md) 与 [GEO Wiki](https://geo.wiki/zh)）：
+原书聚焦"内容与渠道"，这里补齐更底层的机制与口径（详见 [ai-crawler-access](../geo-playbook/references/capabilities/ai-crawler-access.md) 与 [GEO Wiki](https://geo.wiki/zh)）：
 
 - **答案循环四步**：查询理解 → 检索 → 采信 → 生成与归因。排查"AI 不引用我"按步定位——**被检索到 ≠ 被采信 ≠ 被署名**；页面进不了候选集（AI 爬虫抓取问题），后面一切优化都不起作用。
 - **AI 爬虫按用途分三类**：训练类（GPTBot、ClaudeBot、Google-Extended、Bytespider 等）、检索类（OAI-SearchBot、PerplexityBot、Googlebot、Bingbot）、用户触发类（ChatGPT-User 等）。**屏蔽检索类 = 立即失去被引机会**——"为了拦训练类把 AI 爬虫全部 Disallow"是代价最高的错误；robots.txt 是声明不是强制（RFC 9309）。
@@ -119,7 +119,7 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 ## 8.6 海外侧补充（改编自 geo-seo-claude，MIT）
 
-打海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）时的量化口径：站点就绪度用 GEO Score 六维加权（可引用性 25%/品牌权威 20%/E-E-A-T 20%/技术 15%/结构化 10%/平台优化 10%）；品牌实体权威按平台给分——Wikipedia 30、行业垂评平台 25、Reddit 20、YouTube 15、LinkedIn 10；据 Ahrefs 2025-12 对 75,000 个品牌的研究，**YouTube 与 AI 引用的相关性最强（0.737），外链相关性弱（0.266）**——传统 SEO 权威信号对 AI 引用的解释力有限。6 个可直接填写的 JSON-LD 模板（Organization/SaaS/电商/本地商户/文章作者/站内搜索）随 brand-data-infrastructure 卡分发。另附原文提供的段落级评分细则（答案块 30/自包含 25/结构 20/统计密度 15/独特性 10；段落 134–167 词最优、代词密度 <2%）已并入 citable-content-spec 卡。
+打海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）时的量化口径：站点就绪度用 GEO Score 六维加权（可引用性 25%/品牌权威 20%/E-E-A-T 20%/技术 15%/结构化 10%/平台优化 10%）；品牌实体权威按平台给分——Wikipedia 30、行业垂评平台 25、Reddit 20、YouTube 15、LinkedIn 10；据 Ahrefs 2025-12 对 75,000 个品牌的研究，**YouTube 与 AI 引用的相关性最强（0.737），外链相关性弱（0.266）**——传统 SEO 权威信号对 AI 引用的解释力有限。6 个可直接填写的 JSON-LD 模板（Organization/SaaS/电商/本地商户/文章作者/站内搜索）随 brand-data-infrastructure 卡分发——本包已把它们本地化为国内口径并补齐 FAQPage / HowTo / BreadcrumbList，共 9 个。另附原文提供的段落级评分细则（答案块 30/自包含 25/结构 20/统计密度 15/独特性 10；段落 134–167 词最优、代词密度 <2%）已并入 citable-content-spec 卡。
 
 ## 9. 反例与陷阱（照着避开）
 
@@ -146,4 +146,4 @@ SEO→LSO→VSO→AEO→GEO 五个词不是五次改朝换代，而是五层叠�
 
 > 引擎会换代，信源偏好三年后可能大半过时。唯一不变的策略：**让你的信息真实、准确、结构清晰、经得起核查，成为那个"值得被引用的答案"**——机器选答案的标准，越来越接近街坊选师傅的标准：谁靠谱，提谁。
 
-**完整能力索引**：[capability-index](dist/geo-book-skill/references/capability-index.md) ｜ [术语表](dist/geo-book-skill/GLOSSARY.md) ｜ [整书理解](BOOK_OVERVIEW.md) ｜ [覆盖审计](coverage-audit.md) ｜ [测试结果](test-results.md)
+**完整能力索引**：[capability-index](../geo-playbook/references/capability-index.md) ｜ [术语表](../geo-playbook/references/glossary.md) ｜ [整书理解](BOOK_OVERVIEW.md) ｜ [覆盖审计](coverage-audit.md) ｜ [测试结果](test-results.md)

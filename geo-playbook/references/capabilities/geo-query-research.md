@@ -56,3 +56,7 @@ GEO 的起点不是关键词工具，而是研究"人怎么跟 AI 说话"。AI �
 ## 相关能力
 
 下游 golden-question-formulas（题型判定）、citable-content-spec（生产）、geo-channel-map（按引擎分工）；与 geo-test-protocol 组成"纸面分级→实测确认"两道筛。
+
+## 配套资源
+
+- [resources/templates/query-grading.md](../../resources/templates/query-grading.md) — query 三维分级清单表 + 语料来源登记 + 排产纪律（第 6 步产出物）。

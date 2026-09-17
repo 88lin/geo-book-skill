@@ -48,13 +48,15 @@ capabilities:
     intents: [决定内容发哪些平台渠道, 选择主攻的 AI 引擎, 查询某引擎引用什么信源, 评估某渠道在 GEO 中的地位]
     keywords: [渠道, 信源地图, 生态绑定, 六引擎, 豆包, 元宝, 文心一言, DeepSeek, 千问, Kimi, 公众号, 百家号, 抖音, 知乎修正, source map, channel selection]
     also_read: [geo-test-protocol, one-fish-multi-platform, citable-content-spec, geo-query-research]
-    card: cards/geo-channel-map.md
+    card: ../geo-playbook/references/capabilities/geo-channel-map.md
     frontmatter:
       description: >-
         当用户要决定内容发到哪些平台、主攻哪个 AI 引擎（豆包/元宝/文心/DeepSeek/千问/Kimi），或问某引擎引用什么信源、
         知乎还有没有用时使用。按"定引擎→看生态→按题型修正→多形态分发"四步走，基于 2026-08-05 六引擎实测快照（方向性，需定期复核）。
         不用于内容怎么写（citable-content-spec）或怎么实测引用行为（geo-test-protocol）。
       tags: [geo, channel, source-map, decision-tree]
+    resources:
+      - ../geo-playbook/resources/templates/channel-matrix.md
     source_evidence:
       - source_id: geo-book
         location: 第 6、7、9 章
@@ -75,7 +77,7 @@ capabilities:
     intents: [判断一道题属于哪类黄金问题, 为具体 query 设计内容骨架, 解释为什么内容没被 AI 引用]
     keywords: [症状型, 对比型, 信任型, 黄金问题, 内容公式, 决策树, 分流, 怎么选, 靠谱吗, 跑不动, question triage, content formula]
     also_read: [citable-content-spec, negative-semantic-occupy, geo-channel-map]
-    card: cards/golden-question-formulas.md
+    card: ../geo-playbook/references/capabilities/golden-question-formulas.md
     frontmatter:
       description: >-
         当用户要为一道具体问题（"X 和 Y 哪个好""X 跑不动怎么办""X 是不是智商税"）写内容，或问稿件该用什么结构时使用。
@@ -100,13 +102,15 @@ capabilities:
     intents: [检查稿件是否容易被 AI 引用, 改写内容提高被引概率, 制定内容生产规范]
     keywords: [结论前置, 对比表, 硬指标, 价格页, 可验证, 被引用, 净菜, 可引用件, citable, answer-first, checklist]
     also_read: [golden-question-formulas, one-fish-multi-platform, geo-monitoring-iteration]
-    card: cards/citable-content-spec.md
+    card: ../geo-playbook/references/capabilities/citable-content-spec.md
     frontmatter:
       description: >-
         当用户写完或拿到一篇稿子，问"怎么改得更容易被 AI 引用/为什么没被引用"，或要定内容交稿验收标准时使用。
         按四条硬指标逐条体检并改写：结论前置 40-60 字、对比表 ≥5 维度、价格带日期、数字可验证。选题归 geo-query-research，
         稿件骨架归 golden-question-formulas，发布渠道归 geo-channel-map。
       tags: [geo, content, standard, checklist]
+    resources:
+      - ../geo-playbook/resources/templates/citable-content-checklist.md
     source_evidence:
       - source_id: geo-book
         location: 第 10 章（第 8、1 章补充）
@@ -129,13 +133,15 @@ capabilities:
     intents: [为 GEO 项目列选题清单, 给 query 排优先级, 判断哪些问题不值得做]
     keywords: [选题, query 清单, easy_win, target, skip, 分级, 竞争空白, 蓝海, 捞词, 下拉联想, topic research, query grading]
     also_read: [geo-test-protocol, golden-question-formulas, geo-channel-map]
-    card: cards/geo-query-research.md
+    card: ../geo-playbook/references/capabilities/geo-query-research.md
     frontmatter:
       description: >-
         当用户要启动 GEO/内容项目、问"该先写哪些题/帮我列选题清单/哪些问题不值得做"时使用。从真实语料（知乎原题、
         百度下拉、评论区）捞用户原话，按决策阶段×引用性×竞争度分级为 easy_win/target/skip，产出可执行清单表。
         纸面分级后投入前仍需实测确认（geo-test-protocol）。
       tags: [geo, query, research, prioritization]
+    resources:
+      - ../geo-playbook/resources/templates/query-grading.md
     source_evidence:
       - source_id: geo-book
         location: 第 10 章（第 1、9 章补充）
@@ -154,7 +160,9 @@ capabilities:
     intents: [把一份内容改造成多平台版本, 排多平台分发计划, 判断各平台版本该怎么改]
     keywords: [一鱼多吃, 多平台, 分发, 改写, 知乎版, 公众号长文, 头条短文, 官网事实页, repurpose, multi-platform]
     also_read: [citable-content-spec, geo-channel-map, geo-monitoring-iteration]
-    card: cards/one-fish-multi-platform.md
+    card: ../geo-playbook/references/capabilities/one-fish-multi-platform.md
+    resources:
+      - ../geo-playbook/resources/templates/distribution-matrix.md
     frontmatter:
       description: >-
         当用户有一篇内容或一份研究，要"一稿多发/多平台分发/改成公众号和知乎和头条版"时使用。按三版规范改造（知乎问答版
@@ -179,13 +187,15 @@ capabilities:
     intents: [追踪品牌在 AI 回答中的引用情况, 决定监测结果出来后做什么, 选择监测工具或决定是否自建]
     keywords: [监测, 迭代, 被引用率, 品牌描述, 对比站位, GEOBase, 新榜智汇, 鲸牙启量, 可见度, 两周, monitoring, visibility]
     also_read: [geo-test-protocol, citable-content-spec, one-fish-multi-platform]
-    card: cards/geo-monitoring-iteration.md
+    card: ../geo-playbook/references/capabilities/geo-monitoring-iteration.md
     frontmatter:
       description: >-
         当用户已发布 GEO 内容，问"怎么知道有没有效果/怎么追踪 AI 有没有引用我/监测结果出来后该干什么/用什么工具"时使用。
         建基线→选工具路径（免费 GEOBase 起步，自建需三条件且限速）→两周周期采样→按被引/竞品被引/无引用三分支执行动作。
         实测口径与限速红线归 geo-test-protocol。
       tags: [geo, monitoring, iteration, tools]
+    resources:
+      - ../geo-playbook/resources/templates/monitoring-log.md
     source_evidence:
       - source_id: geo-book
         location: 第 10 章（第 5 章度量口径）
@@ -210,13 +220,15 @@ capabilities:
     intents: [实测或复现某引擎的引用行为, 判断某 query 在某引擎上值不值得投入, 设计引用采样方案并规避风控]
     keywords: [实测, 采样, 引用率, n=1, 多次采样, 先测后投, 风控, 限速, 新对话, 逐字提问, citation test, sampling, rate limit]
     also_read: [geo-channel-map, geo-monitoring-iteration, geo-query-research]
-    card: cards/geo-test-protocol.md
+    card: ../geo-playbook/references/capabilities/geo-test-protocol.md
     frontmatter:
       description: >-
         当用户要实测/复测 AI 引擎的引用行为、问"这个题这个引擎值不值得投入内容"、或要做自动化采样监测并担心风控时使用。
         规程：每题独立新对话、逐字提问、二值引用率口径（几/12）、n=1 只作方向性；先测后投 5 次采样稳定零引用即红灯；
         约 30 次连续提问触发 DeepSeek 风控，必须分钟级间隔+每日上限。
       tags: [geo, methodology, testing, risk-control]
+    resources:
+      - ../geo-playbook/resources/templates/geo-test-log.md
     source_evidence:
       - source_id: geo-book
         location: 第 6 章、第 9 章
@@ -237,7 +249,7 @@ capabilities:
     intents: [应对 AI 回答中的负面口碑, 处理智商税/骗局类 query 的占位, 排负面 query 优先级]
     keywords: [智商税, 割韭菜, 靠谱吗, 负面语义, 占位, 阅卷权, 辟谣, 口碑, scam, reputation defense]
     also_read: [golden-question-formulas, geo-channel-map, geo-query-research]
-    card: cards/negative-semantic-occupy.md
+    card: ../geo-playbook/references/capabilities/negative-semantic-occupy.md
     frontmatter:
       description: >-
         当品牌方发现 AI 回答自家产品时引用了吐槽帖/负面内容，或面对"智商税/割韭菜/靠谱吗/骗局"类 query 要决定怎么回应时使用。
@@ -262,13 +274,16 @@ capabilities:
     intents: [解决地图搜不到/点评排名低, 新店开业线上信息搭建, 本地口碑与评价运营]
     keywords: [LSO, 本地搜索, 地图, 高德, 百度地图, 大众点评, 美团, NAP, 评价运营, 认领门店, local, reviews]
     also_read: [geo-channel-map, golden-question-formulas]
-    card: cards/lso-local-playbook.md
+    card: ../geo-playbook/references/capabilities/lso-local-playbook.md
     frontmatter:
       description: >-
         当本地商户（门店、教培、餐饮等）问"地图上搜不到我/点评排名低/同行比我靠前/新店开业线上怎么弄"时使用。
         三要素（相关性/距离/知名度）诊断 + 五步执行：认领校准图钉→统一 NAP→补齐货架→评价运营→本地内容带地名。
         不适用于无地理属性的线上业务。
       tags: [lso, local, maps, reviews]
+    resources:
+      - ../geo-playbook/resources/templates/nap-table.md
+      - ../geo-playbook/resources/schema-local-business.json
     source_evidence:
       - source_id: geo-book
         location: 第 2 章
@@ -287,7 +302,7 @@ capabilities:
     intents: [让视频被抖音搜索收录, 让 AI 引擎引用自己的视频, 规划视频与图文的形态分工]
     keywords: [VSO, 视频搜索, 抖音搜索, 字幕, 合集, 标题, 语音搜索, 答案胶囊, 豆包引抖音, video search, subtitle]
     also_read: [geo-channel-map, geo-query-research, one-fish-multi-platform]
-    card: cards/vso-video-optimization.md
+    card: ../geo-playbook/references/capabilities/vso-video-optimization.md
     frontmatter:
       description: >-
         当用户做短视频内容，问"视频怎么被搜到/抖音搜索怎么做/豆包为什么引别人家视频不引我的/字幕和合集要不要认真做"时使用。
@@ -312,13 +327,17 @@ capabilities:
     intents: [优化网页被精选摘要/答案卡片引用, 制作 FAQ 页与 schema 标记, 判断 FAQPage 还值不值得做]
     keywords: [AEO, 精选摘要, 位置零, FAQPage, schema, Speakable, 结构化问答, 答案引擎, featured snippet, position zero]
     also_read: [citable-content-spec, brand-data-infrastructure, one-fish-multi-platform, ai-crawler-access]
-    card: cards/aeo-answer-optimization.md
+    card: ../geo-playbook/references/capabilities/aeo-answer-optimization.md
     frontmatter:
       description: >-
         当用户有官网/FAQ/帮助页，问"怎么让百度精选摘要或语音助手直接引用我的内容/FAQ 页怎么做/FAQPage schema 还有必要吗"时使用。
         三板斧：问题作标题+第一段 40-60 字结论；JSON-LD 结构化标记；圈朗读段。配"成本类问答页五步"占位流程。
         Google 富摘要红利已退潮但降低机器理解成本的价值在 AI 时代更重要。
       tags: [aeo, schema, faq, snippet]
+    resources:
+      - ../geo-playbook/resources/schema-faqpage.json
+      - ../geo-playbook/resources/schema-howto.json
+      - ../geo-playbook/resources/schema-article-author.json
     source_evidence:
       - source_id: geo-book
         location: 第 4 章
@@ -337,7 +356,7 @@ capabilities:
     intents: [制定品牌 AI 时代基建路线图, 建设官网事实页与结构化数据, 准备 Agent 时代的产品信息接口]
     keywords: [数据基建, 事实页, 结构化数据, Schema.org, API 化, Agent 时代, 口径对齐, fact page, structured data, agent-ready]
     also_read: [aeo-answer-optimization, geo-monitoring-iteration, negative-semantic-occupy, ai-crawler-access]
-    card: cards/brand-data-infrastructure.md
+    card: ../geo-playbook/references/capabilities/brand-data-infrastructure.md
     frontmatter:
       description: >-
         当品牌方问"GEO 之外还该长期建什么/官网怎么改才能被 AI 用上/Agent 能下单时要准备什么"时使用。三层路线图：
@@ -345,12 +364,15 @@ capabilities:
         层 1/2 的 Agent 收益属原书推演，执行动作本身有独立价值。
       tags: [infrastructure, fact-page, schema, agent]
     resources:
-      - resources/schema-organization.json
-      - resources/schema-software-saas.json
-      - resources/schema-product-ecommerce.json
-      - resources/schema-local-business.json
-      - resources/schema-article-author.json
-      - resources/schema-website-searchaction.json
+      - ../geo-playbook/resources/schema-organization.json
+      - ../geo-playbook/resources/schema-website-searchaction.json
+      - ../geo-playbook/resources/schema-breadcrumb.json
+      - ../geo-playbook/resources/schema-article-author.json
+      - ../geo-playbook/resources/schema-software-saas.json
+      - ../geo-playbook/resources/schema-product-ecommerce.json
+      - ../geo-playbook/resources/schema-local-business.json
+      - ../geo-playbook/resources/schema-faqpage.json
+      - ../geo-playbook/resources/schema-howto.json
     source_evidence:
       - source_id: geo-book
         location: 第 11 章（推演章，层 3 有实测支撑）
@@ -373,13 +395,16 @@ capabilities:
     intents: [决定 robots.txt 对 AI 爬虫的放行策略, 判断要不要部署 llms.txt, 排查网站内容抓不到的问题]
     keywords: [AI 爬虫, robots.txt, GPTBot, Bytespider, OAI-SearchBot, PerplexityBot, 屏蔽, llms.txt, 抓取, SSR, ai crawler, crawler access]
     also_read: [brand-data-infrastructure, aeo-answer-optimization, geo-monitoring-iteration]
-    card: cards/ai-crawler-access.md
+    card: ../geo-playbook/references/capabilities/ai-crawler-access.md
     frontmatter:
       description: >-
         当用户问"要不要屏蔽 GPTBot/Bytespider 等 AI 爬虫、robots.txt 怎么写 AI 规则、llms.txt 是什么要不要做、
         AI 引擎抓不到我的网站"时使用。AI 爬虫按用途分三类（训练/检索/用户触发）分别决策，检索类屏蔽=立即失去被引机会；
         llms.txt 是筛选索引约定（站点采用≠引擎读取，截至 2026-05 无厂商确认）。补充自 GEO Wiki（CC BY 4.0），超出原书范围。
       tags: [crawler, robots-txt, llms-txt, accessibility]
+    resources:
+      - ../geo-playbook/resources/robots-ai-crawlers.txt
+      - ../geo-playbook/resources/llms.txt.template
     source_evidence:
       - source_id: geo-wiki
         location: AI 爬虫 ai-crawlers、llms.txt（CC BY 4.0，2026-09 核对）

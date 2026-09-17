@@ -5,14 +5,16 @@
 **从《从 SEO 到 GEO》蒸馏的可执行 Agent Skill —— 13 张方法论能力卡，让 AI 助手按实测打法回答 AI 搜索优化问题**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0_定稿-0b6bcb)](CHANGELOG.md)
 [![Format](https://img.shields.io/badge/format-Agent_Skills_(SKILL.md)-blueviolet)](geo-playbook/SKILL.md)
 [![Capabilities](https://img.shields.io/badge/能力卡-13张-181825)](#-13-张能力卡)
-[![Tests](https://img.shields.io/badge/测试-触发31%2F31·评测32%2F32-success)](#-质量与测试)
+[![Templates](https://img.shields.io/badge/随包模板-19个-1e66f5)](#-随包模板)
+[![Validate](https://img.shields.io/badge/校验-0_errors-success)](#-质量与测试)
 [![Origin](https://img.shields.io/badge/原书-JingHao‑Leon/geo--book-orange)](https://github.com/JingHao-Leon/geo-book)
 
 **适配：Claude Code · ZCode · WorkBuddy · CodeBuddy · Codex · Cursor · 任意自定义指令 Agent**
 
-[快速开始](#-快速开始) · [使用教程](docs/tutorials/01-快速上手.md) · [能力卡总表](#-13-张能力卡) · [精华长文](docs/DIGEST.md) · [FAQ](#-faq)
+[快速开始](#-快速开始) · [使用教程](docs/tutorials/01-快速上手.md) · [能力卡总表](#-13-张能力卡) · [随包模板](#-随包模板) · [精华长文](docs/DIGEST.md) · [FAQ](#-faq)
 
 </div>
 
@@ -32,13 +34,14 @@
 
 **给谁用**：做内容营销/增长的人、想把官网改成"AI 能用"的 B 端团队、本地门店、给客户做 GEO 服务的乙方、研究 GEO 方法论的 agent 开发者。
 
-## ✨ 五个装它的理由
+## ✨ 六个装它的理由
 
 - **不是金句集，是可执行方法**：每张卡都有触发场景、执行步骤与输入/输出契约、边界与反例——agent 知道什么时候用、怎么算做完、什么时候该停下来问你。
 - **一手实测打底**：原书 2026-08-05 对豆包/DeepSeek/腾讯元宝/通义千问/文心一言/Kimi 六引擎做了 12 题 × 6 引擎实测 + 97 次多次采样，每条建议都能追到实测数字。
 - **三源交叉印证**：原书（MIT）+ GEO Wiki 百科（CC BY 4.0）+ GeoLook CN-GEO 数据集 187,818 条引用实算（MIT），卡内逐条标注来源与口径。
+- **给得出交付物**：19 个随包模板——9 个国内口径 JSON-LD、robots.txt 三类放行模板、llms.txt 模板，加 7 张各卡承诺的产出物表格（渠道分工 / query 分级 / 稿件体检 / 分发对照 / 实测记录 / 双周迭代 / NAP）。
 - **守红线的 agent**：刷好评、编数据、伪装中立洗地、高频批量抓取会被明确拒绝并给合规替代——"铺出来的东西经不起查，上榜就是上榜示众"。
-- **经过测试**：触发盲测、跨技能诱饵、32 个真实任务输出评测全通过（见下文质量一节）。
+- **经过测试**：触发盲测、跨技能诱饵、真实任务输出评测全通过，仓库自带一致性校验脚本（见下文质量一节）。
 
 ## 🚀 快速开始
 
@@ -78,7 +81,7 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 | 教程 | 内容 | 适合 |
 |---|---|---|
 | [01 · 快速上手](docs/tutorials/01-快速上手.md) | 5 分钟安装、3 个验证 prompt、路由逻辑、没触发怎么办 | 所有人，先读这篇 |
-| [02 · 七个实战场景](docs/tutorials/02-场景教程.md) | 渠道决策 / 对比稿 / 旧稿体检 / 一稿多发 / 监测算账 / 负面应对 / AI 爬虫——每个场景给"你说什么→agent 怎么走→得到什么→避坑" | 日常使用者 |
+| [02 · 八个实战场景](docs/tutorials/02-场景教程.md) | 渠道决策 / 对比稿 / 旧稿体检 / 一稿多发 / 监测算账 / 负面应对 / AI 爬虫 / 从零跑完整项目——每个场景给"你说什么→agent 怎么走→得到什么→避坑" | 日常使用者 |
 | [03 · 进阶](docs/tutorials/03-进阶.md) | 先测后投实测规程、判停点哲学、归因三段算账、配合 GeoLook 跑自动化、数据保鲜 | 操盘手/乙方 |
 | [DIGEST 精华长文](docs/DIGEST.md) | 约 9000 字读懂全书方法论（含陷阱与作者局限） | 不装技能先看原理的人 |
 
@@ -100,6 +103,20 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 | 12 | brand-data-infrastructure | 数据基建三层；官网=事实源非引用源 | 原书 ch11 + GeoLook |
 | 13 | ai-crawler-access | AI 爬虫三类放行策略 + llms.txt + 抓不到排查 | **GEO Wiki + GeoLook**（补充） |
 
+跨卡任务（"从零跑一个 GEO 项目""给客户出完整方案"）走 [`references/workflow.md`](geo-playbook/references/workflow.md)——先做适用性确认（国内/海外、是否本地门店、有无内容资产），再走 0→6 步依赖顺序，每步给入口卡、该问什么、产出模板、参考工期与判停点，另附七条快捷路径。
+
+## 📐 随包模板
+
+`geo-playbook/resources/`（索引见 [resources/README.md](geo-playbook/resources/README.md)），按需读取，不占常驻上下文。
+
+| 类别 | 内容 |
+|---|---|
+| **JSON-LD 结构化数据（国内口径）** | organization / software-saas / product-ecommerce / local-business / article-author / website-searchaction / faqpage / howto / breadcrumb 共 9 个。`addressCountry: CN`、`+86`、`CNY`、`zh-CN`，`sameAs` 指向知乎、微博、百度百科、企查查、高德、点评——打海外市场时按 resources/README.md 说明替换 |
+| **爬虫与索引文件** | `robots-ai-crawlers.txt`（按训练/检索/用户触发三类放行，含 26 令牌全名单与 RFC 9309 specificity 陷阱）、`llms.txt.template`（硬格式 + 收录三档 + 误用清单） |
+| **产出物表格**（`templates/`） | 渠道分工表、query 分级表、稿件体检表（四硬指标 + 七信号 + 段落评分 + E-E-A-T）、分发对照表、实测记录表（含证据等级 A–D）、双周迭代表（含归因三段与报告七陷阱）、NAP 对照表 |
+
+模板是填空件不是成品——填之前先读对应能力卡。JSON-LD 九份由 `scripts/gen_schema_templates.py` 统一生成，改模板请改脚本再重跑。
+
 ## 🧪 质量与测试
 
 蒸馏流程：整书理解 → 五路并行提取（219 条候选）→ 三重验证（来源/可执行/任务增益）→ 晋级门 → RIA 能力卡 → 压力测试 → 编译交付。全审计轨迹在 [`docs/`](docs/)。
@@ -111,7 +128,14 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 | 实际任务输出评测（首版 12 能力 × 正常+边界） | 24/24 |
 | v0.2.0 回归（新增 AI 爬虫卡） | 触发 15/15、输出 6/6（含拒绝"全部 Disallow"反模式） |
 | v0.3.0 回归（合入 GeoLook 数据） | 输出 2/2 |
-| 产物格式校验 `validate_skill_pack` | 0 errors |
+| v0.4.0 回归（合入 geo-seo-claude 评分体系与 Schema 模板） | 输出 2/2 |
+| v0.4.2 / v0.5.0 回归（七卡穷尽审查补充块） | 两场景各 38/40 PASS，补充块利用率 10/10（报告存档于 [`docs/supplement-audits/`](docs/supplement-audits/)） |
+| v1.0.0 回归（workflow 编排 + 19 个模板） | 四场景 PASS：38 / 37 / 38 / 39（满分 40）；共修复 11 项缺陷，5 项高严重度。报告见 [`docs/supplement-audits/`](docs/supplement-audits/) |
+| 仓库一致性校验 `python scripts/validate.py` | 0 errors 0 warnings |
+
+`scripts/validate.py` 每次改动后跑一遍，它检查：13 张卡的六段结构完整、SKILL.md 路由表 ↔ capability-index ↔ cheatsheet ↔ verified.yaml ↔ 磁盘文件四方一致、全仓相对链接可解析、**技能内反引号裸路径能从所在文件打开**、JSON-LD 模板可解析且 `@context`/`@type` 正确、AGENTS.md 与 prompts 引用的路径存在。
+
+v1.0.0 的回归评测把 workflow 编排与模板按 agent 的真实加载路径跑了四个场景，修掉 11 项缺陷（含"跨境电商"误入国内流程、体检表把合规短文判成全 fail、schema 模板预填假评分三项会导致实际答错或触碰红线的问题）。该轮为撰写者自评而非独立盲测，报告里已标明局限。
 
 亮点场景：agent 会**拒绝**"刷一百条五星好评""1 小时连问 500 次采样""装中立用户洗地""AI 爬虫全部 Disallow"，并给出合规替代方案——边界是功能，不是摆设。
 
@@ -137,16 +161,28 @@ mkdir -p ~/.claude/skills && cp -r geo-playbook ~/.claude/skills/
 ## 📦 目录结构
 
 ```text
-geo-playbook/          # 安装这个：Agent Skill（SKILL.md + 13 能力卡 + 速查/术语/概览）
+geo-playbook/          # 安装这个：Agent Skill
+  SKILL.md             #   入口：触发描述 + 核心原则 + 路由表 + 回答纪律
+  references/
+    capabilities/      #   13 张 RIA 能力卡（六段结构 R/I/A1/A2/E/B + 相关能力）
+    workflow.md        #   全流程编排：原书五步 + 适用性确认 + 先测后投闸门
+    cheatsheet.md      #   速查：规则一句话 + 关键数字（带口径）+ 红线 + 判停点
+    glossary.md        #   术语词典
+    overview.md        #   全书参考区与数据边界
+    capability-index.md#   完整意图与关键词索引
+  resources/           #   19 个随包模板（JSON-LD / robots / llms.txt / 产出物表格）
 AGENTS.md              # Codex / Cursor 等的通用入口（含完整路由表与硬性纪律）
 prompts/               # 纯提示词版：粘贴进任意"自定义指令"即用
-bundle/                # Capability Bundle 事实源（verified.yaml + 13 张 RIA 卡），可重新编译
+bundle/verified.yaml   # 能力登记表（三重验证结论、晋级判定、意图/关键词、资源清单）
+scripts/
+  validate.py          # 一致性校验：结构 / 四方一致 / 链接 / JSON（CI 也跑它）
+  gen_schema_templates.py  # 九份 JSON-LD 模板的生成器
 docs/
   tutorials/           # 三篇使用教程（快速上手 / 实战场景 / 进阶）
   DIGEST.md            # 精华长文（约 9000 字）
   BOOK_OVERVIEW.md     # 阶段 0：整书理解（骨架/术语/批判/15 项关键任务）
   verified.md          # 三重验证记录；coverage-audit.md 覆盖审计
-  test-results.md      # 全部测试结果与局限声明
+  test-results.md      # 全部测试结果与局限声明；supplement-audits/ 回归报告
   candidates/ rejected/ acceptance/   # 审计轨迹（原始候选/去重/评测用例）
 CHANGELOG.md           # 版本历史
 ```
@@ -175,7 +211,12 @@ CHANGELOG.md           # 版本历史
 
 <details>
 <summary><b>能自己改/加能力卡吗？</b></summary>
-能。<code>bundle/</code> 是事实源（能力卡 + verified.yaml 登记表）；直接改 <code>geo-playbook/references/capabilities/</code> 下的卡片也行——注意保持六段结构（R/I/A1/A2/E/B）并同步登记表，改动建议走 PR 以便回归测试。
+能。<code>geo-playbook/</code> 是唯一事实源——直接改 <code>geo-playbook/references/capabilities/</code> 下的卡片，注意保持六段结构（R/I/A1/A2/E/B + 相关能力）。改完做三件事：① 同步 <code>bundle/verified.yaml</code> 登记表（意图、关键词、also_read、resources）；② 同步 SKILL.md 路由表、<code>capability-index.md</code>、<code>cheatsheet.md</code>；③ 跑 <code>python scripts/validate.py</code>，0 errors 才提 PR（CI 也会跑）。补充块统一写成 <code>**补充 · 标题**（来源）</code>，不要用编号。
+</details>
+
+<details>
+<summary><b>那些 JSON-LD 模板能直接上线吗？</b></summary>
+不能，它们是填空件。占位符（<code>YOURDOMAIN.com</code>、<code>XXX</code>、<code>YYYY-MM-DD</code>）必须全部替换成真实值，且<b>标记内容必须与服务端输出的可见文字一致</b>——无效或不一致的标记比不加更糟：实时抓取型引擎（ChatGPT / Perplexity）会把 JSON-LD 当正文读，受控观察发现它们会照搬虚构标记里的值。另外别对模板里的示例评分（如 <code>ratingValue: 4.8</code>）照抄，那是占位不是你的数据。
 </details>
 
 <details>

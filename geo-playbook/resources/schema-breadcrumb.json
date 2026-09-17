@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://YOURDOMAIN.com/CURRENT_PAGE/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://YOURDOMAIN.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "栏目名",
+      "item": "https://YOURDOMAIN.com/SECTION"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "当前页标题",
+      "item": "https://YOURDOMAIN.com/SECTION/CURRENT_PAGE"
+    }
+  ]
+}

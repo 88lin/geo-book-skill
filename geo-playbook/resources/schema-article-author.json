@@ -2,8 +2,8 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "@id": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG/#article",
-  "headline": "ARTICLE_TITLE",
-  "description": "ARTICLE_DESCRIPTION",
+  "headline": "标题：直接用目标 query 的用户原话，可带更新日期",
+  "description": "首段 40-60 字结论，与页面可见首屏逐字一致",
   "url": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -16,36 +16,37 @@
   "author": {
     "@type": "Person",
     "@id": "https://YOURDOMAIN.com/about/AUTHOR_SLUG/#person",
-    "name": "AUTHOR_NAME",
+    "name": "作者真名或可核实的固定笔名",
     "url": "https://YOURDOMAIN.com/about/AUTHOR_SLUG",
     "image": "https://YOURDOMAIN.com/images/authors/AUTHOR_IMAGE.jpg",
-    "jobTitle": "AUTHOR_JOB_TITLE",
-    "description": "AUTHOR_BIO_SHORT",
+    "jobTitle": "职位",
+    "description": "一句话资历：做过什么、多少年、可核实的成果",
     "knowsAbout": [
-      "EXPERTISE_1",
-      "EXPERTISE_2",
-      "EXPERTISE_3"
+      "专长 1",
+      "专长 2",
+      "专长 3"
     ],
     "sameAs": [
-      "https://www.linkedin.com/in/AUTHOR_LINKEDIN",
-      "https://twitter.com/AUTHOR_TWITTER",
-      "https://github.com/AUTHOR_GITHUB",
-      "https://en.wikipedia.org/wiki/AUTHOR_WIKIPEDIA"
+      "https://www.zhihu.com/people/AUTHOR_ZHIHU",
+      "https://weibo.com/AUTHOR_WEIBO",
+      "https://juejin.cn/user/AUTHOR_JUEJIN",
+      "https://blog.csdn.net/AUTHOR_CSDN",
+      "https://github.com/AUTHOR_GITHUB"
     ],
     "alumniOf": {
       "@type": "CollegeOrUniversity",
-      "name": "UNIVERSITY_NAME"
+      "name": "毕业院校"
     },
     "worksFor": {
       "@type": "Organization",
-      "name": "YOUR_ORGANIZATION_NAME",
+      "name": "所属机构",
       "@id": "https://YOURDOMAIN.com/#organization"
     }
   },
   "publisher": {
     "@type": "Organization",
     "@id": "https://YOURDOMAIN.com/#organization",
-    "name": "YOUR_ORGANIZATION_NAME",
+    "name": "品牌全称",
     "logo": {
       "@type": "ImageObject",
       "url": "https://YOURDOMAIN.com/logo.png"
@@ -56,12 +57,20 @@
     "@id": "https://YOURDOMAIN.com/blog/ARTICLE_SLUG"
   },
   "wordCount": "XXXX",
-  "articleSection": "CATEGORY",
-  "keywords": "KEYWORD_1, KEYWORD_2, KEYWORD_3",
+  "articleSection": "栏目",
+  "keywords": "关键词 1, 关键词 2, 关键词 3",
+  "citation": [
+    "引用的权威来源标题与链接 1",
+    "引用的权威来源标题与链接 2"
+  ],
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": [".article-summary", ".key-takeaway", "h2"]
+    "cssSelector": [
+      ".article-summary",
+      ".key-takeaway",
+      "h2"
+    ]
   },
   "isAccessibleForFree": true,
-  "inLanguage": "en-US"
+  "inLanguage": "zh-CN"
 }

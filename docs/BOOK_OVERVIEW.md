@@ -8,7 +8,7 @@
 - **作者**: JingHao-Leon（与 AI 协作完成）
 - **出版/发布时间**: 2026-08-05（成书与数据实测同日）
 - **内容类型**: 实操手册（mdBook，README + 12 章，约 6 万字）
-- **版本来源**: /home/developer/.zcode/workspace/default/geo-book/（GitHub: JingHao-Leon/geo-book，MIT）
+- **版本来源**: [JingHao-Leon/geo-book](https://github.com/JingHao-Leon/geo-book)（MIT）
 - **处理时间**: 2026-09-13
 
 ---

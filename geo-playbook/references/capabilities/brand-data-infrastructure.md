@@ -20,18 +20,18 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 
 按角色的节奏（三类读者行动清单）：**品牌方**——本周盘点官网事实页；三个月内核心产品信息结构化、全渠道口径对齐；持续监测出现率与口径、负面词条占位。**内容创作者**——每篇结论前置+带日期真实数字+5 维对比表；渠道按实测优先级铺；长期只吃真实数据和真实经验。**工具服务商**——监测控频或接现成数据源；产品机会从"监测可见度"升级到"建设可调性"。
 
-**补充定位校正（GeoLook CN-GEO 数据集 v2.0.1，MIT）**：品牌官网类信源只占国内 AI 引用全库的 **1.37%**——官方事实页的价值在"**事实源**"（让 AI 描述你时口径正确、不出事实错误），不在"引用源"（引用大头在内容平台与榜单站）。建事实页的目标是口径一致与可被抓取，不是指望官网本身带来大量引用。
+**补充 · 定位校正**（GeoLook CN-GEO 数据集 v2.0.1，MIT）：品牌官网类信源只占国内 AI 引用全库的 **1.37%**——官方事实页的价值在"**事实源**"（让 AI 描述你时口径正确、不出事实错误），不在"引用源"（引用大头在内容平台与榜单站）。建事实页的目标是口径一致与可被抓取，不是指望官网本身带来大量引用。
 
-**补充二（来自 geo-seo-claude，MIT，github.com/zubair-trabzada/geo-seo-claude）——6 个可直接填的 JSON-LD 模板**随本技能分发（resources/ 目录）：organization（组织实体主干）、software-saas（SaaS 产品）、product-ecommerce（电商商品）、local-business（本地商户）、article-author（文章与作者，E-E-A-T 信号）、website-searchaction（站内搜索）。部署顺序：先建实体主干（Organization），再声明页面类型，最后才考虑答案形态类标记（FAQ/HowTo）；标记必须与服务端输出的可见内容一致——**解析器会丢弃不合规标记，而实时抓取型模型会把整个块当页面文字读**，两类读者对错误标记的处理恰好相反。
+**补充 · JSON-LD 模板**（geo-seo-claude，MIT，github.com/zubair-trabzada/geo-seo-claude）——9 个可直接填的模板随本技能分发（resources/ 目录）：organization（组织实体主干）、software-saas（SaaS 产品）、product-ecommerce（电商商品）、local-business（本地商户）、article-author（文章与作者，E-E-A-T 信号）、website-searchaction（站内搜索），以及本仓库补充编写的 faqpage、howto、breadcrumb 三个。原 6 个源自 geo-seo-claude 并已本地化为国内口径。部署顺序：先建实体主干（Organization），再声明页面类型，最后才考虑答案形态类标记（FAQ/HowTo）；标记必须与服务端输出的可见内容一致——**解析器会丢弃不合规标记，而实时抓取型模型会把整个块当页面文字读**，两类读者对错误标记的处理恰好相反。
 
-**补充三（改编自 GEO Wiki《面向 AI 的 Schema.org》，CC BY 4.0；GeoLook 事实卡实践）——标记的正确预期与优先级：**
+**补充 · 标记的正确预期与优先级**（改编自 GEO Wiki《面向 AI 的 Schema.org》，CC BY 4.0；GeoLook 事实卡实践）：
 
 - **标记 ≠ 引用**：Schema 标记不是排名信号也不是引用信号——它作用于检索前的页面解析与实体识别，不参与由可引用性与 E-E-A-T 决定的采信环节。"为 FAQ 加标记并不会让其中的答案更容易被引用"，答案是否被用取决于可见正文的写法。
 - **两类读者对错误标记的处理相反**（searchVIU 2025）：依赖搜索索引的 AI（Google AI Overviews、Bing Copilot）会解析标记；实时抓取页面的对话引擎（ChatGPT、Perplexity）只把 JSON-LD 当普通正文读。
 - **sameAs 是最高优先级属性**：优先给 Organization/Person 正确设置 sameAs（Wikipedia、Wikidata、官网、社媒主页），它决定知识图谱里"你是谁"的消歧；类型优先级 Organization/Person > Article/WebSite/BreadcrumbList > FAQPage/HowTo（最后两者只是声明解析器本可识别的结构，Google 的 HowTo 富结果也已移除）。
 - **事实卡实践**（GeoLook）：把品牌事实（成立时间、价格、客户、资质）维护成一张带来源、核验日期、证据等级（A 官方已证实 / B 第三方可佐证 / C 内部待授权 / D 需补证 / E 禁止使用）的事实卡，作为 llms.txt、JSON-LD、内容稿的唯一口径来源；每条事实标证据等级，查不到标"待确认"，绝不用常识填充。
 
-**补充四（geo-seo-claude + GEO Wiki，MIT / CC BY 4.0，2026-09-14 穷尽审查）——结构化数据的审计细则与打分：**
+**补充 · 结构化数据的审计细则与打分**（geo-seo-claude + GEO Wiki，MIT / CC BY 4.0，2026-09-14 穷尽审查）：
 
 - **四级台阶审计法**：覆盖（原始 HTML 含 JSON-LD，非 JS 注入——AI 爬虫不执行 JS，JS 注入的 schema 会被整体漏掉）→ 有效（语法 + @context）→ 一致（@id 唯一、页面内引用可解析、无重复实体、有稳定 Organization/Person 节点）→ 属实（标记标题 vs 可见标题、作者可见、日期合理；抽查最多 10 个 sameAs）。**无效或不一致的标记比不加更糟**：实时抓取型 AI 把 JSON-LD 当正文读，受控观察发现 ChatGPT/Perplexity 甚至照搬无效或虚构标记中的值。
 - **生成五规则**：@graph 合并多类型；@id 交叉引用；ISO 8601 日期；绝对 URL；放 head 由服务端输出（非 JS 注入）。speakable 用 cssSelector 圈候选段（如 .article-summary / .key-takeaway）；knowsAbout 列 3+ 主题。
@@ -74,11 +74,20 @@ AI 时代品牌基建的三层模型（餐馆比喻：从门口吆喝→点评�
 
 ## 配套资源
 
-路径相对于本文件；脚本需先检查运行条件，不因附带而自动执行。
+路径相对于本文件。模板为国内口径（`addressCountry: CN` / `+86` / `CNY` / `zh-CN`，`sameAs` 指向知乎、微博、百度百科、企查查、高德等），打海外市场时按 [resources/README.md](../../resources/README.md) 的说明替换。
 
-- [resources/schema-organization.json](../../resources/schema-organization.json)
-- [resources/schema-software-saas.json](../../resources/schema-software-saas.json)
-- [resources/schema-product-ecommerce.json](../../resources/schema-product-ecommerce.json)
-- [resources/schema-local-business.json](../../resources/schema-local-business.json)
-- [resources/schema-article-author.json](../../resources/schema-article-author.json)
-- [resources/schema-website-searchaction.json](../../resources/schema-website-searchaction.json)
+部署顺序：先建实体主干 → 再声明页面类型 → 最后才是答案形态类标记。
+
+| 顺序 | 模板 | 用途 |
+|---|---|---|
+| ① | [schema-organization.json](../../resources/schema-organization.json) | 组织实体主干，`sameAs` 优先级最高 |
+| ② | [schema-website-searchaction.json](../../resources/schema-website-searchaction.json) | 站点与站内搜索 |
+| ② | [schema-breadcrumb.json](../../resources/schema-breadcrumb.json) | 面包屑导航 |
+| ② | [schema-article-author.json](../../resources/schema-article-author.json) | 文章与作者（E-E-A-T 信号） |
+| ② | [schema-software-saas.json](../../resources/schema-software-saas.json) | SaaS 产品（三档定价） |
+| ② | [schema-product-ecommerce.json](../../resources/schema-product-ecommerce.json) | 电商商品（运费与七天无理由） |
+| ② | [schema-local-business.json](../../resources/schema-local-business.json) | 本地商户（配合 lso-local-playbook） |
+| ③ | [schema-faqpage.json](../../resources/schema-faqpage.json) | FAQ 页（不提升被引概率，只降低解析成本） |
+| ③ | [schema-howto.json](../../resources/schema-howto.json) | 操作指南 / 症状型步骤页 |
+
+⚠️ `aggregateRating` / `review` 字段的占位符是 `X.X`、`X`、`XXX` 这类填不满的形式——**有真实平台数据就填真数据，没有就整块删掉**，不要补一个看起来合理的分数。留假分上线同时踩三条：伪造评价（红线）、数字不可验证（硬指标）、被实时抓取型引擎当正文读走。

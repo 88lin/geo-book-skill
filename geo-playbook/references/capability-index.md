@@ -15,3 +15,9 @@
 | cap.geo-book.aeo-answer-optimization | AEO 答案位三板斧与占位五步 | medium | 优化网页被精选摘要/答案卡片引用；制作 FAQ 页与 schema 标记；判断 FAQPage 还值不值得做 | AEO、精选摘要、位置零、FAQPage、schema、Speakable、结构化问答、答案引擎、featured snippet、position zero | capabilities/aeo-answer-optimization.md |
 | cap.geo-book.brand-data-infrastructure | 品牌数据基建三层 | medium | 制定品牌 AI 时代基建路线图；建设官网事实页与结构化数据；准备 Agent 时代的产品信息接口 | 数据基建、事实页、结构化数据、Schema.org、API 化、Agent 时代、口径对齐、fact page、structured data、agent-ready | capabilities/brand-data-infrastructure.md |
 | cap.geo-book.ai-crawler-access | AI 爬虫可访问性与 llms.txt（补充自 GEO Wiki） | high | 决定 robots.txt 对 AI 爬虫的放行策略；判断要不要部署 llms.txt；排查网站内容抓不到的问题 | AI 爬虫、robots.txt、GPTBot、Bytespider、OAI-SearchBot、PerplexityBot、屏蔽、llms.txt、抓取、SSR、ai crawler、crawler access | capabilities/ai-crawler-access.md |
+
+---
+
+- 跨卡任务（完整项目、"第一步做什么"）的执行编排见 [workflow.md](workflow.md)。
+- 规则与关键数字速查见 [cheatsheet.md](cheatsheet.md)；随包模板索引见 [../resources/README.md](../resources/README.md)。
+- 本表未覆盖的意图 = 超出本书范围，明确告知，不要硬套。

@@ -2,7 +2,8 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://YOURDOMAIN.com/#organization",
-  "name": "YOUR_ORGANIZATION_NAME",
+  "name": "品牌全称（与营业执照一致）",
+  "alternateName": "品牌常用简称",
   "url": "https://YOURDOMAIN.com",
   "logo": {
     "@type": "ImageObject",
@@ -10,51 +11,81 @@
     "width": 600,
     "height": 60
   },
-  "description": "YOUR_ORGANIZATION_DESCRIPTION",
+  "description": "一句话说清你是谁、为谁解决什么问题（40-60 字，与官网首屏首段逐字一致）",
   "foundingDate": "YYYY-MM-DD",
   "founder": {
     "@type": "Person",
-    "name": "FOUNDER_NAME",
-    "url": "https://YOURDOMAIN.com/about/FOUNDER",
+    "name": "创始人姓名",
+    "url": "https://YOURDOMAIN.com/about/founder",
     "sameAs": [
-      "https://www.linkedin.com/in/FOUNDER_LINKEDIN",
-      "https://twitter.com/FOUNDER_TWITTER"
+      "https://www.zhihu.com/people/ZHIHU_ID",
+      "https://weibo.com/WEIBO_ID"
     ]
   },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-XXX-XXX-XXXX",
-    "contactType": "customer service",
-    "email": "contact@YOURDOMAIN.com",
-    "availableLanguage": ["English"]
-  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+86-400-XXX-XXXX",
+      "contactType": "customer service",
+      "email": "support@YOURDOMAIN.com",
+      "availableLanguage": [
+        "zh-CN"
+      ],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+86-XXX-XXXX-XXXX",
+      "contactType": "sales",
+      "email": "sales@YOURDOMAIN.com",
+      "availableLanguage": [
+        "zh-CN"
+      ]
+    }
+  ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "YOUR_STREET",
-    "addressLocality": "YOUR_CITY",
-    "addressRegion": "YOUR_STATE",
-    "postalCode": "YOUR_ZIP",
-    "addressCountry": "US"
+    "streetAddress": "XX 区 XX 路 XX 号 XX 座 XX 室",
+    "addressLocality": "城市（如：杭州市）",
+    "addressRegion": "省/直辖市（如：浙江省）",
+    "postalCode": "XXXXXX",
+    "addressCountry": "CN"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/YOUR_LINKEDIN",
-    "https://www.youtube.com/@YOUR_YOUTUBE",
-    "https://www.reddit.com/r/YOUR_SUBREDDIT",
-    "https://twitter.com/YOUR_TWITTER",
-    "https://www.facebook.com/YOUR_FACEBOOK",
+    "https://www.zhihu.com/org/YOUR_ZHIHU",
+    "https://weibo.com/YOUR_WEIBO",
+    "https://baike.baidu.com/item/YOUR_BAIKE",
+    "https://space.bilibili.com/YOUR_BILIBILI",
+    "https://www.xiaohongshu.com/user/profile/YOUR_XHS",
+    "https://www.douyin.com/user/YOUR_DOUYIN",
+    "https://www.qcc.com/firm/YOUR_QCC.html",
+    "https://gitee.com/YOUR_GITEE",
     "https://github.com/YOUR_GITHUB",
-    "https://www.crunchbase.com/organization/YOUR_CRUNCHBASE",
-    "https://en.wikipedia.org/wiki/YOUR_WIKIPEDIA",
     "https://www.wikidata.org/wiki/YOUR_WIKIDATA_ID"
   ],
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
     "value": "XX"
   },
-  "areaServed": "US",
+  "areaServed": {
+    "@type": "Country",
+    "name": "CN"
+  },
   "knowsAbout": [
-    "TOPIC_1",
-    "TOPIC_2",
-    "TOPIC_3"
-  ]
+    "主营领域 1",
+    "主营领域 2",
+    "主营领域 3"
+  ],
+  "inLanguage": "zh-CN"
 }

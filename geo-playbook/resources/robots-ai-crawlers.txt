@@ -1,0 +1,93 @@
+# robots.txt — AI 爬虫按用途三类放行模板
+#
+# 配合能力卡 references/capabilities/ai-crawler-access.md 使用。
+# 三条使用前提（照抄前必读）：
+#   1. 令牌名单按 GEO Wiki 2026-08-18 核验版整理，每季度需对照各家官方文档复核——
+#      固定白名单会让新出现的爬虫默认落进通配符组。
+#   2. robots.txt 是声明不是强制（RFC 9309）。Bytespider 实测不遵守；硬限制只能走网络层（WAF / IP 段）。
+#   3. RFC 9309 的 specificity 规则不看顺序：某个 UA 一旦有专属组，通配符组对它整组失效。
+#      所以每个要放行的爬虫都必须有自己的组，不能指望它继承 "User-agent: *"。
+
+# ─────────────────────────────────────────────────────────────
+# 一、检索类：必须放行
+# 屏蔽 = 立即失去被引用机会（训练大多已发生或另有语料，检索是当下唯一的进答案通道）
+# ─────────────────────────────────────────────────────────────
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Googlebot
+User-agent: bingbot
+User-agent: Applebot
+User-agent: DuckAssistBot
+User-agent: YouBot
+User-agent: MistralAI-Index
+Allow: /
+Disallow: /admin/
+Disallow: /api/internal/
+Disallow: /*?utm_
+
+# ─────────────────────────────────────────────────────────────
+# 二、用户触发类：放行
+# 屏蔽只会让「某个用户此刻对这一页的实时查询」失败，没有收益
+# ─────────────────────────────────────────────────────────────
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: meta-externalfetcher
+User-agent: MistralAI-User
+User-agent: Google-GeminiNotebook
+User-agent: Google-Agent
+Allow: /
+Disallow: /admin/
+Disallow: /api/internal/
+
+# ─────────────────────────────────────────────────────────────
+# 三、训练类：按业务自定（默认放行，换「进入未来模型参数记忆」的机会）
+# 要屏蔽就把下面这组的 Allow 改成 Disallow: /，并注意三件事：
+#   · 屏蔽 GPTBot 不影响 ChatGPT 搜索可见性（那由 OAI-SearchBot + ChatGPT-User 决定）
+#   · Google-Extended / Applebot-Extended 不是真实 UA，只是 robots 控制令牌；
+#     Google 官方确认 Google-Extended 与搜索收录/排名无关、对 AI Overviews 也无效，
+#     它控制的是 Gemini Apps / Vertex 的 grounding 采信
+#   · Bytespider 实测不遵守 robots.txt，写在这里只是姿态
+# ─────────────────────────────────────────────────────────────
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: MistralAI-Training
+User-agent: AI2Bot
+User-agent: Bytespider
+Allow: /
+Disallow: /admin/
+Disallow: /api/internal/
+
+# ─────────────────────────────────────────────────────────────
+# 四、通配符兜底组
+# 反模式警告：这里写 "Disallow: /" 是最常见的「无意封禁」——
+# 它会封掉所有没有专属组的 AI 爬虫（包括明天才出现的检索类爬虫）。
+#
+# 注意 Crawl-delay 的作用面：按 RFC 9309 的 specificity 规则，
+# 上面三组里的爬虫各自有专属组，本组对它们整组失效——
+# 也就是说这条 Crawl-delay 不会限速任何 AI 爬虫，只作用于杂项爬虫。
+# 这是刻意的（不该给检索类爬虫限速）。另外 Googlebot 不支持 Crawl-delay，
+# 它的抓取频率只能在 Search Console 里调。
+# ─────────────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/internal/
+Disallow: /search
+Disallow: /*?utm_
+Crawl-delay: 5
+
+Sitemap: https://YOURDOMAIN.com/sitemap.xml
+
+# ─────────────────────────────────────────────────────────────
+# 部署后必须验证的三件事（只看 robots.txt 不算做完）
+#   1. 换真实 AI 爬虫 UA 实测：WAF/CDN 常按 UA 拦截，robots 放行但真实请求 403，浏览器里看不出来
+#   2. 查响应头 X-Robots-Tag：它覆盖 meta 且对图片/PDF 等非 HTML 资源同样生效，源码里看不到
+#   3. 查渲染方式：GPTBot / ClaudeBot / PerplexityBot 按纯 HTML 对待，SPA 空壳页对它们等于不存在
+#      （Googlebot 会渲染，但有可能延迟数天到数周）

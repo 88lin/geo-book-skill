@@ -1,0 +1,7 @@
+# 仓库内统一 LF，避免 Windows 检出后与生成器输出（LF）产生假 diff，
+# 也避免 CI 的 `git diff --exit-code` 因换行差异误报。
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary

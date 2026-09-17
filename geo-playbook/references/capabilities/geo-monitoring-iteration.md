@@ -16,23 +16,23 @@
 
 **度量口径换轨**（SEO→GEO）：排名/点击率/UV → 被引用率（目标 query 下 AI 是否引你）、品牌描述倾向（正面/中性/负面）、对比中的站位（和谁放一起比、分流理由是否对你有利）。"零点击的胜利"是真实胜利：用户看完 AI 答案直接下单，你的官网 UV 没变化但这单成了——盯着流量报表做 GEO 等于用体温计量体重。
 
-**补充（改编自 GEO Wiki《GEO 指标》《引用 vs 提及》，CC BY 4.0，https://geo.wiki/zh/geo-metrics）——三个口径坑与十项 KPI 速查：** ①**引用 ≠ 提及 ≠ 链接**：品牌在答案正文被点名（mention）、域名被列为来源（citation）、附了可点链接，是三种不同结果，混计会高估；②Visibility Score（品牌出现率，提及或引用都算）、Citation Rate（严格只计域名被列为来源）、Answer Inclusion Rate（查询级"是否出现"二值）三者易混，**区分时公式比名称可靠**；③行业无统一 KPI 标准，下表为商用工具口径汇总（Profound/Otterly/Ahrefs/BrightEdge/Similarweb），采购时逐项对公式：Visibility Score（整体出现率）、Citation Rate（单话题引用比例）、Citation Share（竞品集合内引用份额）、Share of Voice（相对声量）、Average Position（平均位置，三种定义并存、最易争议）、Mention Frequency（提及频次）、Answer Inclusion Rate（查询级覆盖度）、First-Cite Rate（首位引用率）、Brand Sentiment（品牌情感 −100…+100）、Source Diversity（引用引擎覆盖度）。监测工具补充：geo.wiki 免费工具（可引用性检测 /zh/tools/citability-check、Schema 检测 /zh/tools/schema-check、AI 爬虫访问检测 /zh/tools/ai-crawler-access）。
+**补充 · 三个口径坑与十项 KPI 速查**（改编自 GEO Wiki《GEO 指标》《引用 vs 提及》，CC BY 4.0，https://geo.wiki/zh/geo-metrics）： ①**引用 ≠ 提及 ≠ 链接**：品牌在答案正文被点名（mention）、域名被列为来源（citation）、附了可点链接，是三种不同结果，混计会高估；②Visibility Score（品牌出现率，提及或引用都算）、Citation Rate（严格只计域名被列为来源）、Answer Inclusion Rate（查询级"是否出现"二值）三者易混，**区分时公式比名称可靠**；③行业无统一 KPI 标准，下表为商用工具口径汇总（Profound/Otterly/Ahrefs/BrightEdge/Similarweb），采购时逐项对公式：Visibility Score（整体出现率）、Citation Rate（单话题引用比例）、Citation Share（竞品集合内引用份额）、Share of Voice（相对声量）、Average Position（平均位置，三种定义并存、最易争议）、Mention Frequency（提及频次）、Answer Inclusion Rate（查询级覆盖度）、First-Cite Rate（首位引用率）、Brand Sentiment（品牌情感 −100…+100）、Source Diversity（引用引擎覆盖度）。监测工具补充：geo.wiki 免费工具（可引用性检测 /zh/tools/citability-check、Schema 检测 /zh/tools/schema-check、AI 爬虫访问检测 /zh/tools/ai-crawler-access）。
 
 **监测结果三分支动作**：①被引→固化该内容形态，横向复制到同 cluster 的其他 query；②没被引但竞品被引→拆竞品被引那篇（赢在结论前置还是数据更实），针对性改写；③整个 query 无引用→先查 query 类型选错没有（纯定义类引用率天然低），再查信源铺错平台没有。周期两周。
 
 **工具与建制的决策**：先买或用免费工具（满足任一：无专职技术 / query 少于 50 条 / 还在验证投入）；才考虑自建（需同时满足：query 上百条跨六引擎按天追踪 + 有研发资源 + 有内部报表需求）。建议路径：免费工具验证 → SaaS 订阅 → 仅当 SaaS 成本和灵活度都成瓶颈才自建，多数团队停在第二阶段。
 
-**补充（GeoLook 归因框架，MIT）——"被引用 → 业务结果"的转化链可以分三段测量**（本包 B 段曾指出原书缺转化数据，此框架补上可测方法）：①采样测"答案里有没有你"（上游供给）；②**referrer/UTM 测 AI 带来多少会话**（各家引擎 referrer 域名清单要先在自己服务器日志/GA4 里核对；App 内打开常不带 referrer，测的是下界）；③转化事件测这些会话值多少钱（落在业务系统）。三段各自能测、各自会漏、不能互替；只有三段都测了，归因才脱离"观察相关"。
+**补充 · 归因三段**（GeoLook 归因框架，MIT）——"被引用 → 业务结果"的转化链可以分三段测量（本包 B 段曾指出原书缺转化数据，此框架补上可测方法）：①采样测"答案里有没有你"（上游供给）；②**referrer/UTM 测 AI 带来多少会话**（各家引擎 referrer 域名清单要先在自己服务器日志/GA4 里核对；App 内打开常不带 referrer，测的是下界）；③转化事件测这些会话值多少钱（落在业务系统）。三段各自能测、各自会漏、不能互替；只有三段都测了，归因才脱离"观察相关"。
 
-**补充二（改编自 geo-seo-claude 评分方法，MIT，github.com/zubair-trabzada/geo-seo-claude）——两类可量化口径：**
+**补充 · 两类可量化口径**（改编自 geo-seo-claude 评分方法，MIT，github.com/zubair-trabzada/geo-seo-claude）：
 
 ①**站点侧 GEO Score 六维加权**（适用于"我的网站 READY 程度"审计分，与引用行为监测分开算）：GEO Score = 可引用性×0.25 + 品牌权威×0.20 + E-E-A-T×0.20 + 技术×0.15 + 结构化数据×0.10 + 平台优化×0.10；90-100 极佳 / 75-89 良好 / 60-74 一般 / 40-59 差 / 0-39 几乎不可见。其中可引用性子分 = 内容可引用 35% + 品牌提及 30% + 爬虫放行 25% + llms.txt 10%。
 
 ②**品牌权威信号的平台分值表**（海外生态，监测品牌实体权威度用）：Wikipedia 30 分（最高权重）、行业/垂评平台（G2/Trustpilot/Capterra 等）25 分、Reddit 20 分、YouTube 15 分、LinkedIn 10 分。依据 Ahrefs 2025-12 对 75,000 个品牌的研究：**YouTube 与 AI 引用的相关性最强（0.737），域名评分/外链相关性弱（0.266）**——传统 SEO 权威信号对 AI 引用的解释力有限。国内引擎的对应口径参考 geo-channel-map 的信源榜（央媒/榜单站/内容平台），两套分数不可混用。
 
-**补充三（GeoLook 方法层，MIT）——指标至少四层 + 广度≠深度**：只看提及率会严重高估效果，完整口径至少四层——提及率、首位率/Top3 位置、描述准确率（AI 说的对不对，事实错误立即 P0）、引用质量（召回 + 准确）。海外引用生态还有"广度≠深度"现象：Perplexity 平均每答引 16.35 个来源、Google 12.06、ChatGPT 仅 6.88，但 ChatGPT 单条引用的平均影响力是 Google 的 5.64 倍——**"被引次数多"和"真被采纳"要分开算**。
+**补充 · 指标至少四层 + 广度≠深度**（GeoLook 方法层，MIT）：只看提及率会严重高估效果，完整口径至少四层——提及率、首位率/Top3 位置、描述准确率（AI 说的对不对，事实错误立即 P0）、引用质量（召回 + 准确）。海外引用生态还有"广度≠深度"现象：Perplexity 平均每答引 16.35 个来源、Google 12.06、ChatGPT 仅 6.88，但 ChatGPT 单条引用的平均影响力是 Google 的 5.64 倍——**"被引次数多"和"真被采纳"要分开算**。
 
-**补充四（GEO Wiki geo-metrics/zero-click 全文细目，2026-09-14 穷尽审查）：**
+**补充 · 指标定义细目与预期管理**（GEO Wiki geo-metrics/zero-click 全文，2026-09-14 穷尽审查）：
 
 - **Average Position 有 3 种不兼容定义**：A=引用列表序（Citation Order）、B=正文提及序、C=榜单位；**默认采用 A 并在报告注明**。Citation Rate 常态区间 0-30%（超 30% 通常说明话题范围过窄）；换一套查询集合结果可差 5-10 倍——**提问集必须固定并公开**。First-Cite Rate 在小样本下无意义（一周仅被引 5 次时，20%→40% 统计上无意义）。Brand Sentiment 对措辞极端敏感（中性问法 vs "X 有什么问题"结果可能完全相反）。SOV 与 Citation Share 因是否计提及可差 2-3 倍。Otterly 公式（唯一成套公开）：Brand Visibility Index = 10 + ((5 − avgPosition)/4) × 90。
 - **成熟度阶梯**（先简后全，不一步到位）：L1 无基线→只看 Source Diversity + Mention Frequency（无需竞品集合）；L2 加 Citation Rate + Position(A)；L3 加 Answer Inclusion Rate（固定提问集）；L4 加 Citation Share/SOV/First-Cite/Sentiment（竞品集合与引擎清单须稳定）；L5 全部 + 自定义复合。
@@ -40,7 +40,7 @@
 - **学术纠错**：Aggarwal KDD'24 只定义 3 项指标（Word Count / Position-Adjusted Word Count / Subjective Impression），不是 10 项 KPI 的出处，引用防张冠李戴。
 - **预期管理**：论文"最高 40%"在真实引擎约 22%、多方竞争下进一步失效；点击 AI 摘要内部链接仅约 1%（被引用带来的点击极小）；零点击损失集中在信息型与对比型查询，品牌型零点击反而增加可见度；实时检索型引擎数小时到数天可见变化但波动大；GEO 改动完整见效通常 4-8 周（平台需重新索引）；竞品全零时你的"中等"即相对强——分数相对竞品校准。
 
-**补充五（GeoLook 运营纪律，MIT，2026-09-14 穷尽审查）：**
+**补充 · 运营纪律**（GeoLook，MIT，2026-09-14 穷尽审查）：
 
 - **修复优先级判据**（P0→P2）：门票问题（抓不到/读不了）→ 事实错误（AI 说错品牌/张冠李戴/**归错行业**/价格错——直接改知识库）→ 抽取块缺口 → 高价值问题无承接 → **外部信源是 P1 不是 P2**（官网仅 1.37%）→ 长尾扩量。不许把 SEO 排名/官网流量/知名度等同 GEO 优先级。
 - **变更风险分级与复核**：低风险（纯新增）直接做；需观察（不改 URL、不改排名页核心主题）发布后 **7/14/28 天**各复核一次；高风险（robots/WAF/noindex/渲染架构）先备份、小批量、可回滚、发布后立即重跑体检；记录改动前 baseline。
@@ -89,3 +89,7 @@
 ## 相关能力
 
 上游 geo-query-research（清单）、geo-test-protocol（口径与限速）；兄弟 citable-content-spec、one-fish-multi-platform（迭代动作的执行规格）。
+
+## 配套资源
+
+- [resources/templates/monitoring-log.md](../../resources/templates/monitoring-log.md) — 双周迭代记录：四层指标、三分支动作、修复优先级 P0–P2、归因三段、变更风险分级、报告七陷阱、预期管理（第 6 步产出物）。

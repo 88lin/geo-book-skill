@@ -2,32 +2,49 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://YOURDOMAIN.com/#localbusiness",
-  "name": "YOUR_BUSINESS_NAME",
+  "name": "门店名（与高德/百度地图/点评逐字一致，含括号后缀写法）",
   "url": "https://YOURDOMAIN.com",
   "image": "https://YOURDOMAIN.com/images/storefront.jpg",
-  "description": "YOUR_BUSINESS_DESCRIPTION",
-  "telephone": "+1-XXX-XXX-XXXX",
+  "description": "门店一句话介绍：卖什么 + 商圈位置",
+  "telephone": "+86-XXX-XXXX-XXXX",
   "email": "contact@YOURDOMAIN.com",
-  "priceRange": "$$",
+  "priceRange": "¥XX-XXX",
+  "currenciesAccepted": "CNY",
+  "paymentAccepted": "微信支付, 支付宝, 现金, 银行卡",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "YOUR_STREET",
-    "addressLocality": "YOUR_CITY",
-    "addressRegion": "YOUR_STATE",
-    "postalCode": "YOUR_ZIP",
-    "addressCountry": "US"
+    "streetAddress": "XX 区 XX 路 XX 号（与各平台一字不差）",
+    "addressLocality": "城市（如：杭州市）",
+    "addressRegion": "省/直辖市（如：浙江省）",
+    "postalCode": "XXXXXX",
+    "addressCountry": "CN"
   },
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "XX.XXXXXX",
-    "longitude": "-XX.XXXXXX"
+    "longitude": "XXX.XXXXXX"
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
       "opens": "09:00",
-      "closes": "17:00"
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
     }
   ],
   "areaServed": {
@@ -35,44 +52,49 @@
     "geoMidpoint": {
       "@type": "GeoCoordinates",
       "latitude": "XX.XXXXXX",
-      "longitude": "-XX.XXXXXX"
+      "longitude": "XXX.XXXXXX"
     },
-    "geoRadius": "50 mi"
+    "geoRadius": "5000"
   },
   "sameAs": [
-    "https://www.google.com/maps/place/YOUR_GOOGLE_MAPS_URL",
-    "https://www.yelp.com/biz/YOUR_YELP_URL",
-    "https://www.facebook.com/YOUR_FACEBOOK",
-    "https://www.linkedin.com/company/YOUR_LINKEDIN",
-    "https://www.youtube.com/@YOUR_YOUTUBE",
-    "https://www.bbb.org/YOUR_BBB_URL"
+    "https://www.amap.com/place/YOUR_AMAP_POI",
+    "https://map.baidu.com/poi/YOUR_BAIDU_POI",
+    "https://www.dianping.com/shop/YOUR_DIANPING_ID",
+    "https://meituan.com/YOUR_MEITUAN",
+    "https://www.douyin.com/user/YOUR_DOUYIN",
+    "https://www.xiaohongshu.com/user/profile/YOUR_XHS"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
+    "ratingValue": "X.X",
     "reviewCount": "XX",
     "bestRating": "5"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Services",
+    "name": "服务项目",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "SERVICE_NAME_1",
-          "description": "SERVICE_DESCRIPTION_1"
-        }
+          "name": "服务 1",
+          "description": "服务 1 说明"
+        },
+        "price": "XXX",
+        "priceCurrency": "CNY"
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "SERVICE_NAME_2",
-          "description": "SERVICE_DESCRIPTION_2"
-        }
+          "name": "服务 2",
+          "description": "服务 2 说明"
+        },
+        "price": "XXX",
+        "priceCurrency": "CNY"
       }
     ]
-  }
+  },
+  "inLanguage": "zh-CN"
 }

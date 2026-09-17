@@ -46,7 +46,7 @@ GeoLook 是开源自托管的全流程 GEO 实施平台（Skill 形态，含抓�
 
 ## 补充来源三：geo-seo-claude（zubair-trabzada，MIT，2026-09 核对）
 
-面向海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）的 Claude 技能集与乙方交付流。已并入本包：段落级可引用性评分细则（5 维度分值）、GEO Score 六维加权公式、品牌权威平台分值表（含 Ahrefs 2025-12 研究：YouTube 相关性 0.737 最强、外链仅 0.266）、6 个可直接填写的 JSON-LD Schema 模板（随 brand-data-infrastructure 卡以 resources 分发）。适用边界：评分为海外向经验值，国内口径用 CN-GEO 信源榜。**配套关系**：geo-playbook（国内方法论）+ GeoLook（国内流水线）+ geo-seo-claude（海外审计与交付），按市场各取所需。
+面向海外引擎（ChatGPT/Perplexity/Gemini/Google AIO）的 Claude 技能集与乙方交付流。已并入本包：段落级可引用性评分细则（5 维度分值）、GEO Score 六维加权公式、品牌权威平台分值表（含 Ahrefs 2025-12 研究：YouTube 相关性 0.737 最强、外链仅 0.266）、6 个可直接填写的 JSON-LD Schema 模板（随 brand-data-infrastructure 卡以 resources 分发；本包已将其本地化为国内口径，并补充 FAQPage / HowTo / BreadcrumbList 三个模板）。适用边界：评分为海外向经验值，国内口径用 CN-GEO 信源榜。**配套关系**：geo-playbook（国内方法论）+ GeoLook（国内流水线）+ geo-seo-claude（海外审计与交付），按市场各取所需。
 
 ## 收束
 

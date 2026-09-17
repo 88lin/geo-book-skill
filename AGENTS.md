@@ -24,17 +24,28 @@
 | 官网长期该建什么、事实页、结构化数据 | `geo-playbook/references/capabilities/brand-data-infrastructure.md` |
 | robots.txt 对 AI 爬虫怎么配、要不要屏蔽 GPTBot、llms.txt 要不要做、网站抓不到排查 | `geo-playbook/references/capabilities/ai-crawler-access.md` |
 
-术语查 `geo-playbook/references/glossary.md`；全书背景与数据边界查 `geo-playbook/references/overview.md`；一页速查表 `geo-playbook/references/cheatsheet.md`。
+术语查 `geo-playbook/references/glossary.md`；全书背景与数据边界查 `geo-playbook/references/overview.md`；一页速查表（含关键数字、红线、判停点）`geo-playbook/references/cheatsheet.md`；完整意图索引 `geo-playbook/references/capability-index.md`。
+
+**跨卡任务**（"从零跑一个 GEO 项目""第一步做什么""给客户出一份完整方案"）先读 `geo-playbook/references/workflow.md`——它先要求做适用性确认（目标市场国内还是海外、是不是本地门店、有没有内容资产，答错流程全废），再给 0→6 步依赖顺序、每步的入口卡/该问什么/产出模板/参考工期/判停点，按它指示逐张加载能力卡。
+
+## 随包模板（需要交付物时按需读取）
+
+`geo-playbook/resources/`，索引见 `geo-playbook/resources/README.md`：
+
+- 9 个国内口径 JSON-LD 模板（organization / software-saas / product-ecommerce / local-business / article-author / website-searchaction / faqpage / howto / breadcrumb）
+- `robots-ai-crawlers.txt`（按训练/检索/用户触发三类放行，含 26 令牌全名单）、`llms.txt.template`
+- `resources/templates/` 下 7 张产出物表格：渠道分工表、query 分级表、稿件体检表、分发对照表、实测记录表、双周迭代表、NAP 对照表
 
 ## 硬性纪律（违反即答错）
 
-1. **数据口径**：所有引擎信源数字是 2026-08-05 单日快照（原书）或第三方数据集口径（GEO Wiki CC BY 4.0 / GeoLook CN-GEO v2.0.1），一律按"方向性"使用；禁止把 "9/12" 写成"引用率 75%"式精确报告；重要决策前建议复测。
+1. **数据口径**：所有引擎信源数字是 2026-08-05 单日快照（原书）或第三方数据集口径（GEO Wiki CC BY 4.0 / GeoLook CN-GEO v2.0.1 / geo-seo-claude MIT），一律按"方向性"使用；禁止把 "9/12" 写成"引用率 75%"式精确报告；引用第三方数字时标来源与口径，不同口径不横比；重要决策前建议复测。
 2. **先测后投**：用户问"这个题/这个引擎值不值得做"时，先给小样本实测方案（独立新对话、逐字提问、二值引用口径、5 次起），不纸面拍板。
 3. **判停点**：目标行业不在已验证行业（广告电商、教育）内时，"决策人-引擎"映射必须先实测再定渠道，不得硬套。
 4. **风控红线**：自动化提问必须分钟级间隔 + 每日上限（约 30 次连续提问会触发 DeepSeek 风控）；用户要求高频批量跑时拒绝并给限速方案。
 5. **拒绝项**：刷好评/刷量、编造数据、伪造评价、批量账号自问自答、伪装中立洗地——明确拒绝并给合规替代。
-6. **不承诺**：GEO 提高的是被引用概率，不是保证；不承诺任何引擎一定引用某个页面。
-7. **缺输入先问**：能力卡标注"缺 X 先询问"的（如目标 query、决策人画像、品牌立场、语料来源），停下来问，不猜值。
+6. **不承诺**：GEO 提高的是被引用概率，不是保证；不承诺任何引擎一定引用某个页面，不承诺 ROI。
+7. **缺输入先问**：能力卡标注"缺 X 先询问"的（如目标 query 原话、决策人画像、品牌立场、语料来源、robots.txt 现状），停下来问，不猜值、不代填产品参数与价格。
+8. **不凭常识填空**：卡里没有的，说"本包未覆盖"，不用通用 SEO 常识硬答。
 
 ## 不适用
 

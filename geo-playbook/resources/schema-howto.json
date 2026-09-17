@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://YOURDOMAIN.com/guides/GUIDE_SLUG/#howto",
+  "name": "怎么做 XXX：用症状原句作标题",
+  "description": "首段 40-60 字结论：这套步骤解决什么问题、大概多久、需要什么前提",
+  "url": "https://YOURDOMAIN.com/guides/GUIDE_SLUG",
+  "image": "https://YOURDOMAIN.com/images/GUIDE_IMAGE.jpg",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "CNY",
+    "value": "XXX"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "需要准备的材料/账号 1"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "需要用到的工具 1"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "第一步标题（动词开头）",
+      "text": "这一步具体做什么、判断阈值是多少、什么情况下停下来。",
+      "url": "https://YOURDOMAIN.com/guides/GUIDE_SLUG#step1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "第二步标题",
+      "text": "步骤正文，含具体数值与红线。",
+      "url": "https://YOURDOMAIN.com/guides/GUIDE_SLUG#step2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "第三步标题",
+      "text": "步骤正文，含完成标准。",
+      "url": "https://YOURDOMAIN.com/guides/GUIDE_SLUG#step3"
+    }
+  ],
+  "author": {
+    "@type": "Organization",
+    "@id": "https://YOURDOMAIN.com/#organization"
+  },
+  "inLanguage": "zh-CN"
+}

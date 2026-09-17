@@ -2,9 +2,9 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://YOURDOMAIN.com/#website",
-  "name": "YOUR_SITE_NAME",
+  "name": "站点名",
   "url": "https://YOURDOMAIN.com",
-  "description": "YOUR_SITE_DESCRIPTION",
+  "description": "站点一句话介绍",
   "publisher": {
     "@type": "Organization",
     "@id": "https://YOURDOMAIN.com/#organization"
@@ -17,5 +17,5 @@
     },
     "query-input": "required name=search_term_string"
   },
-  "inLanguage": "en-US"
+  "inLanguage": "zh-CN"
 }

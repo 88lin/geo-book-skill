@@ -20,7 +20,7 @@
 
 **与 GEO 的承继**：AEO 教机器"找"答案（形态好就够），GEO 教机器"信"答案（要评估权威背书、数据可验证、多信源一致）。三条推论：AEO 技术全部保留为 GEO 基本功；SEO/AEO 积累的权重直接继承（文心与百度收录深度绑定）；"信"这门课要重新修。位置零的价值边界（Ahrefs 200 万样本）：约 12.3% 查询出现摘要，摘要框平均拿走 8.6% 点击、其后第一名仍拿 19.6%——值得抢但不是流量全部；丢掉摘要两周可损失 3.9 万次点击。
 
-**补充（GEO Wiki《面向 AI 的 Schema.org》，CC BY 4.0）——标记优先级与正确预期**：Organization/Person（含 sameAs 知识图谱消歧）> Article/WebSite/BreadcrumbList > FAQPage/HowTo——最后两者只是声明解析器本可识别的结构，**加 FAQPage 标记并不会让答案更容易被引用**（是否被用取决于可见正文的可引用性）；Google 的 HowTo 富结果也已移除。标记作用于检索前的解析与实体识别，不参与采信。
+**补充 · 标记优先级与正确预期**（GEO Wiki《面向 AI 的 Schema.org》，CC BY 4.0）：Organization/Person（含 sameAs 知识图谱消歧）> Article/WebSite/BreadcrumbList > FAQPage/HowTo——最后两者只是声明解析器本可识别的结构，**加 FAQPage 标记并不会让答案更容易被引用**（是否被用取决于可见正文的可引用性）；Google 的 HowTo 富结果也已移除。标记作用于检索前的解析与实体识别，不参与采信。
 
 ## A1 — 书中案例
 
@@ -56,3 +56,9 @@
 ## 相关能力
 
 与 citable-content-spec 共用结论前置规格；下游 brand-data-infrastructure（官网事实页是本卡的基建化形态）；one-fish-multi-platform（第 5 步分发）。
+
+## 配套资源
+
+- [resources/schema-faqpage.json](../../resources/schema-faqpage.json) — FAQPage 模板（第 3 步）。注意标记本身不提升被引概率，答案是否被用取决于可见正文；标记文字必须与页面可见文字逐字一致。
+- [resources/schema-howto.json](../../resources/schema-howto.json) — HowTo 模板，症状型步骤页用。Google 的 HowTo 富结果已移除，价值在降低机器理解成本。
+- [resources/schema-article-author.json](../../resources/schema-article-author.json) — 含 `speakable` 的 Article 模板（第 3 步 Speakable 圈朗读段）。

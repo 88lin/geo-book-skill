@@ -57,3 +57,7 @@
 ## 相关能力
 
 上游 citable-content-spec（各版共同的硬指标）；geo-channel-map（决定要哪几版）；下游 geo-monitoring-iteration（版本被引表现回灌迭代）。
+
+## 配套资源
+
+- [resources/templates/distribution-matrix.md](../../resources/templates/distribution-matrix.md) — 分发对照表：原料清单（三版共用保口径一致）+ 版本/平台/引擎/字数/挂源/状态表 + 逐版规格核对 + 改写检查（第 4 步产出物）。

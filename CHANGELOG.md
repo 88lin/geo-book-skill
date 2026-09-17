@@ -2,6 +2,50 @@
 
 本仓库遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 精神，版本号语义：次版本号 = 能力卡内容或来源的实质变更。
 
+**1.0.0 是定稿版**——内容、结构与校验流程均已稳定，作者不再计划后续迭代。数据本身仍会随引擎行为漂移，使用时按各卡的「方向性 + 定期复核」纪律处理（见 [数据边界](README.md#-数据边界与红线请务必读)）。
+
+## [1.0.0] - 2026-09-18
+
+### Added
+- `geo-playbook/references/workflow.md`：全流程执行编排（原书五步 + 两道闸门）——第 −1 步适用性确认（国内/海外、是否本地门店、有无内容资产）+ 0→6 步依赖顺序（可访问性 → query 分级 → 渠道分工 → 先测后投闸门 → 内容生产 → 分发 → 监测迭代），每步给入口卡、该问什么、产出模板、参考工期与判停点，另附七条快捷路径
+- `geo-playbook/resources/` 从 6 个扩到 19 个模板：
+  - 补齐卡内点名却未分发的 `schema-faqpage.json` / `schema-howto.json` / `schema-breadcrumb.json`
+  - `robots-ai-crawlers.txt`（按训练/检索/用户触发三类放行，含 26 令牌全名单、RFC 9309 specificity 陷阱、部署后必验三件事）
+  - `llms.txt.template`（硬格式、收录三档、误用清单、三条诚实边界）
+  - `resources/templates/` 七张产出物表格：渠道分工表、query 分级表、稿件体检表、分发对照表、实测记录表、双周迭代表、NAP 对照表——对应各卡 E 段承诺的输出格式
+  - `resources/README.md` 模板索引
+- `scripts/validate.py` 一致性校验 + `.github/workflows/validate.yml` CI：六段结构、四方一致（SKILL.md 路由表 ↔ capability-index ↔ cheatsheet ↔ verified.yaml ↔ 磁盘）、相对链接、技能内反引号裸路径可从所在文件打开、JSON-LD 可解析、编号式补充块检测
+- `scripts/gen_schema_templates.py`：九份 JSON-LD 模板的统一生成器
+- cheatsheet 新增四节：关键数字速查（带口径）、红线与拒绝项、判停点速查、口径纪律
+
+### Changed
+- SKILL.md：`description` 从内容目录式改为「何时使用 / 何时不使用」触发导向；新增「回答纪律」七条与随包资源索引；路由表去掉重复路径前缀
+- JSON-LD 模板本地化为国内口径：`addressCountry: CN`、`+86` 电话、`CNY`、`zh-CN`、七天无理由退货、`KGM` 计重，`sameAs` 改为知乎/微博/百度百科/企查查/B站/小红书/高德/百度地图/点评/美团（原为 Yelp/BBB/Facebook/Crunchbase/LinkedIn）
+- 能力卡补充块统一为「**补充 · 标题**（来源）」，替换原先断裂的编号体系
+- 9 张能力卡新增「配套资源」段，指向对应模板
+- `bundle/verified.yaml`：`card` / `resources` 路径重指向 `geo-playbook/`，并为 9 个能力补齐资源清单
+- AGENTS.md / prompts 纯提示词版同步 workflow 顺序、模板索引与口径纪律
+
+### Fixed
+- `bundle/` 与 `geo-playbook/` 逐字节重复的 20 个文件（约 180KB）——删除重复副本，`geo-playbook/` 成为唯一事实源，`bundle/` 只保留 verified.yaml 登记表。重复副本中 `bundle/cards/brand-data-infrastructure.md` 的 6 条 resources 链接因目录深度不同全部失效，随之修复
+- `docs/DIGEST.md` 的 17 条链接指向不存在的编译产物路径 `dist/geo-book-skill/`，改为 `../geo-playbook/`
+- `docs/GLOSSARY.md` 与 `geo-playbook/references/glossary.md` 重复，删除前者
+- `docs/PIPELINE_STATE.md` 泄漏的构建机绝对路径与过期的阶段标记
+- README 测试徽章与测试表缺 v0.4.0 / v0.4.2 / v0.5.0 轮次
+
+**以下为同版内回归评测发现并修复：**
+
+- **20 条路径引用打不开**：新文件混用"文件相对"与"技能根相对"两种基准，其中 14 条从任何基准都解析不了。全部改为可校验的相对链接；`validate.py` 增加"裸路径引用从所在文件可打开"检查防复发
+- **workflow 缺国内/海外适用性分流**："跨境电商""出海 SaaS"这类词会直接误入国内引擎流程。新增第 −1 步适用性确认（国内/海外、是否本地门店、有无内容资产）
+- **workflow 第 0/3/4/5/6 步缺"输入 / 缺什么先问"**：只有第 1/2 步有，agent 走到第 0 步会直接给 robots 建议而不先索取现状。五步补齐
+- **稿件体检表误判平台短文**：结构硬指标（段落 ≥25、H2 ≥6、字数地板 1500）来自海外长文研究，会把符合 one-fish 规范的 800–1500 字头条短文判成全 fail。新增适用范围表按稿件类型分档
+- **schema 模板预填像真数据的评分**：`ratingValue: 4.8 / 4.6` 与 `XX` 式占位符风格不一致，忘改即等于发布伪造评分，同时踩"不伪造评价"红线与"数字可验证"硬指标。改为 `X.X` 这类填不满的形式，三处补专项警告
+- workflow 缺工期锚点（补每步参考工期 + 排期口径声明）、第 5 步缺产出物模板（新增 `distribution-matrix.md`）、体检表两套百分制并列无说明、文件名"五步工作流"与实际七段不符、robots 模板 Crawl-delay 作用面易误读、brand-data 卡"9 个模板"只列 6 个名
+
+### Verified
+- `python scripts/validate.py` 0 errors 0 warnings；负向测试确认可捕获断链、缺段、编号式补充块、裸路径失效
+- v1.0.0 回归评测四场景全部 PASS：E1 从零跑完整项目 30→38/40、E2 跳过闸门边界 37/40、E3 稿件体检 31→38/40、E4 robots+llms.txt+schema 38→39/40。报告见 `docs/supplement-audits/v1.0.0-workflow-templates-audit.md`（含"自评非独立盲测"的局限声明）
+
 ## [0.5.0] - 2026-09-15
 
 ### Verified
